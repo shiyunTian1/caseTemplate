@@ -20,12 +20,12 @@ const props = defineProps({
 const myColor = ["#eb2100", "#eb3600", "#d0570e", "#d0a00e", "#34da62", "#00e9db", "#00c0e9", "#0096f3"];
 
 const option = {
-  backgroundColor: "#0e2147",
+  // backgroundColor: "#0e2147",
   grid: {
-    left: "11%",
-    top: "12%",
-    right: "0%",
-    bottom: "8%",
+    left: "2%",
+    right: "2%",
+    bottom: "0%",
+    top: "2%",
     containLabel: true
   },
   xAxis: [
@@ -37,13 +37,13 @@ const option = {
     {
       axisTick: "none",
       axisLine: "none",
-      offset: "27",
-      axisLabel: {
-        textStyle: {
-          color: "#ffffff",
-          fontSize: "16"
-        }
-      },
+      // offset: "27",
+      // axisLabel: {
+      //   textStyle: {
+      //     color: "#303133",
+      //     fontSize: "12",
+      //   },
+      // },
       data: ["8", "7", "6", "5", "4", "3", "2", "1"]
     },
     {
@@ -51,24 +51,21 @@ const option = {
       axisLine: "none",
       axisLabel: {
         textStyle: {
-          color: "#ffffff",
-          fontSize: "16"
+          color: "#303133",
+          fontSize: "12"
         }
       },
       data: ["12567", "12566", "12566", "12566", "12566", "12566", "12566", "12566"]
     },
     {
+      axisTick: "none",
+      axisLine: "none",
       name: "单位：件",
       nameGap: "50",
-      nameTextStyle: {
-        color: "#ffffff",
-        fontSize: "16"
-      },
-      axisLine: {
-        lineStyle: {
-          color: "rgba(0,0,0,0)"
-        }
-      },
+      // nameTextStyle: {
+      //   // color: "#303133",
+      //   fontSize: "16",
+      // },
       data: []
     }
   ],
@@ -91,7 +88,7 @@ const option = {
           }
         }
       },
-      barWidth: 12,
+      barWidth: 6,
       itemStyle: {
         normal: {
           color: function (params) {
@@ -111,7 +108,7 @@ const option = {
       barWidth: 20,
       itemStyle: {
         normal: {
-          color: "#0e2147",
+          color: "#fff",
           barBorderRadius: 5
         }
       },
@@ -123,13 +120,10 @@ const option = {
       yAxisIndex: 2,
       barGap: "-100%",
       data: [100, 100, 100, 100, 100, 100, 100, 100],
-      barWidth: 24,
+      barWidth: 22,
       itemStyle: {
         normal: {
-          color: function (params) {
-            var num = myColor.length;
-            return myColor[params.dataIndex % num];
-          },
+          color: "transparent",
           barBorderRadius: 5
         }
       },
@@ -141,7 +135,7 @@ const option = {
       hoverAnimation: false,
       data: [0, 0, 0, 0, 0, 0, 0, 0],
       yAxisIndex: 2,
-      symbolSize: 35,
+      symbolSize: 15,
       itemStyle: {
         normal: {
           color: function (params) {

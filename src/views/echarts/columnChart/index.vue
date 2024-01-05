@@ -28,12 +28,12 @@
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart1 />
+          <GradientLineChart5 />
         </div>
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart2 />
+          <GradientLineChart6 />
         </div>
       </el-col>
       <el-col :span="6">
@@ -52,6 +52,8 @@ import GradientLineChart1 from "./components/gradientLineChart1/index.vue";
 import GradientLineChart2 from "./components/gradientLineChart2/index.vue";
 import GradientLineChart3 from "./components/gradientLineChart3/index.vue";
 import GradientLineChart4 from "./components/gradientLineChart4/index.vue";
+import GradientLineChart5 from "./components/gradientLineChart5/index.vue";
+import GradientLineChart6 from "./components/gradientLineChart6/index.vue";
 </script>
 
 <style scoped lang="scss">
