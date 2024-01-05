@@ -1009,6 +1009,20 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/about/deploy",
+          "name": "deploy",
+          "component": "/about/deploy",
+          "meta": {
+            "icon": "InfoFilled",
+            "title": "前端测试地址部署",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },

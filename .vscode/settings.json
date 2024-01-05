@@ -8,7 +8,7 @@
   "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib",
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "Wscats.vue"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -68,6 +68,7 @@
     "pinia",
     "pjpeg",
     "Prefixs",
+    "qingzi",
     "screenfull",
     "sortablejs",
     "sousuo",
@@ -93,7 +94,5 @@
     "zhongyingwen",
     "zhuti"
   ],
-  "i18n-ally.localesPaths": [
-    "src/languages"
-  ]
+  "i18n-ally.localesPaths": ["src/languages"]
 }
