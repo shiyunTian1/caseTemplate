@@ -32,10 +32,12 @@ import I18n from "@/languages/index";
 import pinia from "@/stores";
 // errorHandler
 import errorHandler from "@/utils/errorHandler";
+import * as echarts from "echarts";
 
 const app = createApp(App);
 
 app.config.errorHandler = errorHandler;
+app.config.globalProperties.$echarts = echarts;
 
 // register the element Icons component
 Object.keys(Icons).forEach(key => {
