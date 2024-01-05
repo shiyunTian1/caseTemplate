@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="columnChart-container">
     <el-row :gutter="20">
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
@@ -38,7 +38,27 @@
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart3 />
+          <GradientLineChart7 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart8 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart9 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart10 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart11 />
         </div>
       </el-col>
     </el-row>
@@ -54,6 +74,11 @@ import GradientLineChart3 from "./components/gradientLineChart3/index.vue";
 import GradientLineChart4 from "./components/gradientLineChart4/index.vue";
 import GradientLineChart5 from "./components/gradientLineChart5/index.vue";
 import GradientLineChart6 from "./components/gradientLineChart6/index.vue";
+import GradientLineChart7 from "./components/gradientLineChart7/index.vue";
+import GradientLineChart8 from "./components/gradientLineChart8/index.vue";
+import GradientLineChart9 from "./components/gradientLineChart9/index.vue";
+import GradientLineChart10 from "./components/gradientLineChart10/index.vue";
+import GradientLineChart11 from "./components/gradientLineChart11/index.vue";
 </script>
 
 <style scoped lang="scss">
@@ -64,6 +89,8 @@ import GradientLineChart6 from "./components/gradientLineChart6/index.vue";
   margin-bottom: 0;
 }
 .el-col {
+  height: 30% !important;
+  margin-bottom: 20px;
   border-radius: 4px;
 }
 .grid-content {
