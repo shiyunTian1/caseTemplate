@@ -1,94 +1,110 @@
 <template>
   <div class="home">
-    <div v-for="item in projectarr" :key="item.id" class="card" @click="handleCard">
-      {{ item.name }}
+    <div class="card-box">
+      <div v-for="item in projectsArr" class="card-item" @click="openUrl(item.url)">
+        <div class="card">
+          <div class="image" :style="{ backgroundImage: `url(${item.image})` }"></div>
+          <div class="des">
+            <div class="logo"></div>
+            <div class="title">
+              {{ item.name }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-const projectarr = ref([
-  {
-    name: "螺旋锚基础有限分析与设计软件",
-    image: "@/assets/images/home/lxm.png",
-    url: "http://lxmtest_ylsas_com"
-  },
-  {
-    name: "土壤与地下水污染风险管控系统",
-    image: "@/assets/images/home/webtest3.png",
-    url: "http://webtest3.ylsas.com"
-  },
-  {
-    name: "中条山尾矿库智慧管理系统",
-    image: "@/assets/images/home/tailingpond_test.png",
-    url: "http://tailingpond_test.ylsas.com"
-  },
-  {
-    name: "河北应急厅尾矿库",
-    image: "@/assets/images/home/tailingpond.png",
-    url: "http://tailingpond.ylsas.com"
-  },
-  {
-    name: "尾矿库风险评估系统",
-    image: "@/assets/images/home/gjyjb.png",
-    url: "http://gjyjb.ylsas.com"
-  },
-  {
-    name: "桥梁项目",
-    image: "@/assets/images/home/bridge.png",
-    url: "http://webtest.cloudansys.com/bridge/#/Login"
-  },
-  {
-    name: "张家界内涝试点",
-    image: "@/assets/images/home/zjjneilaotest.png",
-    url: "http://zjjneilaotest.ylsas.com"
-  },
-  {
-    name: "新国展二期项目",
-    image: "@/assets/images/home/xgz.png",
-    url: "http://xgz.ylsas.com"
-  },
-  {
-    name: "中核1400测试服务",
-    image: "@/assets/images/home/zhcs.png",
-    url: "http://zhcs.ylsas.com"
-  },
-  {
-    name: "沈阳恒隆市府广场基坑监测试点项目",
-    image: "@/assets/images/home/syjk.png",
-    url: "http://syjk.ylsas.com"
-  },
-  {
-    name: "数字孪生城市内涝管控平台",
-    image: "@/assets/images/home/csnl_test.png",
-    url: "http://csnl_test.ylsas.com"
-  },
-  {
-    name: "庄里水库",
-    image: "@/assets/images/home/zlsk_test.png",
-    url: "http://zlsk_test.ylsas.com"
-  }
-]);
+import projects from "./projects.json";
 
-const handleCard = () => {
-  console.log(projectarr.value);
-};
+// 图片路径处理
+if (projects.projects.length !== 0) {
+  projects.projects.forEach(item => {
+    item.image = new URL(item.image, import.meta.url).href;
+  });
+}
+const projectsArr = ref(projects.projects);
+
+/**
+ * @description 跳转到项目地址
+ */
+function openUrl(url: string) {
+  window.open(url, "_blank");
+}
 </script>
 
 <style scoped lang="scss">
-.home {
+.card {
+  position: relative;
+  aspect-ratio: 1920/1080;
+  overflow: hidden;
+  cursor: pointer;
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    filter: blur(50px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.3s;
+    transform: scale(3);
+  }
+  .des {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-align: center;
+    background: rgb(0 0 0 / 50%);
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      background: url("../../assets/images/home/yunlu_logo.png") no-repeat center;
+      background-color: rgb(0 0 0 / 50%);
+      background-size: 65%;
+      border-radius: 100%;
+    }
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+
+      // mix-blend-mode: difference;
+    }
+  }
+  &:hover {
+    .image {
+      zoom: 1.5;
+      filter: blur(0);
+      transform: scale(1);
+    }
+  }
+  /* stylelint-disable-next-line no-duplicate-selectors */
+  .des {
+    background: rgb(0 0 0 / 50%);
+  }
+}
+.card-box {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
-  .card {
-    width: 24%;
-    height: 30%;
-    margin: 0 10px 10px 0;
-    img {
-      width: 100%;
-      height: 100%;
-    }
+  .card-item {
+    box-sizing: border-box;
+    flex: 0 0 25%;
+    width: 0;
+    padding: 10px;
   }
 }
 </style>
