@@ -3,17 +3,17 @@
     <el-row :gutter="20">
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart />
+          <GradientLineChart5 />
         </div>
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart1 />
+          <GradientLineChart7 />
         </div>
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart2 />
+          <GradientLineChart8 />
         </div>
       </el-col>
       <el-col :span="6">
@@ -28,7 +28,7 @@
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart5 />
+          <GradientLineChart />
         </div>
       </el-col>
       <el-col :span="6">
@@ -38,12 +38,12 @@
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart7 />
+          <GradientLineChart1 />
         </div>
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart8 />
+          <GradientLineChart2 />
         </div>
       </el-col>
       <el-col :span="6">
