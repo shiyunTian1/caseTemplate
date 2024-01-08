@@ -11,7 +11,9 @@
             v-for="item in menuList"
             :key="item.path"
             class="split-item"
-            :class="{ 'split-active': splitActive === item.path || `/${splitActive.split('/')[1]}` === item.path }"
+            :class="{
+              'split-active': splitActive === item.path || `/${splitActive.split('/')[1]}` === item.path
+            }"
             @click="changeSubMenu(item)"
           >
             <el-icon>
