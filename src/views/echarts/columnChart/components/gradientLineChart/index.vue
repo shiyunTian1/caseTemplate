@@ -27,18 +27,19 @@ const option = {
     }
   },
 
-  legend: {
-    align: "right",
-    right: 10,
-    textStyle: {
-      color: "#fff"
-    },
-    data: ["男", "女"]
-  },
+  // legend: {
+  //   align: "right",
+  //   right: 10,
+  //   textStyle: {
+  //     color: "#fff",
+  //   },
+  //   data: ["男", "女"],
+  // },
   grid: {
     left: "3%",
     right: "4%",
     bottom: "3%",
+    top: "3%",
     containLabel: true
   },
   tooltip: {
@@ -79,7 +80,7 @@ const option = {
       //     color: "#fff",
       //   },
       // },
-      data: ["会", "不会", "看情况"]
+      data: ["", "", ""]
     },
     {
       type: "category",
@@ -98,7 +99,7 @@ const option = {
       splitLine: {
         show: false
       },
-      data: ["会", "不会", "看情况"]
+      data: ["", "", ""]
     }
   ],
   series: [

@@ -10,13 +10,14 @@
 <script setup lang="ts">
 import { ECOption } from "@/components/ECharts/config";
 import ECharts from "@/components/ECharts/index.vue";
+import * as echarts from "echarts";
 const props = defineProps({
   titleName: {
     type: String,
     default: "柱状图"
   }
 });
-const salvProName = ["安徽省", "河南省", "浙江省", "湖北省", "贵州省", "江西省", "江苏省", "四川省", "云南省", "湖南省"];
+const salvProName = ["安徽省", "河南省", "浙江省", "湖北省", "贵州省", "江西省"];
 const salvProValue = [239, 181, 154, 144, 135, 117, 74, 72, 67, 55];
 const salvProMax = []; //背景按最大值
 
@@ -85,31 +86,30 @@ const option = {
       itemStyle: {
         normal: {
           barBorderRadius: 30,
-          color: "rgb(57,89,255,.8)"
-          // color: new ECharts.graphic.LinearGradient(0, 0, 1, 0, [
-          //   {
-          //     offset: 0,
-          //     color: "rgb(57,89,255,1)",
-          //   },
-          //   {
-          //     offset: 1,
-          //     color: "rgb(46,200,207,1)",
-          //   },
-          // ]),
+          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+            {
+              offset: 0,
+              color: "rgb(57,89,255,1)"
+            },
+            {
+              offset: 1,
+              color: "rgb(46,200,207,1)"
+            }
+          ])
         }
       },
-      barWidth: 10,
+      barWidth: 20,
       data: salvProValue
     },
     {
       name: "背景",
       type: "bar",
-      barWidth: 10,
+      barWidth: 20,
       barGap: "-100%",
       data: salvProMax,
       itemStyle: {
         normal: {
-          color: "rgba(24,31,68,.1)",
+          color: "rgba(24,31,68,1)",
           barBorderRadius: 30
         }
       }

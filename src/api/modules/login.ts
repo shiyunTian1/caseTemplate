@@ -1,3 +1,11 @@
+/*
+ * @Author: qingzi tsy15632385483@163.com
+ * @Date: 2024-01-05 09:57:57
+ * @LastEditors: qingzi tsy15632385483@163.com
+ * @LastEditTime: 2024-01-05 14:05:48
+ * @FilePath: \yl_admin_base_project\src\api\modules\login.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import { Login } from "@/api/interface/index";
 import { PORT1 } from "@/api/config/servicePort";
 import authMenuList from "@/assets/json/authMenuList.json";
@@ -18,14 +26,14 @@ export const loginApi = (params: Login.ReqLoginForm) => {
 
 // 获取菜单列表
 export const getAuthMenuListApi = () => {
-  return http.get<Menu.MenuOptions[]>(PORT1 + `/menu/list`, {}, { loading: false });
+  // return http.get<Menu.MenuOptions[]>(PORT1 + `/menu/list`, {}, { loading: false });
   // 如果想让菜单变为本地数据，注释上一行代码，并引入本地 authMenuList.json 数据
   return authMenuList;
 };
 
 // 获取按钮权限
 export const getAuthButtonListApi = () => {
-  return http.get<Login.ResAuthButtons>(PORT1 + `/auth/buttons`, {}, { loading: false });
+  // return http.get<Login.ResAuthButtons>(PORT1 + `/auth/buttons`, {}, { loading: false });
   // 如果想让按钮权限变为本地数据，注释上一行代码，并引入本地 authButtonList.json 数据
   return authButtonList;
 };
