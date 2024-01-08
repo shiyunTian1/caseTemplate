@@ -67,7 +67,7 @@ const option = {
           ],
           globalCoord: true // 缺省为 false
         },
-        shadowColor: "rgb(58,115,192,.1)",
+        shadowColor: "rgb(58,115,192,.6)",
         shadowOffsetX: 10,
         shadowOffsetY: 11
       },
