@@ -1,19 +1,9 @@
 <template>
   <div class="card">
-    <el-row :gutter="20">
-      <el-col :span="6">
+    <el-row :gutter="24">
+      <el-col :span="24">
         <div class="grid-content ep-bg-purple">
           <Chart1 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
-          <chart2 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
-          <chart3 />
         </div>
       </el-col>
     </el-row>
@@ -23,8 +13,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Chart1 from "./components/chart1.vue";
-import Chart2 from "./components/chart2.vue";
-import Chart3 from "./components/chart3.vue";
 </script>
 
 <style scoped lang="scss">
@@ -35,6 +23,7 @@ import Chart3 from "./components/chart3.vue";
   margin-bottom: 0;
 }
 .el-col {
+  margin-bottom: 20px;
   border-radius: 4px;
 }
 .grid-content {

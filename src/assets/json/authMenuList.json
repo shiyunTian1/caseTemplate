@@ -74,20 +74,6 @@
       },
       "children": [
         {
-          "path": "/echarts/waterChart",
-          "name": "waterChart",
-          "component": "/echarts/waterChart/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "水型图",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
           "path": "/echarts/columnChart",
           "name": "columnChart",
           "component": "/echarts/columnChart/index",
@@ -130,12 +116,12 @@
           }
         },
         {
-          "path": "/echarts/radarChart",
-          "name": "radarChart",
-          "component": "/echarts/radarChart/index",
+          "path": "/echarts/mapChart",
+          "name": "mapChart",
+          "component": "/echarts/mapChart/index",
           "meta": {
             "icon": "Menu",
-            "title": "雷达图",
+            "title": "地图",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -144,12 +130,12 @@
           }
         },
         {
-          "path": "/echarts/nestedChart",
-          "name": "nestedChart",
-          "component": "/echarts/nestedChart/index",
+          "path": "/echarts/waterChart",
+          "name": "waterChart",
+          "component": "/echarts/waterChart/index",
           "meta": {
             "icon": "Menu",
-            "title": "嵌套环形图",
+            "title": "其他",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -536,7 +522,6 @@
         }
       ]
     },
-
     {
       "path": "/directives",
       "name": "directives",
