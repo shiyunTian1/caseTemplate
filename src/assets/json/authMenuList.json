@@ -551,6 +551,20 @@
           }
         },
         {
+          "path": "/echarts/mapChart",
+          "name": "mapChart",
+          "component": "/echarts/mapChart/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "地图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
           "path": "/echarts/radarChart",
           "name": "radarChart",
           "component": "/echarts/radarChart/index",
