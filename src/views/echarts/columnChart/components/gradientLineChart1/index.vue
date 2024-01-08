@@ -24,21 +24,22 @@ const option = {
       type: "shadow"
     }
   },
-  legend: {
-    data: ["接入率", "在线率", "完好率"],
-    align: "right",
-    right: 10,
-    textStyle: {
-      color: "#fff"
-    },
-    itemWidth: 10,
-    itemHeight: 10,
-    itemGap: 35
-  },
+  // legend: {
+  //   data: ["接入率", "在线率", "完好率"],
+  //   align: "right",
+  //   right: 10,
+  //   textStyle: {
+  //     color: "#fff"
+  //   },
+  //   itemWidth: 10,
+  //   itemHeight: 10,
+  //   itemGap: 35
+  // },
   grid: {
     left: "3%",
     right: "4%",
     bottom: "3%",
+    top: "3%",
     containLabel: true
   },
   xAxis: [
