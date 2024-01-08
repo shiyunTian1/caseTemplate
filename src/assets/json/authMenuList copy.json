@@ -1009,48 +1009,6 @@
             "isAffix": false,
             "isKeepAlive": true
           }
-        },
-        {
-          "path": "/about/deploy",
-          "name": "deploy",
-          "component": "/about/deploy",
-          "meta": {
-            "icon": "InfoFilled",
-            "title": "前端测试地址部署",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/link/webGroupBase",
-          "name": "webGroupBase",
-          "component": "/link/webGroupBase/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "图表组件",
-            "isLink": "http://web_group_base.ylsas.com",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/link/vue3BaseProject",
-          "name": "vue3BaseProject",
-          "component": "/link/vue3BaseProject/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "公共初始化项目",
-            "isLink": "http://vue3_base_project.ylsas.com",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
         }
       ]
     },
