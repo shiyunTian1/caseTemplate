@@ -1,0 +1,337 @@
+
+type C3dViewerHandlerType = {
+    [key: string] : any
+};
+class C3dViewerHandler {
+
+    protected _C3dViewer: C3dViewerHandlerType = {};
+    
+    constructor(C3dViewer: Object) {
+        this._C3dViewer = C3dViewer;
+        // console.log('C3dViewer',this._C3dViewer)
+       
+    }
+
+    get C3dViewer() {
+        return this._C3dViewer;
+    }
+    /**
+     * 设置参数
+     * @param param 参数 string
+     * @param value 值
+     */
+    set(param: string, value: any) {
+        console.log('set',param,value)
+        this[param] = value
+    }
+    /**
+     * 获取参数
+     * @param param 参数 string
+     * @returns 
+     */
+    get(param: string) : any {
+        console.log('get', param, this[param])
+        return this[param];
+    }
+
+    /**
+     * 发送消息
+     */
+    sendMsg(msg, origin: string = '*') {
+        // let msgStr = JSON.stringify(msg);
+        let msgStr = msg;
+        console.log('sendMsg', msgStr, origin)
+        this._C3dViewer.contentWindow.postMessage(msgStr, origin);
+        
+    }
+
+    /**
+     * 相机位置重置
+     */
+    resetCamera() {
+        let msg = {
+            resetCamera: ''
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 相机定位POI
+     */
+    cameraToPOI(poi: object = {lng: 0, lat: 0}) {
+        let msg = {
+            lockPOI: poi
+        }
+        this.sendMsg(msg);
+    }
+
+    /**
+     * 播放
+     * all: 恢复默认
+     */
+    play(f:number|string){
+
+        let updataCM = { 
+            updataCM: { 
+                id: f
+            }
+        } 
+
+        this.sendMsg(updataCM);
+
+    }
+    /**
+     * 暂停 | 复原
+     */
+    resetMap() {
+        let msg = {
+            updataCM: {
+                id: 'all'
+            }
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 导出播放数据
+     * @param data  
+     */
+    exportPlayData(data) {
+        let msg = {
+            createImgMaterial: data
+        }
+        this.sendMsg(msg);
+    }
+
+    /**
+     * 设置图标高亮
+     * @param id    图标id
+     */
+    setIconHighlight(id: string) {
+        let msg = {
+            blinkPOI: id
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * @description 标签缩放
+     * @param id 点位id
+     */
+    scalePOI(id: string) {
+        let msg = {
+            scalePOI: {
+                id: id,
+                scaleParam: {
+                    scaleFactor: 0.05, // 每次缩放的比例
+                    maxScale: 0.8, //最大值
+                    minScale: 0.4, //最大值
+                    animationInterval: 100, // 每100毫秒调整一次
+                    totalRounds: 3, //3个循环
+                },
+            }
+        }
+        this.sendMsg(msg);
+    }
+
+    /**
+     * 设置点位信息 - 不带文字标签
+     * msgData[key] = {
+            id: element.target_id,
+            name: element.code,
+            lat: element.latitude,
+            lng: element.longitude,
+            type: element.type_id + imgStatus,
+            status: element.status,
+            warn: element.warn,
+        }
+
+     */
+    setPOI(data: object) {
+        let msg = {
+            createLabel: data
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 设置点位信息 - 带文字标签
+     * msgData[key] = {
+            id: 1,
+            name: "浸润线1",
+            lng: 118.56048114942652,
+            lat: 28.898543310642435,
+            alt: 5,
+            type: 0,
+            text: "展宏生物",
+            icon: true,
+        }
+
+     */
+    setPOI2(data: object) {
+        let msg = {
+            createLabel2: data
+        }
+        this.sendMsg(msg);
+    }
+
+     /**
+     * 设置点位信息 - 带说明带刷新标签点位
+     */
+     setPOIInfo(data: object) {
+        let msg = {
+            updataLabel: data
+        }
+        this.sendMsg(msg);
+    }
+
+    /**
+     * 自定义画干滩线
+     */
+    createLine(text: string) {
+        let msg = {
+            createLine: {
+                text: text
+            }
+        }
+        this.sendMsg(msg);
+    }
+
+    /**
+     * 显隐干滩线
+     */
+    displayEntity() {
+        let msg = {
+            displayEntity: {}
+        }
+        this.sendMsg(msg);
+    }
+
+    /**
+     * 销毁干滩线
+     */
+    destroyLine() {
+        let msg = {
+            destroyLine: {}
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 设置交互显示样式 (鼠标显示)
+     */
+    setCursorState(style: string) {
+        let msg = {
+            cursorState: style
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * poi动效激活 true 开启 false 关闭
+     */
+    updataDynamicLabel(data: boolean){
+        let msg = {
+            updataDynamicLabel: data
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 云图控制
+     *  id: cm_common：公共云图类    cm_flow：流动云图类
+     *  cm_common：公共云图类下的有这些：cm_common_pollution_0:污染分布   cm_common_subField_0:地下流场     cm_risk_0: 风险分布
+     *  cm_flow：  流动云图类下的有这些：cm_origin:溯源
+     */
+    CMcontrol(params : {id: string, img: string, show: boolean, flow?: boolean}){
+        let msg = {
+            CMcontrol: params
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 区域边界描边高亮 true 开启 false 关闭 
+     */
+    areaBoundaryDisplay(status: boolean){
+        let msg = {
+            areaBoundaryDisplay: status
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 框选  true 激活 false 关闭
+    */
+    electDiv(status: boolean){
+        let msg = {
+            electDiv: status
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 多边形框选  true 激活 false 关闭
+    */
+    electDiv2(status: boolean){
+        let msg = {
+            electDiv2: status
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 设置框选筛选点
+     * @param { Array } params: [[118.56048114942652, 28.898543310642435], [118.56048114942652, 28.89854]]
+    */
+    setElectPOI(params: number[][]){
+        let msg = {
+            setElectPOI: params
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 设置云图等级颜色
+     * @param { object } data: {lv0: [252, 228, 91, 0.8], lv1: [231, 237, 114, 0.8], lv2: [122, 237, 114, 0.8], lv3: [40, 146, 199, 0.8], lv4: [242, 86, 34, 0.8]}
+     */
+    setVectorCMColor(data: {}){
+        let msg = {
+            setVectorCMColor: {
+                color: data,
+            }
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 批量加载云图
+     * @param { Array } data: [
+     * {
+     *      id: '25_40', 
+     *      url: 'http://thingjstest.cloudansys.com/project/changshan_dixiashui/develop/public/25_40.json', 
+     *      param:{
+     *          type:"polygon" | "polyline",
+     *          width: 2,
+     *          rgba: [0, 0, 0, 0.5],}
+     *  }
+     * ]
+     * @tip : 加载完成后 会返回 { CMloadingCompleted ： "CMloadingCompleted" }
+     */
+    loadVectorCM(data: {id:string, url:string}[]){
+        let msg = {
+            loadVectorCM: data 
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 显隐云图
+     * @param data {id: ['25_40',''], show: true}
+     */
+    displayCM(data: {id:string[], show:boolean}){
+        let msg = {
+            displayCM: data 
+        }
+        this.sendMsg(msg);
+    }
+    /**
+     * 销毁云图
+     */
+    destroyCM(){
+        let msg = {
+            destroyCM: '' 
+        }
+        this.sendMsg(msg);
+    }
+
+}
+
+
+export default C3dViewerHandler;

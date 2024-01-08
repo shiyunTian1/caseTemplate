@@ -1,9 +1,10 @@
 <template>
   <div>
     <div class="card mb10">
-      <h4 class="title">简介</h4>
+      <h4 class="title">平台介绍</h4>
       <span class="text"> 前端建设平台 </span>
     </div>
+    <div></div>
     <!-- <div class="card mb10">
       <h4 class="title">项目信息</h4>
       <el-descriptions :column="2" border>

@@ -1,68 +1,101 @@
 <template>
-  <div class="card content-box">
-    <ECharts :option="option" />
+  <div class="card">
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart2 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart3 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart4 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart5 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart6 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart7 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart8 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart9 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart10 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart11 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart12 />
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
-<script setup lang="ts" name="pieChart">
-import { ECOption } from "@/components/ECharts/config";
-import ECharts from "@/components/ECharts/index.vue";
-
-const option: ECOption = {
-  tooltip: {
-    trigger: "item",
-    formatter: "{a} <br/>{b} : {c} ({d}%)"
-  },
-  legend: {
-    left: "center",
-    top: "bottom",
-    data: ["rose 1", "rose 2", "rose 3", "rose 4", "rose 5", "rose 6", "rose 7", "rose 8"],
-    textStyle: {
-      color: "#a1a1a1"
-    }
-  },
-  toolbox: {
-    show: true,
-    feature: {
-      mark: { show: true },
-      dataView: { show: true, readOnly: false },
-      restore: { show: true },
-      saveAsImage: { show: true }
-    }
-  },
-  series: [
-    {
-      name: "Radius Mode",
-      type: "pie",
-      radius: [60, 280],
-      center: ["50%", "50%"],
-      roseType: "radius",
-      itemStyle: {
-        borderRadius: 5
-      },
-      label: {
-        show: true
-      },
-      emphasis: {
-        label: {
-          show: true
-        }
-      },
-      data: [
-        { value: 40, name: "rose 1" },
-        { value: 33, name: "rose 2" },
-        { value: 28, name: "rose 3" },
-        { value: 22, name: "rose 4" },
-        { value: 20, name: "rose 5" },
-        { value: 15, name: "rose 6" },
-        { value: 12, name: "rose 7" },
-        { value: 10, name: "rose 8" }
-      ]
-    }
-  ]
-};
+<script setup lang="ts">
+import { ref } from "vue";
+import LineChart from "./components/chart1.vue";
+import LineChart2 from "./components/chart2.vue";
+import LineChart3 from "./components/chart3.vue";
+import LineChart4 from "./components/chart4.vue";
+import LineChart5 from "./components/chart5.vue";
+import LineChart6 from "./components/chart6.vue";
+import LineChart7 from "./components/chart7.vue";
+import LineChart8 from "./components/chart8.vue";
+import LineChart9 from "./components/chart9.vue";
+import LineChart10 from "./components/chart10.vue";
+import LineChart11 from "./components/chart11.vue";
+import LineChart12 from "./components/chart12.vue";
 </script>
 
 <style scoped lang="scss">
-@import "./index.scss";
+:deep(.el-row) {
+  margin-bottom: 20px;
+}
+.el-row:last-child {
+  margin-bottom: 0;
+}
+.el-col {
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+.grid-content {
+  min-height: 36px;
+  background: var(--el-header-bg-color);
+  border: 1px solid var(--el-header-border-color);
+  border-radius: 4px;
+}
 </style>
