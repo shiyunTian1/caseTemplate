@@ -17,6 +17,7 @@ const props = defineProps({
     default: "饼图"
   }
 });
+
 var scaleData = [
   {
     name: "总户数",
@@ -93,6 +94,7 @@ var seriesObj = [
           position: "inner",
           fontSize: 14,
           lineHeight: 15,
+          color: "#333",
           formatter: function (params) {
             var percent = 0;
             var total = 0;
@@ -112,6 +114,7 @@ var seriesObj = [
             }
           }
         },
+        color: "#333",
         labelLine: {
           length: 30,
           length2: 60,
@@ -159,7 +162,9 @@ var seriesObj = [
     data: data
   }
 ];
+
 const option = {
+  // backgroundColor: "#fff",
   tooltip: {
     show: false
   },
@@ -183,7 +188,7 @@ const option = {
           top: "0",
           style: {
             fill: "#333",
-            text: [],
+            // text: ["治理率(以户数计算)"],
             font: "16px Microsoft YaHei"
           }
         },
@@ -191,9 +196,9 @@ const option = {
           type: "text",
           z: 100,
           left: "center",
-          top: "20",
+          top: "40",
           style: {
-            fill: "3#33",
+            fill: "#333",
             text: ["80%"],
             font: "26px Microsoft YaHei"
           }
