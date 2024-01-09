@@ -1,0 +1,332 @@
+
+// 以下关于模型操作方法 ↓↓↓↓↓↓
+/**
+ * @description: 模型相关数据
+ * @param {boolean} modelStatus 模型加载状态
+ * @param {number} checkModelNum 检测模型是否加载成功次数
+ * @param {Array} framesList 帧列表
+ * @param {Array} scenesList 物理场列表
+ * @param {Array} dateList 帧数对应日期列表
+ * @param {Object} PollutantQualityLevel 污染物对应的水质标准阈值范围以及颜色
+ * @param {number} currentFrame 当前帧 0表示第1帧 数组下标
+ * @param {number} currentScene 当前物理场 0表示数组下标
+ * @param {number} currentDate 当前日期位置 0表示数组下标
+ * @param {boolean} playStatus 播放状态
+ * @param { any } timer 定时器实例
+ * @param {Function} load 加载模型数据
+ * @param {Function} reset 重置数据
+ * @param {Function} setCurrentFrame 设置当前帧
+ * @param {Function} stop 停止播放
+ * @param {Function} play 开始播放
+ * 
+ */
+const modelParams = reactive({
+  modelStatus: false,
+  checkModelNum: 0,
+  framesList: [] as string[],
+  scenesList: [] as string[],
+  dateList: [] as string[],
+  PollutantQualityLevel: {} as { [key: string]: { mm: number[], rgba: { r: number, g: number, b: number, a: number } } },  // a*255
+  currentFrame: -1,
+  currentScene: 0,
+  currentDate: 0,
+  playStatus: false,
+  ddcxStatus: false,
+  timer: null as any,
+  load() {
+
+    console.log('阈值', this.PollutantQualityLevel)
+    // 重置 正常情况下重置 测试先注释
+    this.reset();
+    // 设置图标
+    modalHanldle.TT.flagInit(new URL("../../assets/theme1/model/ddcx.png", import.meta.url).href, 20, 23)
+
+    // 获取播放物理场
+    this.scenesList = modalHanldle.CM.getNameListOfCM()
+    console.log('物理场', this.scenesList)
+    // 设置物理场
+    modalHanldle.CM.updateColors(this.scenesList[this.currentScene]);
+    console.log('物理场', this.scenesList[this.currentScene])
+    // 获取播放帧数据
+    this.framesList = modalHanldle.CM.getResTimeList()
+    console.log('帧数据', this.framesList)
+    // 设置当前帧为第一帧
+    this.setCurrentFrame(this.framesList[this.currentFrame])
+    console.log('当前帧', this.framesList[this.currentFrame])
+
+    // 设置进度条日期
+    let selectedData = popupConfig.value.list.selectedObj;
+    let currentYear = selectedData.monitorTime.split('年')[0];
+    let currentQuarter = ['一', '二', '三', '四'].findIndex((item: string) => {
+      return selectedData.monitorTime.includes(item)
+    }) + 1
+    this.dateList = getQuarterEndMonthArr(this.framesList.length, currentYear, popupConfig.value.list.selectedObj.frameYear || 4,
+     currentQuarter * 3, parseInt(selectedData.traceCycle), parseInt(selectedData.predictCycle))
+    this.currentDate = this.dateList.findIndex((item: string) => {
+      let year = item.split('-')[0];
+      let month = item.split('-')[1];
+      // console.log('播放进度条日期', year, currentYear, month, currentQuarter)
+      return year.includes(currentYear) && month.includes((currentQuarter * 3).toString())
+
+    })
+    console.log('播放进度条日期', this.dateList, this.currentDate)
+    // console.log('播放进度条日期', dateArr, popupConfig.value.list.selectedObj)
+  },
+  reset() {
+    this.modelStatus = false;
+    this.checkModelNum = 0;
+    this.framesList = [];
+    this.scenesList = [];
+    this.dateList = [];
+    this.PollutantQualityLevel = {};
+    this.currentFrame = -1;
+  },
+  setCurrentFrame(frame: string) {
+    if (frame === undefined) {
+      // frame = this.framesList[0];
+      return;
+    }
+    // 如果播放状态先停止播放
+    if (this.playStatus) {
+      clearInterval(this.timer);
+    }
+    this.currentFrame = this.framesList.indexOf(frame);
+    console.log('设置当前帧', frame, this.currentFrame)
+    // 设置当前帧
+    modalHanldle.CM.Draw.setCurrentLevel(frame);
+    // 更新当前物理场
+    modalHanldle.CM.updateColors(this.scenesList[this.currentScene]);
+    // 如果播放状态再开始播放
+    if (this.playStatus) {
+      setTimeout(() => {
+        this.play();
+      }, 400);
+    }
+  },
+  stop() {
+    this.playStatus = false;
+    clearInterval(this.timer);
+  },
+  play() {
+    clearInterval(this.timer);
+    this.playStatus = true;
+    this.timer = setInterval(() => {
+      this.currentFrame++;
+      if (this.currentFrame > this.framesList.length) {
+        this.currentFrame = 0;
+        this.stop();
+      }
+      // 设置当前帧
+      modalHanldle.CM.Draw.setCurrentLevel(this.framesList[this.currentFrame]);
+      // 更新当前物理场
+      modalHanldle.CM.updateColors(this.scenesList[this.currentScene]);
+    }, 200)
+    // modalHanldle.CM.play(0.2, (i: string) => {
+    //     this.currentFrame = this.framesList.indexOf(i);
+    //     // console.log('播放帧', i)
+    // });
+  }
+
+});
+/**
+ * @description 模型操作挂载
+ */
+const modalHanldle = reactive({
+  CM: null as any,
+  TT: null as any,
+  viewer: null as any,
+  window: null as any,
+})
+/**
+ * @description: 模型加载成功回调
+ */
+const modelLoadingCallback = (status: boolean) => {
+  console.log('modelLoadingCallback', status)
+  modelParams.modelStatus = status;
+
+}
+/**
+ * @description: 检测模型是否挂载成功
+ */
+const checkModelStatus = (cb?: () => void) => {
+
+  // console.log('checkModelStatus', modelParams.checkModelNum, modelParams.modelStatus)
+
+  if (modelParams.modelStatus === false) {
+    if (modelParams.checkModelNum < 6) {
+      modelParams.checkModelNum++;
+      setTimeout(() => {
+        checkModelStatus(cb);
+      }, 500)
+    } else {
+      ElMessage({
+        message: `模型加载失败,请刷新页面`,
+        type: 'warning',
+      })
+    }
+  } else {
+    modelParams.checkModelNum = 0;
+    console.log('模型加载成功')
+    cb && cb();
+  }
+}
+/**
+ * @description: 获取播放数据
+ */
+const getPlayData = () => {
+  // if(Object.keys(popupConfig.value.list.selectedObj).length !== 0 ){
+  //     // 清除原数据
+  //     modalHanldle.CM.clean();
+  // }
+  modalHanldle.TT = window.frames['GIframe'].contentWindow.TT
+  // 设置阈值以及颜色
+  modalHanldle.TT.updataFS(modelParams.PollutantQualityLevel)
+
+  modalHanldle.TT.reNew(popupConfig.value.list.selectedObj.dataFramesUrl, () => {
+    console.log('加载模型数据成功', popupConfig.value.list.selectedObj.dataFramesUrl)
+    checkModelStatus(() => {
+      // 挂载模型操作
+      modalHanldle.CM = window.frames['GIframe'].contentWindow.main.CMs[0]
+      modalHanldle.viewer = window.frames['GIframe'].contentWindow.viewer
+      modalHanldle.window = window.frames['GIframe'].contentWindow
+      // 加载模型数据
+      modelParams.load()
+    })
+  })
+
+
+}
+
+// 模型操作结束 ↑↑↑↑↑
+
+
+/**
+ * @description 生成帧数对应的月份数组 根据帧数生成对应的季度末月份数组
+ * @param {Number}  framesLength 帧数长度
+ * @param {Number}  currentYear 当前年份
+ * @param {Number}  yearFramesLength 年份帧数
+ * @param {Number}  currentMonth 当前月份
+ * @param {Number}  beforeYearLength 往前的年数
+ * @param {Number}  afterYearLength 往后年数
+ * @returns {Array} 帧数季度末月份数组
+ */
+const getQuarterEndMonthArr = (framesLength: number, currentYear: number, yearFramesLength: number, currentMonth: number, beforeYearLength: number, afterYearLength: number) => {
+  const connector = '-';
+  /**
+   * @description 生成拓展年份的季度数组
+   * @param {Number}  yearLength 拓展年数
+   * @returns {Array} 季度末月份数组
+   */
+  // function getYearQuarterArr(yearLength: number, type?: 'before' | 'after') {
+  //     let quarterArr = [] as string[];
+  //     if(yearLength === 0){
+  //         for (let i = 0; i < 4; i++) {
+  //             let year = currentYear;
+  //             let month = (i + 1) * 3;
+  //             let monthStr = month < 10? `0${month}` : month;
+  //             quarterArr.push(`${year}${connector}${monthStr}`);
+  //         }
+  //     }else{
+  //         for (let i = 0; i < yearLength * 4; i++) {
+  //             let yearMinusNum = i/4 < 1 ? 1 : parseInt(`${i/4+1}`);
+  //             let year = Number(currentYear) - Number(yearMinusNum);
+  //             let month = (yearLength * 4 - i)%4 * 3;
+  //             if( type === 'after'){
+  //                 year = Number(currentYear) + Number(yearMinusNum);
+  //                 month = ((i+1)%4)*3
+  //             }
+  //             month = month === 0? 12 : month;
+  //             let monthStr = month < 10? `0${month}` : month;
+  //             quarterArr.push(`${year}${connector}${monthStr}`);
+  //         }
+  //     }
+  //     return quarterArr;
+  // }
+
+  /**
+   * @description 根据年份帧数生成拓展年份月数数组
+   * @param {Number}  yearFramesLength 年份帧数
+   * @param {Number}  yearLength 拓展年数
+   * @returns {Array} 拓展年份月数数组
+   */
+  const getYearMonthArr = (yearFramesLength: number, yearLength: number, type?: 'before' | 'after') => {
+    let yearMonthArr = [] as string[];
+    let base = parseInt((12 / yearFramesLength).toString());
+    // console.log(base)
+    if (yearLength === 0) {
+      for (let i = 0; i < yearFramesLength; i++) {
+        let month = (i + 1) * base;
+        if (month > currentMonth && month <= 12) {
+          month = currentMonth
+        } else if (month > 12) {
+          month = 12;
+        }
+        let monthStr = month < 10 ? `0${month}` : month;
+        yearMonthArr.push(`${currentYear}${connector}${monthStr}`);
+      }
+    } else {
+      for (let i = 0; i < yearLength; i++) {
+        if (type === 'before') {
+          let year = currentYear / 1 - (i + 1);
+          for (let j = 0; j < yearFramesLength; j++) {
+            let month = 12 - j * base;
+            // 
+            if (month < 0) {
+              month = 1;
+            }
+            let monthStr = month < 10 ? `0${month}` : month;
+            yearMonthArr.push(`${year}${connector}${monthStr}`);
+          }
+        } else {
+          let year = currentYear / 1 + (i + 1);
+          for (let j = 0; j < yearFramesLength; j++) {
+            let month = (j + 1) * base;
+            // 
+            if (month > 12) {
+              month = 12;
+            }
+            let monthStr = month < 10 ? `0${month}` : month;
+            yearMonthArr.push(`${year}${connector}${monthStr}`);
+          }
+        }
+      }
+    }
+    return yearMonthArr;
+
+  }
+
+
+
+  // 当前年份季度数组
+  let currentYearQuarterArr = getYearMonthArr(yearFramesLength, 0);
+  // 往前的年数季度数组
+  let beforeYearQuarterArr = getYearMonthArr(yearFramesLength, beforeYearLength, 'before').reverse();
+  // 往后年数季度数组
+  let afterYearQuarterArr = getYearMonthArr(yearFramesLength, afterYearLength, 'after');
+  // 帧数季度末月份数组长度 (除本年外)
+  let arrayLength = framesLength - currentYearQuarterArr.length;
+  // 实际往前年数季度数组长度 向上取整
+  let realBeforeYearQuarterArrLength = Math.ceil(beforeYearLength / (beforeYearLength + afterYearLength) * arrayLength);
+  // 实际往后年数季度数组长度 向下取整
+  let realAfterYearQuarterArrLength = Math.floor(afterYearLength / (beforeYearLength + afterYearLength) * arrayLength);
+  // console.log('realBeforeYearQuarterArrLength', realBeforeYearQuarterArrLength, beforeYearLength, afterYearLength)
+  // console.log('realAfterYearQuarterArrLength', realAfterYearQuarterArrLength)
+  // 如果实际往前年数季度数组长度小于等于往前年数季度数组长度 则执行保留第一条数据,剩下的随机删减 至长度相等   暂不考虑实际往前年数季度数组长度小于等于往前年数季度数组长度的情况
+  if (realBeforeYearQuarterArrLength <= beforeYearQuarterArr.length) {
+    let l = beforeYearQuarterArr.length - realBeforeYearQuarterArrLength;
+    for (let i = 0; i < l; i++) {
+      beforeYearQuarterArr.splice(Math.floor(Math.random() * (beforeYearQuarterArr.length - 1)) + 1, 1);
+    }
+  }
+  // 如果实际往后年数季度数组长度小于等于往后年数季度数组长度 则执行保留最后一条数据,剩下的随机删减 至长度相等   暂不考虑实际往后年数季度数组长度小于等于往后年数季度数组长度的情况
+  if (realAfterYearQuarterArrLength <= afterYearQuarterArr.length) {
+    let l = afterYearQuarterArr.length - realAfterYearQuarterArrLength;
+    for (let i = 0; i < l; i++) {
+      afterYearQuarterArr.splice(Math.floor(Math.random() * (afterYearQuarterArr.length - 1)), 1);
+    }
+  }
+  // 
+  let quarterEndMonth = [...beforeYearQuarterArr, ...currentYearQuarterArr, ...afterYearQuarterArr];
+  // console.log('getQuarterEndMonthArr', quarterEndMonth)
+  return quarterEndMonth;
+}
