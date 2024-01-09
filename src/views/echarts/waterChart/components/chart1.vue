@@ -147,7 +147,7 @@ const option = {
           value: 100,
           itemStyle: {
             normal: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              color: new echarts.graphic.LinearGradient(255, 255, 255, 0, [
                 {
                   offset: 0,
                   color: "#fefefe"

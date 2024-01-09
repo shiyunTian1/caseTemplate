@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <el-row :gutter="20">
-      <el-col :span="6">
+      <!-- <el-col :span="6">
         <div class="grid-content ep-bg-purple">
           <LineChart />
         </div>
@@ -55,10 +55,15 @@
         <div class="grid-content ep-bg-purple">
           <LineChart11 />
         </div>
-      </el-col>
+      </el-col> -->
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
           <LineChart12 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart13 />
         </div>
       </el-col>
     </el-row>
@@ -79,6 +84,7 @@ import LineChart9 from "./components/chart9.vue";
 import LineChart10 from "./components/chart10.vue";
 import LineChart11 from "./components/chart11.vue";
 import LineChart12 from "./components/chart12.vue";
+import LineChart13 from "./components/chart13.vue";
 </script>
 
 <style scoped lang="scss">
