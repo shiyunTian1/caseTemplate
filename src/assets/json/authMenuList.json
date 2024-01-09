@@ -42,22 +42,66 @@
             "isAffix": false,
             "isKeepAlive": true
           }
+        },
+        {
+          "path": "/home/index",
+          "name": "index",
+          "component": "/home/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "备用首页",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
         }
       ]
     },
     {
-      "path": "/home/index",
-      "name": "home",
-      "component": "/home/index",
+      "path": "/dataScreen",
+      "name": "dataScreen",
+      "redirect": "/dataScreen/index",
       "meta": {
-        "icon": "Menu",
-        "title": "项目概览",
+        "icon": "Histogram",
+        "title": "实战项目",
         "isLink": "",
         "isHide": false,
-        "isFull": false,
-        "isAffix": true,
+        "isFull": true,
+        "isAffix": false,
         "isKeepAlive": true
-      }
+      },
+      "children": [
+        {
+          "path": "/dataScreen/index",
+          "name": "dataScreenIndex",
+          "component": "/dataScreen/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "项目列表",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/dataScreen/actionDes",
+          "name": "actionDes",
+          "component": "/dataScreen/actionDes/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "交互说明",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
     },
     {
       "path": "/echarts",
