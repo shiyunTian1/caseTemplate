@@ -60,7 +60,7 @@
       ]
     },
     {
-      "path": "/dataScreen",
+      "path": "/dataScreen/index",
       "name": "dataScreen",
       "redirect": "/dataScreen/index",
       "meta": {
@@ -75,25 +75,11 @@
       "children": [
         {
           "path": "/dataScreen/index",
-          "name": "dataScreenIndex",
+          "name": "dataScreen",
           "component": "/dataScreen/index",
           "meta": {
-            "icon": "Menu",
-            "title": "项目列表",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/dataScreen/actionDes",
-          "name": "actionDes",
-          "component": "/dataScreen/actionDes/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "交互说明",
+            "icon": "Histogram",
+            "title": "项目概览",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -103,6 +89,7 @@
         }
       ]
     },
+
     {
       "path": "/echarts",
       "name": "echarts",
@@ -657,6 +644,64 @@
           "meta": {
             "icon": "Menu",
             "title": "长按指令",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "/actionDes",
+      "name": "ss",
+      "redirect": "/dataScreen/actionDes/index",
+      "meta": {
+        "icon": "Histogram",
+        "title": "三维协作",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/dataScreen/actionDes",
+          "name": "actionDes",
+          "component": "/dataScreen/actionDes/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "Window",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/dataScreen/actionDes2",
+          "name": "actionDes2",
+          "component": "/dataScreen/actionDes/index copy",
+          "meta": {
+            "icon": "Menu",
+            "title": "WEBGL",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/dataScreen/actionDes3",
+          "name": "actionDes3",
+          "component": "/dataScreen/actionDes/index2",
+          "meta": {
+            "icon": "Menu",
+            "title": "GIS",
             "isLink": "",
             "isHide": false,
             "isFull": false,
