@@ -50,6 +50,7 @@
     "highlight.js": "^11.9.0",
     "md5": "^2.3.0",
     "mitt": "^3.0.1",
+    "monaco-editor": "^0.45.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
@@ -100,6 +101,7 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-html": "^3.2.1",
+    "vite-plugin-monaco-editor": "^1.1.0",
     "vite-plugin-pwa": "^0.17.4",
     "vite-plugin-svg-icons": "^2.0.1",
     "vue-tsc": "^1.8.27"
