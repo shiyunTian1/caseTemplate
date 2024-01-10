@@ -33,7 +33,10 @@ import pinia from "@/stores";
 // errorHandler
 import errorHandler from "@/utils/errorHandler";
 import * as echarts from "echarts";
+import highcharts from "highcharts";
+import highcharts3d from "highcharts/highcharts-3d";
 
+highcharts3d(highcharts);
 const app = createApp(App);
 
 app.config.errorHandler = errorHandler;

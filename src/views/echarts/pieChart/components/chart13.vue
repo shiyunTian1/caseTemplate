@@ -18,177 +18,131 @@ const props = defineProps({
   }
 });
 
-const option = {
-  color: [
-    "#FAE927",
-    "#E9E416",
-    "#C9DA36",
-    "#9ECB3C",
-    "#6DBC49",
-    "#37B44E",
-    "#3DBA78",
-    "#14ADCF",
-    "#209AC9",
-    "#1E91CA",
-    "#2C6BA0",
-    "#2B55A1",
-    "#2D3D8E",
-    "#44388E",
-    "#6A368B",
-    "#7D3990",
-    "#A63F98",
-    "#C31C88",
-    "#D52178",
-    "#D5225B",
-    "#D02C2A",
-    "#D44C2D",
-    "#F57A34",
-    "#FA8F2F",
-    "#D99D21",
-    "#CF7B25",
-    "#CF7B25",
-    "#CF7B25"
-  ],
-
-  calculable: true,
-  series: [
-    {
-      name: "",
-      type: "pie",
-      startAngle: 0,
-      clockwise: false,
-      radius: ["30%", "120%"],
-      center: ["50%", "62%"],
-      roseType: "area",
-      avoidLabelOverlap: false,
-      label: {
-        show: true,
-        position: "inside",
-        formatter: "{c}",
-
-        textStyle: {
-          fontWeight: "100",
-          fontFamily: "Microsoft YaHei",
-          color: "#000"
-          // fontSize: 8
-        }
-      },
-
-      itemStyle: {
-        normal: {
-          // color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [{
-          //     offset: 0,
-          //     color: '#ef29b1'
-          // }, {
-          //     offset: 1,
-          //     color: '#fd7225'
-          // }]),
-          borderWidth: 3,
-          borderColor: "#fff",
-          shadowColor: "#fff",
-          shadowBlur: 30
-        }
-      },
-      data: [
-        {
-          value: 600,
-          name: "A"
-        },
-        {
-          value: 1100,
-          name: "B"
-        },
-        {
-          value: 1200,
-          name: "C"
-        },
-        {
-          value: 1300,
-          name: "D"
-        },
-        {
-          value: 1250,
-          name: "E"
-        },
-        {
-          value: 400,
-          name: "F"
-        },
-        {
-          value: 680,
-          name: "G"
-        },
-        {
-          value: 850,
-          name: "H"
-        },
-        {
-          value: 470,
-          name: "I"
-        },
-        {
-          value: 780,
-          name: "J"
-        },
-        {
-          value: 680,
-          name: "K"
-        },
-        {
-          value: 880,
-          name: "L"
-        },
-        {
-          value: 1201,
-          name: "M"
-        },
-        {
-          value: 540,
-          name: "N"
-        },
-        {
-          value: 960,
-          name: "O"
-        },
-        {
-          value: 1280,
-          name: "P"
-        }
-      ].sort(function (a, b) {
-        return b.value - a.value;
-      })
+let data = [
+  {
+    name: "风速仪",
+    value: 40
+  },
+  {
+    name: "加速度",
+    value: 30
+  },
+  {
+    name: "全站仪",
+    value: 20
+  },
+  {
+    name: "温度计",
+    value: 10
+  }
+];
+let value = data.map(item => item.value);
+let sum = value.reduce((a, b) => {
+  return a + b;
+});
+let series = [];
+let yAxis = [];
+for (let i = 0; i < data.length; i++) {
+  series.push({
+    name: "",
+    type: "pie",
+    clockWise: true, //顺时加载
+    hoverAnimation: false, //鼠标移入变大
+    radius: [85 - i * 10 + "%", 81 - i * 10 + "%"],
+    center: ["20%", "50%"],
+    label: {
+      show: false
     },
-    {
-      type: "pie",
-      radius: ["28.5%", "30%"],
-      data: [100],
-      center: ["50%", "62%"],
-      itemStyle: {
-        normal: {
-          color: "#A",
-          shadowColor: "#000",
-          shadowBlur: 15,
-          shadowOffsetX: "0",
-          shadowOffsetY: "0"
-        }
+    itemStyle: {
+      borderWidth: 30, //圆柱图宽度
+      borderRadius: 30, //光环宽度
+      borderColor: "rgba(0, 0,0, 0)",
+      borderDashOffset: 20
+    },
+    data: [
+      {
+        value: data[i].value,
+        name: data[i].name
       },
-      hoverAnimation: false,
-      label: {
-        show: false
+      {
+        value: sum - data[i].value,
+        name: "",
+        itemStyle: {
+          color: "transparent"
+        },
+        hoverAnimation: false
       }
+    ]
+  });
+}
+
+const option = {
+  color: ["#0080ff", "#25a2f2", "#4dfbff", "#30ffcc"],
+  legend: {
+    show: true,
+    icon: "circle",
+    top: "center",
+    right: "0%",
+    data: name,
+    itemWidth: 10,
+    itemHeight: 10,
+    width: 200,
+    itemGap: 40,
+    orient: "horizontal",
+    formatter: name => {
+      return (
+        "{title|" +
+        name +
+        "}{value|" +
+        data.find(item => {
+          return item.name == name;
+        }).value +
+        "}{value|人}"
+      );
     },
-    {
-      type: "pie",
-      radius: ["26.5%", "27%"],
-      data: [100],
-      center: ["50%", "62%"],
-      color: "#000",
-      hoverAnimation: false,
-      label: {
-        show: false
+    textStyle: {
+      rich: {
+        title: {
+          fontSize: 14,
+          padding: [0, 15, 0, 5], // 整体偏移label位置
+          color: "#008FF4"
+        },
+        value: {
+          fontSize: 18,
+          color: "#008FF4"
+        }
       }
     }
-  ]
+  },
+
+  yAxis: [
+    {
+      type: "category",
+      inverse: true,
+      axisLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        interval: 0,
+        inside: true,
+        textStyle: {
+          color: "#fff",
+          fontSize: 14
+        },
+        show: true
+      },
+      data: yAxis
+    }
+  ],
+  xAxis: [
+    {
+      show: false
+    }
+  ],
+  series: series
 };
 </script>
 
