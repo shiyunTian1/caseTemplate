@@ -51,20 +51,20 @@ import { getUserTreeList, deleteUser, editUser, addUser, getUserStatus, getUserD
 
 onMounted(() => {
   getTreeFilter();
-  ElNotification({
-    title: "温馨提示",
-    message: "该页面 ProTable 数据不会自动请求，需等待 treeFilter 数据请求完成之后，才会触发表格请求。",
-    type: "info",
-    duration: 10000
-  });
-  setTimeout(() => {
-    ElNotification({
-      title: "温馨提示",
-      message: "该页面 ProTable 性别搜索框为远程数据搜索，详情可查看代码。",
-      type: "info",
-      duration: 10000
-    });
-  }, 0);
+  // ElNotification({
+  //   title: "温馨提示",
+  //   message: "该页面 ProTable 数据不会自动请求，需等待 treeFilter 数据请求完成之后，才会触发表格请求。",
+  //   type: "info",
+  //   duration: 10000
+  // });
+  // setTimeout(() => {
+  //   ElNotification({
+  //     title: "温馨提示",
+  //     message: "该页面 ProTable 性别搜索框为远程数据搜索，详情可查看代码。",
+  //     type: "info",
+  //     duration: 10000
+  //   });
+  // }, 0);
 });
 
 // ProTable 实例
@@ -84,7 +84,7 @@ const getTreeFilter = async () => {
 
 // 树形筛选切换
 const changeTreeFilter = (val: string) => {
-  ElMessage.success("请注意查看请求参数变化 🤔");
+  // ElMessage.success("请注意查看请求参数变化 🤔");
   proTable.value!.pageable.pageNum = 1;
   initParam.departmentId = val;
 };
@@ -114,7 +114,14 @@ const columns = reactive<ColumnProps<User.ResUserList>[]>([
     enum: filterGenderEnum,
     search: {
       el: "select",
-      props: { placeholder: "请输入性别查询", filterable: true, remote: true, reserveKeyword: true, loading, remoteMethod }
+      props: {
+        placeholder: "请输入性别查询",
+        filterable: true,
+        remote: true,
+        reserveKeyword: true,
+        loading,
+        remoteMethod
+      }
     },
     render: scope => <>{scope.row.gender === 1 ? "男" : "女"}</>
   },

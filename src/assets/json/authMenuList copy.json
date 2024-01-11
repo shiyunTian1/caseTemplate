@@ -2,32 +2,179 @@
   "code": 200,
   "data": [
     {
-      "path": "/home/index",
-      "name": "home",
-      "component": "/home/index",
+      "path": "/dashboard/dataVisualize",
+      "name": "dataVisualize",
+      "component": "/dashboard/dataVisualize/index",
       "meta": {
         "icon": "HomeFilled",
         "title": "首页",
         "isLink": "",
         "isHide": false,
         "isFull": false,
-        "isAffix": true,
+        "isAffix": false,
         "isKeepAlive": true
-      }
+      },
+      "children": [
+        {
+          "path": "/dashboard/dataVisualize",
+          "name": "dataVisualize",
+          "component": "/dashboard/dataVisualize/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "概览",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/home/readme",
+          "name": "md",
+          "component": "/home/readme",
+          "meta": {
+            "icon": "Menu",
+            "title": "平台说明",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/home/index",
+          "name": "index",
+          "component": "/home/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "备用首页",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
     },
     {
-      "path": "/dataScreen",
+      "path": "/dataScreen/index",
       "name": "dataScreen",
-      "component": "/dataScreen/index",
+      "redirect": "/dataScreen/index",
       "meta": {
         "icon": "Histogram",
-        "title": "数据大屏1",
+        "title": "实战项目",
         "isLink": "",
         "isHide": false,
         "isFull": true,
         "isAffix": false,
         "isKeepAlive": true
-      }
+      },
+      "children": [
+        {
+          "path": "/dataScreen/index",
+          "name": "dataScreen",
+          "component": "/dataScreen/index",
+          "meta": {
+            "icon": "Histogram",
+            "title": "项目概览",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
+    },
+
+    {
+      "path": "/echarts",
+      "name": "echarts",
+      "redirect": "/echarts/waterChart",
+      "meta": {
+        "icon": "TrendCharts",
+        "title": "图表Charts",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      },
+      "children": [
+        {
+          "path": "/echarts/columnChart",
+          "name": "columnChart",
+          "component": "/echarts/columnChart/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "柱状图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/echarts/lineChart",
+          "name": "lineChart",
+          "component": "/echarts/lineChart/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "折线图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/echarts/pieChart",
+          "name": "pieChart",
+          "component": "/echarts/pieChart/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "饼图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/echarts/mapChart",
+          "name": "mapChart",
+          "component": "/echarts/mapChart/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "地图",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        },
+        {
+          "path": "/echarts/waterChart",
+          "name": "waterChart",
+          "component": "/echarts/waterChart/index",
+          "meta": {
+            "icon": "Menu",
+            "title": "其他",
+            "isLink": "",
+            "isHide": false,
+            "isFull": false,
+            "isAffix": false,
+            "isKeepAlive": true
+          }
+        }
+      ]
     },
     {
       "path": "/proTable",
@@ -35,7 +182,7 @@
       "redirect": "/proTable/useProTable",
       "meta": {
         "icon": "MessageBox",
-        "title": "超级表格",
+        "title": "表格Table",
         "isLink": "",
         "isHide": false,
         "isFull": false,
@@ -153,50 +300,6 @@
             "icon": "Menu",
             "title": "ProTable 文档",
             "isLink": "https://juejin.cn/post/7166068828202336263/#heading-14",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        }
-      ]
-    },
-    {
-      "path": "/auth",
-      "name": "auth",
-      "redirect": "/auth/menu",
-      "meta": {
-        "icon": "Lock",
-        "title": "权限管理",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      },
-      "children": [
-        {
-          "path": "/auth/menu",
-          "name": "authMenu",
-          "component": "/auth/menu/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "菜单权限",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/auth/button",
-          "name": "authButton",
-          "component": "/auth/button/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "按钮权限",
-            "isLink": "",
             "isHide": false,
             "isFull": false,
             "isAffix": false,
@@ -379,36 +482,6 @@
       ]
     },
     {
-      "path": "/dashboard",
-      "name": "dashboard",
-      "redirect": "/dashboard/dataVisualize",
-      "meta": {
-        "icon": "Odometer",
-        "title": "Dashboard",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      },
-      "children": [
-        {
-          "path": "/dashboard/dataVisualize",
-          "name": "dataVisualize",
-          "component": "/dashboard/dataVisualize/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "数据可视化",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        }
-      ]
-    },
-    {
       "path": "/form",
       "name": "form",
       "redirect": "/form/proForm",
@@ -471,106 +544,6 @@
           "meta": {
             "icon": "Menu",
             "title": "动态 Form",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        }
-      ]
-    },
-    {
-      "path": "/echarts",
-      "name": "echarts",
-      "redirect": "/echarts/waterChart",
-      "meta": {
-        "icon": "TrendCharts",
-        "title": "ECharts",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      },
-      "children": [
-        {
-          "path": "/echarts/waterChart",
-          "name": "waterChart",
-          "component": "/echarts/waterChart/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "水型图",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/echarts/columnChart",
-          "name": "columnChart",
-          "component": "/echarts/columnChart/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "柱状图",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/echarts/lineChart",
-          "name": "lineChart",
-          "component": "/echarts/lineChart/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "折线图",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/echarts/pieChart",
-          "name": "pieChart",
-          "component": "/echarts/pieChart/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "饼图",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/echarts/radarChart",
-          "name": "radarChart",
-          "component": "/echarts/radarChart/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "雷达图",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/echarts/nestedChart",
-          "name": "nestedChart",
-          "component": "/echarts/nestedChart/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "嵌套环形图",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -681,12 +654,12 @@
       ]
     },
     {
-      "path": "/menu",
-      "name": "menu",
-      "redirect": "/menu/menu1",
+      "path": "/actionDes",
+      "name": "ss",
+      "redirect": "/dataScreen/actionDes/index",
       "meta": {
-        "icon": "List",
-        "title": "菜单嵌套",
+        "icon": "Histogram",
+        "title": "三维协作",
         "isLink": "",
         "isHide": false,
         "isFull": false,
@@ -695,12 +668,12 @@
       },
       "children": [
         {
-          "path": "/menu/menu1",
-          "name": "menu1",
-          "component": "/menu/menu1/index",
+          "path": "/dataScreen/actionDes",
+          "name": "actionDes",
+          "component": "/dataScreen/actionDes/index",
           "meta": {
             "icon": "Menu",
-            "title": "菜单1",
+            "title": "Window",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -709,130 +682,12 @@
           }
         },
         {
-          "path": "/menu/menu2",
-          "name": "menu2",
-          "redirect": "/menu/menu2/menu21",
+          "path": "/dataScreen/actionDes2",
+          "name": "actionDes2",
+          "component": "/dataScreen/actionDes/index copy",
           "meta": {
             "icon": "Menu",
-            "title": "菜单2",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          },
-          "children": [
-            {
-              "path": "/menu/menu2/menu21",
-              "name": "menu21",
-              "component": "/menu/menu2/menu21/index",
-              "meta": {
-                "icon": "Menu",
-                "title": "菜单2-1",
-                "isLink": "",
-                "isHide": false,
-                "isFull": false,
-                "isAffix": false,
-                "isKeepAlive": true
-              }
-            },
-            {
-              "path": "/menu/menu2/menu22",
-              "name": "menu22",
-              "redirect": "/menu/menu2/menu22/menu221",
-              "meta": {
-                "icon": "Menu",
-                "title": "菜单2-2",
-                "isLink": "",
-                "isHide": false,
-                "isFull": false,
-                "isAffix": false,
-                "isKeepAlive": true
-              },
-              "children": [
-                {
-                  "path": "/menu/menu2/menu22/menu221",
-                  "name": "menu221",
-                  "component": "/menu/menu2/menu22/menu221/index",
-                  "meta": {
-                    "icon": "Menu",
-                    "title": "菜单2-2-1",
-                    "isLink": "",
-                    "isHide": false,
-                    "isFull": false,
-                    "isAffix": false,
-                    "isKeepAlive": true
-                  }
-                },
-                {
-                  "path": "/menu/menu2/menu22/menu222",
-                  "name": "menu222",
-                  "component": "/menu/menu2/menu22/menu222/index",
-                  "meta": {
-                    "icon": "Menu",
-                    "title": "菜单2-2-2",
-                    "isLink": "",
-                    "isHide": false,
-                    "isFull": false,
-                    "isAffix": false,
-                    "isKeepAlive": true
-                  }
-                }
-              ]
-            },
-            {
-              "path": "/menu/menu2/menu23",
-              "name": "menu23",
-              "component": "/menu/menu2/menu23/index",
-              "meta": {
-                "icon": "Menu",
-                "title": "菜单2-3",
-                "isLink": "",
-                "isHide": false,
-                "isFull": false,
-                "isAffix": false,
-                "isKeepAlive": true
-              }
-            }
-          ]
-        },
-        {
-          "path": "/menu/menu3",
-          "name": "menu3",
-          "component": "/menu/menu3/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "菜单3",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        }
-      ]
-    },
-    {
-      "path": "/system",
-      "name": "system",
-      "redirect": "/system/accountManage",
-      "meta": {
-        "icon": "Tools",
-        "title": "系统管理",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      },
-      "children": [
-        {
-          "path": "/system/accountManage",
-          "name": "accountManage",
-          "component": "/system/accountManage/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "账号管理",
+            "title": "WEBGL",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -841,82 +696,12 @@
           }
         },
         {
-          "path": "/system/roleManage",
-          "name": "roleManage",
-          "component": "/system/roleManage/index",
+          "path": "/dataScreen/actionDes3",
+          "name": "actionDes3",
+          "component": "/dataScreen/actionDes/index2",
           "meta": {
             "icon": "Menu",
-            "title": "角色管理",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/system/menuMange",
-          "name": "menuMange",
-          "component": "/system/menuMange/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "菜单管理",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/system/departmentManage",
-          "name": "departmentManage",
-          "component": "/system/departmentManage/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "部门管理",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/system/dictManage",
-          "name": "dictManage",
-          "component": "/system/dictManage/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "字典管理",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/system/timingTask",
-          "name": "timingTask",
-          "component": "/system/timingTask/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "定时任务",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/system/systemLog",
-          "name": "systemLog",
-          "component": "/system/systemLog/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "系统日志",
+            "title": "GIS",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -932,7 +717,7 @@
       "redirect": "/link/bing",
       "meta": {
         "icon": "Paperclip",
-        "title": "外部链接",
+        "title": "前端规范",
         "isLink": "",
         "isHide": false,
         "isFull": false,
@@ -955,13 +740,13 @@
           }
         },
         {
-          "path": "/link/gitee",
-          "name": "gitee",
-          "component": "/link/gitee/index",
+          "path": "/link/webGroupBase",
+          "name": "webGroupBase",
+          "component": "/link/webGroupBase/index",
           "meta": {
             "icon": "Menu",
-            "title": "Gitee 仓库",
-            "isLink": "https://gitee.com/HalseySpicy/Geeker-Admin",
+            "title": "图表组件",
+            "isLink": "http://web_group_base.ylsas.com",
             "isHide": false,
             "isFull": false,
             "isAffix": false,
@@ -969,41 +754,13 @@
           }
         },
         {
-          "path": "/link/github",
-          "name": "github",
-          "component": "/link/github/index",
+          "path": "/link/vue3BaseProject",
+          "name": "vue3BaseProject",
+          "component": "/link/vue3BaseProject/index",
           "meta": {
             "icon": "Menu",
-            "title": "GitHub 仓库",
-            "isLink": "https://github.com/HalseySpicy/Geeker-Admin",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/link/docs",
-          "name": "docs",
-          "component": "/link/docs/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "项目文档",
-            "isLink": "https://docs.spicyboy.cn",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/link/juejin",
-          "name": "juejin",
-          "component": "/link/juejin/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "掘金主页",
-            "isLink": "https://juejin.cn/user/3263814531551816/posts",
+            "title": "公共初始化项目",
+            "isLink": "http://vue3_base_project.ylsas.com",
             "isHide": false,
             "isFull": false,
             "isAffix": false,
@@ -1019,6 +776,34 @@
       "meta": {
         "icon": "InfoFilled",
         "title": "关于项目",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/dataBigScreen/index",
+      "name": "dataBigScreen",
+      "component": "/dataBigScreen/index",
+      "meta": {
+        "icon": "InfoFilled",
+        "title": "数据大屏",
+        "isLink": "",
+        "isHide": false,
+        "isFull": false,
+        "isAffix": false,
+        "isKeepAlive": true
+      }
+    },
+    {
+      "path": "/editorChart/index",
+      "name": "editorChart",
+      "component": "/editorChart/index",
+      "meta": {
+        "icon": "InfoFilled",
+        "title": "图标编辑器",
         "isLink": "",
         "isHide": false,
         "isFull": false,

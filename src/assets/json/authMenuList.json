@@ -2,64 +2,6 @@
   "code": 200,
   "data": [
     {
-      "path": "/dashboard/dataVisualize",
-      "name": "dataVisualize",
-      "component": "/dashboard/dataVisualize/index",
-      "meta": {
-        "icon": "HomeFilled",
-        "title": "首页",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      },
-      "children": [
-        {
-          "path": "/dashboard/dataVisualize",
-          "name": "dataVisualize",
-          "component": "/dashboard/dataVisualize/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "概览",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/home/readme",
-          "name": "md",
-          "component": "/home/readme",
-          "meta": {
-            "icon": "Menu",
-            "title": "平台说明",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        },
-        {
-          "path": "/home/index",
-          "name": "index",
-          "component": "/home/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "备用首页",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
-        }
-      ]
-    },
-    {
       "path": "/dataScreen/index",
       "name": "dataScreen",
       "redirect": "/dataScreen/index",
@@ -770,40 +712,12 @@
       ]
     },
     {
-      "path": "/about/index",
-      "name": "about",
-      "component": "/about/index",
-      "meta": {
-        "icon": "InfoFilled",
-        "title": "关于项目",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      }
-    },
-    {
       "path": "/dataBigScreen/index",
       "name": "dataBigScreen",
       "component": "/dataBigScreen/index",
       "meta": {
         "icon": "InfoFilled",
         "title": "数据大屏",
-        "isLink": "",
-        "isHide": false,
-        "isFull": false,
-        "isAffix": false,
-        "isKeepAlive": true
-      }
-    },
-    {
-      "path": "/editorChart/index",
-      "name": "editorChart",
-      "component": "/editorChart/index",
-      "meta": {
-        "icon": "InfoFilled",
-        "title": "图标编辑器",
         "isLink": "",
         "isHide": false,
         "isFull": false,

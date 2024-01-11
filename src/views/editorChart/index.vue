@@ -5,28 +5,66 @@
   </div>
   <div class="card editor-container">
     <div class="left">
-      <EcharsEditor :option="option" />
+      <!-- <EcharsEditor v-model="data" :option="option" /> -->
+      <EcharsEditor ref="monacoEdit" :value="ruleForm.content" @contentChange="contentChange"></EcharsEditor>
     </div>
     <div class="right">
       <el-button type="primary" size="small" @click="refreshChart">运行/刷新</el-button>
       <div class="echars-coontainer">
-        <ECharts :option="_option" />
+        <ECharts :option="getOption.$state.echarsOption" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
-import EcharsEditor from "./components/editor.vue";
+import { ref, reactive, toRefs } from "vue";
+import EcharsEditor from "./components/editor copy.vue";
 import ECharts from "@/components/ECharts/index.vue";
-
+import { useEcharsOptionStore } from "@/stores/modules/echarsOption";
+import { storeToRefs } from "pinia";
 import { EcharsData } from "./components/data";
+import { handleEditorData } from "@/utils/handleEditorData";
+const getOption = useEcharsOptionStore();
+const { echarsOption } = storeToRefs(getOption);
+const options = EcharsData;
 
-const option = ref(EcharsData);
-const funCode = new Function(`option=null;${option.value.code};return option;`);
-const _option = funCode();
+console.log(getOption.$state.echarsOption);
 
+// const funCode = new Function(`option=null;${option.value.code};return option;`);
+// let _option = funCode();
+// console.log(_option);
+const obj = handleEditorData(getOption.$state.echarsOption);
+console.log(obj);
+
+const countent = ref("");
+const { ruleForm } = toRefs(
+  reactive({
+    ruleForm: {
+      // content: getOption.$state.echarsOption,
+      content: handleEditorData(getOption.$state.echarsOption)
+    }
+  })
+);
+
+console.log(ruleForm);
+const contentChange = val => {
+  //先拿一个值存放monaco组件传递过来的值
+  countent.value = val;
+  console.log(countent.value);
+  handleData();
+};
+
+const handleData = () => {
+  console.log(countent.value);
+  //   _option = `${countent.value.code}`;
+
+  // const subStr = countent.value.substring(7, countent.value.length - 1);
+  // console.log(subStr);
+
+  // const obj = JSON.parse(countent.value);
+  // console.log(obj.option);
+};
 // 运行、刷新
 const refreshChart = () => {};
 </script>

@@ -1,6 +1,6 @@
 export const EcharsData = {
   name: "柱子图",
-  code: `option = {
+  code: `option :{
       backgroundColor: '#0e202d',
       tooltip: {},
       xAxis: {
