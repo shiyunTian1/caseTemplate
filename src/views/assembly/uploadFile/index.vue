@@ -168,15 +168,18 @@ import { ref, reactive } from "vue";
 import { FormInstance } from "element-plus";
 import UploadImg from "@/components/Upload/Img.vue";
 import UploadImgs from "@/components/Upload/Imgs.vue";
+const demoImgUrl = new URL(`@/assets/images/upLoadFile/QRBHS.jpg`, import.meta.url).href;
+const demoImgUrl1 = new URL(`@/assets/images/upLoadFile/QR57a.jpg`, import.meta.url).href;
+const demoImgUrl2 = new URL(`@/assets/images/upLoadFile/QRqMK.jpg`, import.meta.url).href;
 
-const fileList = ref([{ name: "img", url: "https://i.imgtg.com/2023/01/16/QRBHS.jpg" }]);
+const fileList = ref([{ name: "img", url: demoImgUrl }]);
 const fileList1 = ref([]);
 
 const avatar1 = ref("");
 const avatar2 = ref("");
 const avatar3 = ref("");
 const avatar4 = ref("");
-const avatar5 = ref("https://i.imgtg.com/2023/01/16/QRqMK.jpg");
+const avatar5 = ref(demoImgUrl2);
 
 const rules = reactive({
   avatar: [{ required: true, message: "请上传用户头像" }],
@@ -188,14 +191,14 @@ const rules = reactive({
 
 const fromModel = ref({
   avatar: "",
-  photo: [{ name: "img", url: "https://i.imgtg.com/2023/01/16/QR57a.jpg" }],
+  photo: [{ name: "img", url: demoImgUrl1 }],
   username: "",
   idCard: "",
   email: ""
 });
 const fromModel1 = ref({
   avatar: "",
-  photo: [{ name: "img", url: "https://i.imgtg.com/2023/01/16/QR57a.jpg" }],
+  photo: [{ name: "img", url: demoImgUrl1 }],
   username: "",
   idCard: "",
   email: ""

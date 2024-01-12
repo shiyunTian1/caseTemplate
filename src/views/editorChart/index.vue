@@ -11,7 +11,7 @@
     <div class="right">
       <el-button type="primary" size="small" @click="refreshChart">运行/刷新</el-button>
       <div class="echars-coontainer">
-        <ECharts :option="getOption.$state.echarsOption" />
+        <ECharts :option="echarsOption" />
       </div>
     </div>
   </div>
@@ -19,39 +19,41 @@
 
 <script setup lang="ts">
 import { ref, reactive, toRefs } from "vue";
-import EcharsEditor from "./components/editor copy.vue";
+import EcharsEditor from "./components/editorCopy.vue";
 import ECharts from "@/components/ECharts/index.vue";
 import { useEcharsOptionStore } from "@/stores/modules/echarsOption";
 import { storeToRefs } from "pinia";
-import { EcharsData } from "./components/data";
+import EcharsData from "./components/data";
 import { handleEditorData } from "@/utils/handleEditorData";
 const getOption = useEcharsOptionStore();
 const { echarsOption } = storeToRefs(getOption);
 const options = EcharsData;
 
-console.log(getOption.$state.echarsOption);
+// console.log(echarsOption.value);
 
-// const funCode = new Function(`option=null;${option.value.code};return option;`);
-// let _option = funCode();
+// console.log(EcharsData);
+// console.log(options);
+
+const funCode = new Function(`option=null;${EcharsData.code};return option;`);
+let _option = funCode();
 // console.log(_option);
-const obj = handleEditorData(getOption.$state.echarsOption);
-console.log(obj);
+// const obj = handleEditorData(getOption.$state.echarsOption);
+// console.log(obj);
 
 const countent = ref("");
 const { ruleForm } = toRefs(
   reactive({
     ruleForm: {
-      // content: getOption.$state.echarsOption,
       content: handleEditorData(getOption.$state.echarsOption)
+      // content: handleEditorData(getOption.$state.echarsOption),
     }
   })
 );
 
-console.log(ruleForm);
 const contentChange = val => {
   //先拿一个值存放monaco组件传递过来的值
   countent.value = val;
-  console.log(countent.value);
+  // console.log(countent.value);
   handleData();
 };
 

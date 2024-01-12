@@ -1,6 +1,6 @@
 <template>
-  <div class="box-body" style="height: 500px">
-    <div id="codeBox"></div>
+  <div class="box-body" style="height: 100%">
+    <div id="codeBox" class="code-container"></div>
   </div>
 </template>
 <script setup>
@@ -14,7 +14,7 @@ const props = defineProps({
   }
 });
 
-console.log(props.value);
+// console.log(props.value);
 const tips = () => {
   range(`
 #--注释--#
@@ -45,13 +45,13 @@ const hover = ref(null);
 watch(
   () => props.value,
   (newVal, oldVal) => {
-    console.log(newVal);
+    // console.log(newVal);
     toRaw(editor.value).setValue(newVal);
   },
   { deep: true }
 );
 const cloneDeep = suggestions => {
-  return JSON.parse(JSON.stringify(suggestions));
+  return suggestions;
 };
 const hoverTips = (arr, word) => {
   let tip = "";
@@ -161,7 +161,7 @@ onMounted(() => {
 // }
 .code-container {
   width: 100%;
-  height: 500px;
+  height: 92%;
   overflow: hidden;
   border: 1px solid #eaeaea;
 }

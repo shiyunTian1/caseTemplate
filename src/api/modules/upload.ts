@@ -7,6 +7,7 @@ import http from "@/api";
  */
 // 图片上传
 export const uploadImg = (params: FormData) => {
+  console.log(params);
   return http.post<Upload.ResFileUrl>(PORT1 + `/file/upload/img`, params, { cancel: false });
 };
 

@@ -13,6 +13,7 @@ const props = defineProps({
 });
 
 const value = props.option.code;
+console.log(value);
 
 const editorContainer = ref<any>(null);
 const editor = ref<any>(null);

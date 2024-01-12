@@ -8,16 +8,6 @@
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart7 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
-          <GradientLineChart8 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
           <GradientLineChart3 />
         </div>
       </el-col>
@@ -68,27 +58,12 @@
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart13 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
-          <GradientLineChart14 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
           <GradientLineChart15 />
         </div>
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
           <GradientLineChart16 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
-          <GradientLineChart17 />
         </div>
       </el-col>
       <el-col :span="6">

@@ -803,7 +803,7 @@
       "component": "/editorChart/index",
       "meta": {
         "icon": "InfoFilled",
-        "title": "图标编辑器",
+        "title": "图表编辑器",
         "isLink": "",
         "isHide": false,
         "isFull": false,
