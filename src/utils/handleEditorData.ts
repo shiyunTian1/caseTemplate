@@ -10,11 +10,13 @@ export function handleEditorData(option) {
   const a = convertToTemplate(option);
   // console.log(a);
 
-  const n = JSON.stringify(option);
-  console.log(n);
-  console.log(option.toString());
+  const n = `${option}`;
+  // console.log(n);
+  // console.log(option.toString());
 
-  const handleOption = `${JSON.stringify(option)}`;
+  const handleOption = `option=${JSON.stringify(option)}`;
+  // const aaa = eval(`(${handleOption})`)
+  // console.log(aaa);
   // console.log(typeof handleOption)
   return handleOption;
 }
@@ -32,7 +34,9 @@ function convertToTemplate(obj) {
       // console.log(`${key}`);
       // console.log(obj[key]);
       obj[key].forEach(element => {
-        // console.log(element)
+        console.log(element, "arr");
+        template += `${key}: ${obj[key]},}`;
+        // console.log(`${key}: ${obj[key]}`);
       });
 
       // // 如果属性值是数组类型，则遍历数组并添加到模板中

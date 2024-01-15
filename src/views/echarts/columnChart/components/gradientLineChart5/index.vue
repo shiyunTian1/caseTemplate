@@ -2,7 +2,7 @@
   <div class="line-title">
     <p class="title">
       <span>{{ titleName }}</span>
-      <!-- <el-button plain text bg @click="editEchars">编辑</el-button> -->
+      <el-button plain text bg @click="editEchars">编辑</el-button>
     </p>
     <div class="echars-container">
       <ECharts :option="option" />

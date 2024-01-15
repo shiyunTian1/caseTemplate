@@ -3,7 +3,7 @@
     <div id="codeBox" class="code-container"></div>
   </div>
 </template>
-<script setup>
+<script lang="ts" setup>
 import * as monaco from "monaco-editor";
 const emit = defineEmits(["contentChange"]);
 import { ref, reactive, toRaw, watch, onMounted } from "vue";
