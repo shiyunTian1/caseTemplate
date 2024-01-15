@@ -1,13 +1,15 @@
 <template>
-  <div class="card mb10">
-    <h4 class="title">数据大屏</h4>
-    <span class="text"> 数据大屏配置 </span>
+  <div>
+    <div class="card mb10">
+      <h4 class="title">数据大屏</h4>
+      <span class="text"> 数据大屏配置 </span>
+    </div>
+    <Theme />
+    <CustomBackground />
+    <WindowAnimation />
+    <LayoutDisplay />
+    <ComponentSelection />
   </div>
-  <Theme />
-  <CustomBackground />
-  <WindowAnimation />
-  <LayoutDisplay />
-  <ComponentSelection />
 </template>
 
 <script setup lang="ts">

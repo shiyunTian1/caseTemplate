@@ -553,9 +553,9 @@
       ]
     },
     {
-      "path": "/actionDes",
-      "name": "ss",
-      "redirect": "/dataScreen/actionDes/index",
+      "path": "/teamWork",
+      "name": "teamWork",
+      "redirect": "/teamWork/actionDes/index",
       "meta": {
         "icon": "Histogram",
         "title": "三维协作",
@@ -567,12 +567,12 @@
       },
       "children": [
         {
-          "path": "/dataScreen/actionDes",
-          "name": "actionDes",
-          "component": "/dataScreen/actionDes/index",
+          "path": "/teamWork/threejs",
+          "name": "threejs",
+          "component": "/teamWork/threejs/index",
           "meta": {
             "icon": "Menu",
-            "title": "Window",
+            "title": "threeJs",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -581,12 +581,12 @@
           }
         },
         {
-          "path": "/dataScreen/actionDes2",
-          "name": "actionDes2",
-          "component": "/dataScreen/actionDes/index copy",
+          "path": "/teamWork/gis/iframe",
+          "name": "gisIframe",
+          "component": "/teamWork/gis/indexIframe",
           "meta": {
             "icon": "Menu",
-            "title": "WEBGL",
+            "title": "GIS Iframe",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -595,12 +595,12 @@
           }
         },
         {
-          "path": "/dataScreen/actionDes3",
-          "name": "actionDes3",
-          "component": "/dataScreen/actionDes/index2",
+          "path": "/teamWork/gis/component",
+          "name": "gisComponent",
+          "component": "/teamWork/gis/indexComponent",
           "meta": {
             "icon": "Menu",
-            "title": "GIS",
+            "title": "GIS Component",
             "isLink": "",
             "isHide": false,
             "isFull": false,
