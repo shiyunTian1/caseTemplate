@@ -3,14 +3,6 @@
  -->
 <template>
   <div class="page card">
-    <div class="title">挂载到window 类型</div>
-    <div class="content">
-      <highlightJs autodetect language="javascript" :code="mountWindowType" />
-    </div>
-    <div class="title">挂载到iframe 类型</div>
-    <div class="content">
-      <highlightJs autodetect language="javascript" :code="mountIframeType" />
-    </div>
     <div class="title">挂载到组件 类型</div>
     <div class="content">
       <highlightJs autodetect language="javascript" :code="mountComponentType" />
@@ -30,24 +22,10 @@ const highlightJs = hljsVuePlugin.component;
 import http from "@/api";
 
 /**
- * @description: 交互类型 挂载到window 类型
- */
-const mountWindowType = ref("") as any;
-http.get(new URL("./data/mountWindowType.txt", import.meta.url).href).then(res => {
-  mountWindowType.value = res;
-});
-/**
- * @description: 交互类型 挂载到iframe 类型
- */
-const mountIframeType = ref("") as any;
-http.get(new URL("./data/mountIframeType.txt", import.meta.url).href).then(res => {
-  mountIframeType.value = res;
-});
-/**
  * @description: 交互类型 挂载到组件 类型
  */
 const mountComponentType = ref("") as any;
-http.get(new URL("./data/mountComponentType.txt", import.meta.url).href).then(res => {
+http.get(new URL("../data/mountComponentType.txt", import.meta.url).href).then(res => {
   mountComponentType.value = res;
 });
 </script>

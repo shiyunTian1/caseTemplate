@@ -46,7 +46,9 @@ watch(
   () => props.value,
   (newVal, oldVal) => {
     // console.log(newVal);
-    toRaw(editor.value).setValue(newVal);
+    if (editor.value) {
+      editor.value.setValue(newVal);
+    }
   },
   { deep: true }
 );
@@ -54,7 +56,7 @@ const cloneDeep = suggestions => {
   return suggestions;
 };
 const hoverTips = (arr, word) => {
-  let tip = "";
+  let tip = {};
   arr.forEach(item => {
     if (word == item.text) {
       tip = {

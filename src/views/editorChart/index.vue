@@ -1,17 +1,19 @@
 <template>
-  <div class="card mb10">
-    <h4 class="title">图标编辑</h4>
-    <span class="text"> 图标编辑 </span>
-  </div>
-  <div class="card editor-container">
-    <div class="left">
-      <!-- <EcharsEditor v-model="data" :option="option" /> -->
-      <EcharsEditor ref="monacoEdit" :value="ruleForm.content" @contentChange="contentChange"></EcharsEditor>
+  <div>
+    <div class="card mb10">
+      <h4 class="title">图标编辑</h4>
+      <span class="text"> 图标编辑 </span>
     </div>
-    <div class="right">
-      <el-button type="primary" size="small" @click="refreshChart">运行/刷新</el-button>
-      <div class="echars-coontainer">
-        <ECharts :option="echarsOption" />
+    <div class="card editor-container">
+      <div class="left">
+        <!-- <EcharsEditor v-model="data" :option="option" /> -->
+        <EcharsEditor ref="monacoEdit" :value="ruleForm.content" @contentChange="contentChange"></EcharsEditor>
+      </div>
+      <div class="right">
+        <el-button type="primary" size="small" @click="refreshChart">运行/刷新</el-button>
+        <div class="echars-coontainer">
+          <ECharts :option="echarsOption" />
+        </div>
       </div>
     </div>
   </div>
