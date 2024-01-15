@@ -61,6 +61,16 @@
           <LineChart12 />
         </div>
       </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart13 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <LineChart14 />
+        </div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -79,6 +89,8 @@ import LineChart9 from "./components/chart9.vue";
 import LineChart10 from "./components/chart10.vue";
 import LineChart11 from "./components/chart11.vue";
 import LineChart12 from "./components/chart12.vue";
+import LineChart13 from "./components/chart13.vue";
+import LineChart14 from "./components/chart14.vue";
 </script>
 
 <style scoped lang="scss">

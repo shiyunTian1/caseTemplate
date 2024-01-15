@@ -5,7 +5,7 @@
     <router-view v-slot="{ Component, route }">
       <transition appear name="fade-transform" mode="out-in">
         <keep-alive :include="keepAliveName">
-          <component :is="Component" v-if="isRouterShow" :key="route.fullPath" />
+          <component :is="Component" :key="route.fullPath" />
         </keep-alive>
       </transition>
     </router-view>
@@ -34,6 +34,7 @@ const { keepAliveName } = storeToRefs(keepAliveStore);
 // 注入刷新页面方法
 const isRouterShow = ref(true);
 const refreshCurrentPage = (val: boolean) => (isRouterShow.value = val);
+
 provide("refresh", refreshCurrentPage);
 
 // 监听当前页面是否最大化，动态添加 class

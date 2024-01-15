@@ -108,7 +108,7 @@ const option = {
       barWidth: 20,
       itemStyle: {
         normal: {
-          color: "#fff",
+          color: "transparent",
           barBorderRadius: 5
         }
       },

@@ -64,7 +64,7 @@ const option = {
         rich: {
           //根据文字的组设置格式
           a: {
-            color: "#BCDCFF",
+            color: "#999",
             fontSize: 14,
             fontWeight: 600,
             fontFamily: "Source Han Sans CN"
@@ -104,7 +104,7 @@ const option = {
           console.log(params);
           return params.value + "万";
         },
-        color: "#8E88FE",
+        color: "#666",
         // position:[-20,-10,-10,-10],
         align: "right",
         distance: 10,

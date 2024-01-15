@@ -58,7 +58,6 @@ const option = {
         visualMap: false,
         color: function (params) {
           var index_color = params.value;
-          console.log(index_color, "1111color");
           if (index_color >= 0) {
             return {
               type: "linear",

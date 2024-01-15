@@ -13,7 +13,7 @@ import ECharts from "@/components/ECharts/index.vue";
 const props = defineProps({
   titleName: {
     type: String,
-    default: "水型图"
+    default: "水球图"
   }
 });
 const colorList = ["#9E87FF", "#73DDFF", "#fe9a8b", "#F56948", "#9E87FF"];
@@ -113,7 +113,16 @@ const option = {
       data: [0.5, 0.5, 0.5],
       backgroundStyle: {
         borderWidth: 1,
-        color: "transparent"
+        color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [
+          {
+            offset: 0,
+            color: "rgba(0, 0, 0,0)"
+          },
+          {
+            offset: 1,
+            color: "rgba(0, 0, 0,0)"
+          }
+        ])
       },
       label: {
         normal: {
@@ -147,14 +156,14 @@ const option = {
           value: 100,
           itemStyle: {
             normal: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              color: new echarts.graphic.LinearGradient(255, 255, 255, 0, [
                 {
                   offset: 0,
-                  color: "#fefefe"
+                  color: "transparent"
                 },
                 {
                   offset: 1,
-                  color: "#e7e8ea"
+                  color: "transparent"
                 }
               ])
             }
@@ -174,7 +183,7 @@ const option = {
       name: "最外绿边",
       type: "pie",
       z: 1,
-      radius: ["0%", "58%"],
+      radius: ["55%", "58%"],
       center: ["25%", "50%"],
       hoverAnimation: false,
       itemStyle: {
@@ -210,7 +219,16 @@ const option = {
       data: [0.6, { value: 0.5, direction: "left" }, 0.4, 0.3],
       backgroundStyle: {
         borderWidth: 1,
-        color: "transparent"
+        color: new echarts.graphic.LinearGradient(0, 1, 1, 0, [
+          {
+            offset: 0,
+            color: "rgba(0, 0, 0,0)"
+          },
+          {
+            offset: 1,
+            color: "rgba(0, 0, 0,0)"
+          }
+        ])
       },
       label: {
         normal: {
@@ -247,11 +265,11 @@ const option = {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                   offset: 0,
-                  color: "#fefefe"
+                  color: "transparent"
                 },
                 {
                   offset: 1,
-                  color: "#e7e8ea"
+                  color: "transparent"
                 }
               ])
             }
@@ -271,7 +289,7 @@ const option = {
       name: "最外蓝边",
       type: "pie",
       z: 1,
-      radius: ["0%", "58%"],
+      radius: ["55%", "58%"],
       center: ["75%", "50%"],
       hoverAnimation: false,
       itemStyle: {

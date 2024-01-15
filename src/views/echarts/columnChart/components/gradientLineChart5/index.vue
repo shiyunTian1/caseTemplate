@@ -1,6 +1,9 @@
 <template>
   <div class="line-title">
-    <p class="title">{{ titleName }}</p>
+    <p class="title">
+      <span>{{ titleName }}</span>
+      <el-button plain text bg @click="editEchars">编辑</el-button>
+    </p>
     <div class="echars-container">
       <ECharts :option="option" />
     </div>
@@ -11,7 +14,11 @@
 import { ECOption } from "@/components/ECharts/config";
 import ECharts from "@/components/ECharts/index.vue";
 import * as echarts from "echarts";
-
+import { useEcharsOptionStore } from "@/stores/modules/echarsOption";
+import { useRouter } from "vue-router";
+const userOption = useEcharsOptionStore();
+const router = useRouter();
+const emit = defineEmits(["echartsOption"]);
 const props = defineProps({
   titleName: {
     type: String,
@@ -19,8 +26,9 @@ const props = defineProps({
   }
 });
 
+const backgroundColor = "#32374d";
 const option = {
-  // backgroundColor: "#32374d",
+  // backgroundColor: backgroundColor,
   // legend: {
   //   top: "16%",
   //   textStyle: {
@@ -305,11 +313,20 @@ const option = {
     }
   ]
 };
+
+const editEchars = () => {
+  console.log(option);
+  emit("echartsOption", option);
+  userOption.setOption(option);
+  router.push("/editorChart/index");
+};
 </script>
 
 <style scoped lang="scss">
 .line-title {
   .title {
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
     font-size: 14px;
     color: var(--el-header-text-color);

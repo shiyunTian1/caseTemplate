@@ -8,16 +8,6 @@
       </el-col>
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
-          <GradientLineChart7 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
-          <GradientLineChart8 />
-        </div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content ep-bg-purple">
           <GradientLineChart3 />
         </div>
       </el-col>
@@ -61,6 +51,26 @@
           <GradientLineChart11 />
         </div>
       </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart12 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart15 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart16 />
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content ep-bg-purple">
+          <GradientLineChart18 />
+        </div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -79,6 +89,13 @@ import GradientLineChart8 from "./components/gradientLineChart8/index.vue";
 import GradientLineChart9 from "./components/gradientLineChart9/index.vue";
 import GradientLineChart10 from "./components/gradientLineChart10/index.vue";
 import GradientLineChart11 from "./components/gradientLineChart11/index.vue";
+import GradientLineChart12 from "./components/gradientLineChart12/index.vue";
+import GradientLineChart13 from "./components/gradientLineChart13/index.vue";
+import GradientLineChart14 from "./components/gradientLineChart14/index.vue";
+import GradientLineChart15 from "./components/gradientLineChart15/index.vue";
+import GradientLineChart16 from "./components/gradientLineChart16/index.vue";
+import GradientLineChart17 from "./components/gradientLineChart17/index.vue";
+import GradientLineChart18 from "./components/gradientLineChart18/index.vue";
 </script>
 
 <style scoped lang="scss">

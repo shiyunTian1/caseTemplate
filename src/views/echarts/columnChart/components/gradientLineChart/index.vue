@@ -1,6 +1,9 @@
 <template>
   <div class="line-title">
-    <p class="title">{{ titleName }}</p>
+    <p class="title">
+      <span>{{ titleName }}</span>
+      <el-button plain>Plain</el-button>
+    </p>
     <div class="echars-container">
       <ECharts :option="option" />
     </div>
@@ -13,16 +16,18 @@ import ECharts from "@/components/ECharts/index.vue";
 const props = defineProps({
   titleName: {
     type: String,
-    default: "柱状图"
+    default: "柱状图1"
   }
 });
+
 const colorList = ["#9E87FF", "#73DDFF", "#fe9a8b", "#F56948", "#9E87FF"];
+const titleColor = "#00FFFF";
 const option = {
   // backgroundColor: "#0E2A43",
   title: {
     text: "",
     textStyle: {
-      color: "#00FFFF",
+      color: titleColor,
       fontSize: 24
     }
   },
