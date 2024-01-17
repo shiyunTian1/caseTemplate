@@ -38,6 +38,9 @@ dependencies:
   element-plus:
     specifier: ^2.4.4
     version: registry.npmmirror.com/element-plus@2.4.4(vue@3.4.3)
+  highlight.js:
+    specifier: ^11.9.0
+    version: 11.9.0
   md5:
     specifier: ^2.3.0
     version: registry.npmmirror.com/md5@2.3.0

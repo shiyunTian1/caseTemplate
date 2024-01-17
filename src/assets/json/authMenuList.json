@@ -671,7 +671,7 @@
     {
       "path": "/dataBigScreen/index",
       "name": "dataBigScreen",
-      "component": "/dataBigScreen/index",
+      "component": "/dataBigScreen/layouts/index",
       "meta": {
         "icon": "InfoFilled",
         "title": "数据大屏",
