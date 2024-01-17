@@ -1,6 +1,6 @@
 <template>
   <div class="card mb10">
-    <h4 class="title">容器布局</h4>
+    <h4 class="title">导航风格</h4>
     <div class="theme-container">
       <div
         class="item-theme"

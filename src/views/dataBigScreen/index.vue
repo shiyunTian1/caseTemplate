@@ -1,11 +1,12 @@
 <template>
   <div>
     <div class="card mb10">
-      <h4 class="title">数据大屏</h4>
-      <span class="text"> 数据大屏配置 </span>
+      <h4 class="title">项目风格配置方案</h4>
+      <span class="text"> 项目框架灵活配置 </span>
     </div>
     <Theme />
-    <CustomBackground />
+    <Nav />
+    <!-- <CustomBackground /> -->
     <WindowAnimation />
     <LayoutDisplay />
     <ComponentSelection />
@@ -14,6 +15,7 @@
 
 <script setup lang="ts">
 import Theme from "./components/theme.vue";
+import Nav from "./components/nav.vue";
 import CustomBackground from "./components/customBackground.vue";
 import WindowAnimation from "./components/windowAnimation.vue";
 import LayoutDisplay from "./components/layoutDisplay.vue";
