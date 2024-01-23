@@ -1,5 +1,13 @@
+<!--
+ * @Author: qingzi tsy15632385483@163.com
+ * @Date: 2024-01-23 11:07:40
+ * @LastEditors: qingzi tsy15632385483@163.com
+ * @LastEditTime: 2024-01-23 11:23:03
+ * @FilePath: \yl_admin_base_project\src\components\SearchForm\index.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
-  <div v-if="columns.length" class="card table-search">
+  <div v-if="false" class="card table-search">
     <el-form ref="formRef" :model="searchParam">
       <Grid ref="gridRef" :collapsed="collapsed" :gap="[20, 0]" :cols="searchCol">
         <GridItem v-for="(item, index) in columns" :key="item.prop" v-bind="getResponsive(item)" :index="index">

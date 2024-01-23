@@ -3,7 +3,7 @@
     <ProTable
       ref="proTable"
       :columns="columns"
-      :data="tableData"
+      :request-api="getTableList"
       :init-param="initParam"
       :data-callback="dataCallback"
       @darg-sort="sortTable"
@@ -37,9 +37,9 @@
       </template>
       <!-- 表格操作 -->
       <template #operation="scope">
-        <!-- <el-button type="primary" link :icon="View" @click="openDrawer('查看', scope.row)">查看</el-button> -->
+        <el-button type="primary" link :icon="View" @click="openDrawer('查看', scope.row)">查看</el-button>
         <el-button type="primary" link :icon="EditPen" @click="openDrawer('编辑', scope.row)">编辑</el-button>
-        <!-- <el-button type="primary" link :icon="Refresh" @click="resetPass(scope.row)">重置密码</el-button> -->
+        <el-button type="primary" link :icon="Refresh" @click="resetPass(scope.row)">重置密码</el-button>
         <el-button type="primary" link :icon="Delete" @click="deleteAccount(scope.row)">删除</el-button>
       </template>
     </ProTable>
@@ -60,7 +60,7 @@ import ProTable from "@/components/ProTable/index.vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
 import UserDrawer from "@/views/proTable/components/UserDrawer.vue";
 import { ProTableInstance, ColumnProps, HeaderRenderScope } from "@/components/ProTable/interface";
-import { Search, CirclePlus, Delete, EditPen, Download, Upload, View, Refresh } from "@element-plus/icons-vue";
+import { CirclePlus, Delete, EditPen, Download, Upload, View, Refresh } from "@element-plus/icons-vue";
 import {
   getUserList,
   deleteUser,
@@ -73,11 +73,8 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
 
 const router = useRouter();
-
-// const tableData = ref(tableData);
 
 // 跳转详情页
 const toDetail = () => {
@@ -125,25 +122,59 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 };
 
 // 表格配置项
-const columns = reactive<any>([
-  { prop: "name", label: "工具名称" },
-  { prop: "type", label: "工具类型" },
-  { prop: "quantity", label: "数量" },
+const columns = reactive<ColumnProps<User.ResUserList>[]>([
+  { type: "selection", fixed: "left", width: 70 },
+  { type: "sort", label: "Sort", width: 80 },
+  { type: "expand", label: "Expand", width: 85 },
   {
-    prop: "brand",
-    label: "品牌"
+    prop: "username",
+    label: "用户姓名",
+    search: { el: "input", tooltip: "我是搜索提示" },
+    render: scope => {
+      return (
+        <el-button type="primary" link onClick={() => ElMessage.success("我是通过 tsx 语法渲染的内容")}>
+          {scope.row.username}
+        </el-button>
+      );
+    }
   },
   {
-    prop: "purchaseDate",
-    label: "购买时间",
-    width: 180
+    prop: "gender",
+    label: "性别",
+    // 字典数据（本地数据）
+    // enum: genderType,
+    // 字典请求不带参数
+    enum: getUserGender,
+    // 字典请求携带参数
+    // enum: () => getUserGender({ id: 1 }),
+    search: { el: "select", props: { filterable: true } },
+    fieldNames: { label: "genderLabel", value: "genderValue" }
   },
-  { prop: "purchasePrice", label: "购买价格", search: { el: "input" } },
-  { prop: "remark", label: "备注" },
+  {
+    // 多级 prop
+    prop: "user.detail.age",
+    label: "年龄",
+    search: {
+      // 自定义 search 显示内容
+      render: ({ searchParam }) => {
+        return (
+          <div class="flx-center">
+            <el-input vModel_trim={searchParam.minAge} placeholder="最小年龄" />
+            <span class="mr10 ml10">-</span>
+            <el-input vModel_trim={searchParam.maxAge} placeholder="最大年龄" />
+          </div>
+        );
+      }
+    }
+  },
+  { prop: "idCard", label: "身份证号", search: { el: "input" } },
+  { prop: "email", label: "邮箱" },
+  { prop: "address", label: "居住地址" },
   {
     prop: "status",
-    label: "状态",
+    label: "用户状态",
     enum: getUserStatus,
+    search: { el: "tree-select", props: { filterable: true } },
     fieldNames: { label: "userLabel", value: "userStatus" },
     render: scope => {
       return (
@@ -161,6 +192,18 @@ const columns = reactive<any>([
           )}
         </>
       );
+    }
+  },
+  {
+    prop: "createTime",
+    label: "创建时间",
+    headerRender,
+    width: 180,
+    search: {
+      el: "date-picker",
+      span: 2,
+      props: { type: "datetimerange", valueFormat: "YYYY-MM-DD HH:mm:ss" },
+      defaultValue: ["2022-11-12 11:35:00", "2022-12-12 11:35:00"]
     }
   },
   { prop: "operation", label: "操作", fixed: "right", width: 330 }

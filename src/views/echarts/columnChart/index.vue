@@ -51,16 +51,16 @@
           <GradientLineChart11 />
         </div>
       </el-col>
-      <el-col :span="6">
+      <!-- <el-col :span="6">
         <div class="grid-content ep-bg-purple">
           <GradientLineChart12 />
         </div>
-      </el-col>
-      <el-col :span="6">
+      </el-col> -->
+      <!-- <el-col :span="6">
         <div class="grid-content ep-bg-purple">
           <GradientLineChart15 />
         </div>
-      </el-col>
+      </el-col> -->
       <el-col :span="6">
         <div class="grid-content ep-bg-purple">
           <GradientLineChart16 />
