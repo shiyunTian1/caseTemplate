@@ -7,7 +7,13 @@
 <script setup lang="ts" name="cure">
 import { ECOption } from "@/components/ECharts/config";
 import ECharts from "@/components/ECharts/index.vue";
-
+var xData = (function () {
+  var data = [] as string[];
+  for (var i = 1; i < 9; i++) {
+    data.push(i + "日");
+  }
+  return data;
+})();
 const curveData = [
   { value: 30, spotName: "掘金" },
   { value: 90, spotName: "CSDN" },
@@ -42,8 +48,8 @@ const option: ECOption = {
     orient: "horizontal"
   },
   grid: {
-    left: "0",
-    right: "0"
+    left: "50",
+    right: "50"
   },
   dataZoom: [
     {
@@ -70,11 +76,12 @@ const option: ECOption = {
   xAxis: [
     {
       type: "category",
-      data: curveData.map((val: any) => {
-        return {
-          value: val.spotName
-        };
-      }),
+      data: xData,
+      // data: curveData.map((val: any) => {
+      //   return {
+      //     value: val.spotName
+      //   };
+      // }),
       axisTick: {
         show: false
       },

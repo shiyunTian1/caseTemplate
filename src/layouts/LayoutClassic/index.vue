@@ -25,13 +25,7 @@
       <el-aside>
         <div class="aside-box" :style="{ width: isCollapse ? '65px' : '210px' }">
           <el-scrollbar>
-            <el-menu
-              :router="false"
-              :default-active="activeMenu"
-              :collapse="isCollapse"
-              :unique-opened="accordion"
-              :collapse-transition="false"
-            >
+            <el-menu :router="false" :default-active="activeMenu" :collapse="isCollapse" :collapse-transition="false">
               <SubMenu :menu-list="menuList" />
             </el-menu>
           </el-scrollbar>
@@ -60,6 +54,7 @@ const route = useRoute();
 const authStore = useAuthStore();
 const globalStore = useGlobalStore();
 const accordion = computed(() => globalStore.accordion);
+// const isCollapse = false;
 const isCollapse = computed(() => globalStore.isCollapse);
 const menuList = computed(() => authStore.showMenuListGet);
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);

@@ -60,9 +60,9 @@
       ]
     },
     {
-      "path": "/proTable",
-      "name": "proTable",
-      "redirect": "/proTable/useProTable",
+      "path": "/proTable1",
+      "name": "proTable1",
+      "redirect": "/proTable1/useProTable",
       "meta": {
         "icon": "MessageBox",
         "title": "工具信息表单",
@@ -74,9 +74,9 @@
       },
       "children": [
         {
-          "path": "/proTable/useProTable",
-          "name": "useProTable",
-          "component": "/proTable/useProTable/index",
+          "path": "/proTable1/useProTable",
+          "name": "useProTable1",
+          "component": "/proTable copy/useProTable/index",
           "meta": {
             "icon": "Menu",
             "title": "工具信息登记",
@@ -88,9 +88,9 @@
           }
         },
         {
-          "path": "/proTable/useTreeFilter",
-          "name": "useTreeFilter",
-          "component": "/proTable/useTreeFilter/index",
+          "path": "/proTable1/useTreeFilter",
+          "name": "useTreeFilter1",
+          "component": "/proTable copy/useTreeFilter/index",
           "meta": {
             "icon": "Menu",
             "title": "工具信息统计",
@@ -104,9 +104,9 @@
       ]
     },
     {
-      "path": "/proTable",
-      "name": "proTable",
-      "redirect": "/proTable/useProTable",
+      "path": "/proTable2",
+      "name": "proTable2",
+      "redirect": "/proTable copy 2/useProTable",
       "meta": {
         "icon": "MessageBox",
         "title": "领用与归还表单",
@@ -118,9 +118,9 @@
       },
       "children": [
         {
-          "path": "/proTable/useProTable",
-          "name": "useProTable",
-          "component": "/proTable/useProTable/index",
+          "path": "/proTable2/useProTable",
+          "name": "useProTable2",
+          "component": "/proTable copy 2/useProTable/index",
           "meta": {
             "icon": "Menu",
             "title": "领用与归还表单登记",
@@ -132,9 +132,9 @@
           }
         },
         {
-          "path": "/proTable/useTreeFilter",
-          "name": "useTreeFilter",
-          "component": "/proTable/useTreeFilter/index",
+          "path": "/proTable2/useTreeFilter",
+          "name": "useTreeFilter2",
+          "component": "/proTable copy 2/useTreeFilter/index",
           "meta": {
             "icon": "Menu",
             "title": "领用与归还表单统计",
@@ -148,9 +148,9 @@
       ]
     },
     {
-      "path": "/proTable",
-      "name": "proTable",
-      "redirect": "/proTable/useProTable",
+      "path": "/proTable3",
+      "name": "proTable3",
+      "redirect": "/proTable copy 3/useProTable",
       "meta": {
         "icon": "MessageBox",
         "title": "维护与检修表单",
@@ -162,9 +162,9 @@
       },
       "children": [
         {
-          "path": "/proTable/useProTable",
-          "name": "useProTable",
-          "component": "/proTable/useProTable/index",
+          "path": "/proTable3/useProTable",
+          "name": "useProTable3",
+          "component": "/proTable copy 3/useProTable/index",
           "meta": {
             "icon": "Menu",
             "title": "维护与检修表单登记",
@@ -176,9 +176,9 @@
           }
         },
         {
-          "path": "/proTable/useTreeFilter",
-          "name": "useTreeFilter",
-          "component": "/proTable/useTreeFilter/index",
+          "path": "/proTable3/useTreeFilter",
+          "name": "useTreeFilter3",
+          "component": "/proTable copy 3/useTreeFilter/index",
           "meta": {
             "icon": "Menu",
             "title": "维护与检修表单统计",
