@@ -7,6 +7,7 @@
       :init-param="initParam"
       :data-callback="dataCallback"
       @darg-sort="sortTable"
+      :toolButton="false"
     >
       <!-- 表格 header 按钮 -->
       <template #tableHeader="scope">

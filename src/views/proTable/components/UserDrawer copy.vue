@@ -1,5 +1,5 @@
 <template>
-  <el-drawer v-model="drawerVisible" :destroy-on-close="true" size="450px" :title="`${drawerProps.title}`">
+  <el-drawer v-model="drawerVisible" :destroy-on-close="true" size="450px" :title="`${drawerProps.title}用户`">
     <el-form
       ref="ruleFormRef"
       label-width="100px"
@@ -9,28 +9,40 @@
       :model="drawerProps.row"
       :hide-required-asterisk="drawerProps.isView"
     >
-      <el-form-item label="工具名称" prop="username">
-        <el-input v-model="drawerProps.row!.username" placeholder="" clearable></el-input>
+      <el-form-item label="用户头像" prop="avatar">
+        <UploadImg v-model:image-url="drawerProps.row!.avatar" width="135px" height="135px" :file-size="3">
+          <template #empty>
+            <el-icon><Avatar /></el-icon>
+            <span>请上传头像</span>
+          </template>
+          <template #tip> 头像大小不能超过 3M </template>
+        </UploadImg>
       </el-form-item>
-      <el-form-item label="工具类型" prop="gender">
-        <el-select v-model="drawerProps.row!.gender" placeholder="" clearable>
+      <el-form-item label="用户照片" prop="photo">
+        <UploadImgs v-model:file-list="drawerProps.row!.photo" height="140px" width="140px" border-radius="50%">
+          <template #empty>
+            <el-icon><Picture /></el-icon>
+            <span>请上传照片</span>
+          </template>
+          <template #tip> 照片大小不能超过 5M </template>
+        </UploadImgs>
+      </el-form-item>
+      <el-form-item label="用户姓名" prop="username">
+        <el-input v-model="drawerProps.row!.username" placeholder="请填写用户姓名" clearable></el-input>
+      </el-form-item>
+      <el-form-item label="性别" prop="gender">
+        <el-select v-model="drawerProps.row!.gender" placeholder="请选择性别" clearable>
           <el-option v-for="item in genderType" :key="item.value" :label="item.label" :value="item.value" />
         </el-select>
       </el-form-item>
-      <el-form-item label="数量" prop="idCard">
-        <el-input v-model="drawerProps.row!.idCard" placeholder="" clearable></el-input>
+      <el-form-item label="身份证号" prop="idCard">
+        <el-input v-model="drawerProps.row!.idCard" placeholder="请填写身份证号" clearable></el-input>
       </el-form-item>
-      <el-form-item label="品牌" prop="email">
-        <el-input v-model="drawerProps.row!.email" placeholder="" clearable></el-input>
+      <el-form-item label="邮箱" prop="email">
+        <el-input v-model="drawerProps.row!.email" placeholder="请填写邮箱" clearable></el-input>
       </el-form-item>
-      <el-form-item label="选择时间" prop="time">
-        <el-time-picker v-model="drawerProps.row!.time" placeholder="Pick a time" style="width: 100%" />
-      </el-form-item>
-      <el-form-item label="购买价格" prop="address">
-        <el-input v-model="drawerProps.row!.address" placeholder="" clearable></el-input>
-      </el-form-item>
-      <el-form-item label="备注" prop="address">
-        <el-input v-model="drawerProps.row!.address" placeholder="" clearable type="textarea"></el-input>
+      <el-form-item label="居住地址" prop="address">
+        <el-input v-model="drawerProps.row!.address" placeholder="请填写居住地址" clearable></el-input>
       </el-form-item>
     </el-form>
     <template #footer>
