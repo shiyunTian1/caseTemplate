@@ -1,0 +1,82 @@
+[
+  {
+    "name": "扳手",
+    "totalBorrowed": 12,
+    "totalReturned": 10,
+    "currentBorrowed": 2,
+    "available": 8,
+    "unavailable": 4
+  },
+  {
+    "name": "电钻",
+    "totalBorrowed": 8,
+    "totalReturned": 6,
+    "currentBorrowed": 1,
+    "available": 4,
+    "unavailable": 2
+  },
+  {
+    "name": "钳子",
+    "totalBorrowed": 15,
+    "totalReturned": 13,
+    "currentBorrowed": 0,
+    "available": 6,
+    "unavailable": 2
+  },
+  {
+    "name": "绝缘电工胶带",
+    "totalBorrowed": 20,
+    "totalReturned": 18,
+    "currentBorrowed": 2,
+    "available": 7,
+    "unavailable": 3
+  },
+  {
+    "name": "剥线钳",
+    "totalBorrowed": 10,
+    "totalReturned": 8,
+    "currentBorrowed": 1,
+    "available": 4,
+    "unavailable": 2
+  },
+  {
+    "name": "电压表",
+    "totalBorrowed": 6,
+    "totalReturned": 4,
+    "currentBorrowed": 1,
+    "available": 2,
+    "unavailable": 1
+  },
+  {
+    "name": "电动割线机",
+    "totalBorrowed": 8,
+    "totalReturned": 7,
+    "currentBorrowed": 0,
+    "available": 3,
+    "unavailable": 1
+  },
+  {
+    "name": "扎线机",
+    "totalBorrowed": 14,
+    "totalReturned": 12,
+    "currentBorrowed": 2,
+    "available": 5,
+    "unavailable": 3
+  },
+  {
+    "name": "接地线",
+    "totalBorrowed": 18,
+    "totalReturned": 16,
+    "currentBorrowed": 0,
+    "available": 9,
+    "unavailable": 1
+  },
+  {
+    "name": "台钳",
+    "totalBorrowed": 10,
+    "totalReturned": 9,
+    "currentBorrowed": 1,
+    "available": 3,
+    "unavailable": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "扳手",
+    "type": "手工工具",
+    "quantity": 5,
+    "status": "可用",
+    "lastMaintenance": "2023-12-15",
+    "location": "工具柜A"
+  },
+  {
+    "name": "电钻",
+    "type": "电动工具",
+    "quantity": 2,
+    "status": "可用",
+    "lastMaintenance": "2024-01-05",
+    "location": "工具柜B"
+  },
+  {
+    "name": "钳子",
+    "type": "手工工具",
+    "quantity": 3,
+    "status": "损坏",
+    "lastMaintenance": "2023-11-28",
+    "location": "工具柜A"
+  },
+  {
+    "name": "绝缘电工胶带",
+    "type": "辅助工具",
+    "quantity": 10,
+    "status": "可用",
+    "lastMaintenance": "2024-01-10",
+    "location": "工具柜C"
+  },
+  {
+    "name": "剥线钳",
+    "type": "手工工具",
+    "quantity": 2,
+    "status": "可用",
+    "lastMaintenance": "2023-12-30",
+    "location": "工具柜B"
+  },
+  {
+    "name": "电压表",
+    "type": "测试工具",
+    "quantity": 1,
+    "status": "损坏",
+    "lastMaintenance": "2023-11-15",
+    "location": "工具柜C"
+  },
+  {
+    "name": "电动割线机",
+    "type": "电动工具",
+    "quantity": 1,
+    "status": "可用",
+    "lastMaintenance": "2023-12-20",
+    "location": "工具柜A"
+  },
+  {
+    "name": "扎线机",
+    "type": "电动工具",
+    "quantity": 2,
+    "status": "可用",
+    "lastMaintenance": "2024-01-02",
+    "location": "工具柜B"
+  },
+  {
+    "name": "接地线",
+    "type": "材料工具",
+    "quantity": 20,
+    "status": "可用",
+    "lastMaintenance": "2023-11-30",
+    "location": "工具柜C"
+  },
+  {
+    "name": "台钳",
+    "type": "手工工具",
+    "quantity": 4,
+    "status": "可用",
+    "lastMaintenance": "2023-12-18",
+    "location": "工具柜A"
+  }
+]

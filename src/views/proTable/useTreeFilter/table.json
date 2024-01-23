@@ -1,0 +1,82 @@
+[
+  {
+    "name": "李明",
+    "age": 32,
+    "gender": "男",
+    "phone": "13812345678",
+    "email": "liming@example.com",
+    "position": "电工"
+  },
+  {
+    "name": "王红",
+    "age": 28,
+    "gender": "女",
+    "phone": "13987654321",
+    "email": "wanghong@example.com",
+    "position": "电工助理"
+  },
+  {
+    "name": "张涛",
+    "age": 35,
+    "gender": "男",
+    "phone": "13698765432",
+    "email": "zhangtao@example.com",
+    "position": "主管"
+  },
+  {
+    "name": "李军",
+    "age": 30,
+    "gender": "男",
+    "phone": "13765432109",
+    "email": "lijun@example.com",
+    "position": "电工"
+  },
+  {
+    "name": "王强",
+    "age": 26,
+    "gender": "男",
+    "phone": "13567890234",
+    "email": "wangqiang@example.com",
+    "position": "实习生"
+  },
+  {
+    "name": "赵辉",
+    "age": 33,
+    "gender": "男",
+    "phone": "13456789012",
+    "email": "zhaohui@example.com",
+    "position": "工程师"
+  },
+  {
+    "name": "刘燕",
+    "age": 29,
+    "gender": "女",
+    "phone": "13098765432",
+    "email": "liuyan@example.com",
+    "position": "电工助理"
+  },
+  {
+    "name": "陈伟",
+    "age": 42,
+    "gender": "男",
+    "phone": "13901234567",
+    "email": "chenwei@example.com",
+    "position": "高级工程师"
+  },
+  {
+    "name": "周静",
+    "age": 31,
+    "gender": "女",
+    "phone": "13876543210",
+    "email": "zhoujing@example.com",
+    "position": "工程师"
+  },
+  {
+    "name": "张琳",
+    "age": 34,
+    "gender": "女",
+    "phone": "13789012345",
+    "email": "zhanglin@example.com",
+    "position": "电工"
+  }
+]

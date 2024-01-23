@@ -62,7 +62,7 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "../table.json";
+import tableData from "./table.json";
 
 const router = useRouter();
 
@@ -115,44 +115,30 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 
 // 表格配置项
 const columns = reactive<any>([
-  { prop: "name", label: "工具名称" },
-  { prop: "type", label: "工具类型" },
-  { prop: "quantity", label: "数量" },
   {
-    prop: "brand",
-    label: "品牌"
+    prop: "name",
+    label: "工具名称"
   },
   {
-    prop: "purchaseDate",
-    label: "购买时间",
-    width: 180
+    prop: "totalBorrowed",
+    label: "总借用次数"
   },
-  { prop: "purchasePrice", label: "购买价格", search: { el: "input" } },
-  { prop: "remark", label: "备注" },
   {
-    prop: "status",
-    label: "状态",
-    enum: getUserStatus,
-    fieldNames: { label: "userLabel", value: "userStatus" },
-    render: scope => {
-      return (
-        <>
-          {BUTTONS.value.status ? (
-            <el-switch
-              model-value={scope.row.status == "可用" ? true : false}
-              active-text={scope.row.status ? "可用" : "禁用"}
-              active-value={1}
-              inactive-value={0}
-              onClick={() => changeStatus(scope.row)}
-            />
-          ) : (
-            <el-tag type={scope.row.status ? "success" : "danger"}>{scope.row.status ? "可用" : "禁用"}</el-tag>
-          )}
-        </>
-      );
-    }
+    prop: "totalReturned",
+    label: "总归还次数"
   },
-  { prop: "operation", label: "操作", fixed: "right", width: 330 }
+  {
+    prop: "currentBorrowed",
+    label: "当前借用数量"
+  },
+  {
+    prop: "available",
+    label: "可用数量"
+  },
+  {
+    prop: "unavailable",
+    label: "不可用数量"
+  }
 ]);
 
 // 表格拖拽排序

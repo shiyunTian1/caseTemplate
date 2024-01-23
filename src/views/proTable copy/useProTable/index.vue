@@ -130,10 +130,7 @@ const columns = reactive<any>([
   { prop: "name", label: "工具名称" },
   { prop: "type", label: "工具类型" },
   { prop: "quantity", label: "数量" },
-  {
-    prop: "brand",
-    label: "品牌"
-  },
+  { prop: "brand", label: "品牌" },
   {
     prop: "purchaseDate",
     label: "购买时间",

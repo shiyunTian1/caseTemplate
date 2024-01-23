@@ -13,7 +13,7 @@
       <template #tableHeader="scope">
         <el-button type="primary" :icon="Search" @click="search"> 搜索 </el-button>
         <el-button v-auth="'add'" type="primary" :icon="CirclePlus" @click="openDrawer('新增')">新增用户</el-button>
-        <el-button v-auth="'export'" type="primary" :icon="Download" @click="downloadFile">导出用户数据</el-button>
+        <el-button v-auth="'export'" type="primary" :icon="Downlpoad" @click="downloadFile">导出用户数据</el-button>
         <!-- <el-button type="primary" plain @click="toDetail">To 子集详情页面</el-button>
         <el-button v-auth="'batchAdd'" type="primary" :icon="Upload" plain @click="batchAdd">批量添加用户</el-button>
         <el-button type="danger" :icon="Delete" plain :disabled="!scope.isSelected" @click="batchDelete(scope.selectedListIds)">
@@ -127,42 +127,29 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 
 // 表格配置项
 const columns = reactive<any>([
-  { prop: "name", label: "工具名称" },
-  { prop: "type", label: "工具类型" },
-  { prop: "quantity", label: "数量" },
   {
-    prop: "brand",
-    label: "品牌"
+    prop: "name",
+    label: "工具名称"
   },
   {
-    prop: "purchaseDate",
-    label: "购买时间",
-    width: 180
+    prop: "maintenanceDate",
+    label: "维护日期"
   },
-  { prop: "purchasePrice", label: "购买价格", search: { el: "input" } },
-  { prop: "remark", label: "备注" },
+  {
+    prop: "maintenanceType",
+    label: "维护类型"
+  },
+  {
+    prop: "maintenancePerson",
+    label: "维护人员"
+  },
+  {
+    prop: "remarks",
+    label: "备注"
+  },
   {
     prop: "status",
-    label: "状态",
-    enum: getUserStatus,
-    fieldNames: { label: "userLabel", value: "userStatus" },
-    render: scope => {
-      return (
-        <>
-          {BUTTONS.value.status ? (
-            <el-switch
-              model-value={scope.row.status == "可用" ? true : false}
-              active-text={scope.row.status ? "可用" : "禁用"}
-              active-value={1}
-              inactive-value={0}
-              onClick={() => changeStatus(scope.row)}
-            />
-          ) : (
-            <el-tag type={scope.row.status ? "success" : "danger"}>{scope.row.status ? "可用" : "禁用"}</el-tag>
-          )}
-        </>
-      );
-    }
+    label: "状态"
   },
   { prop: "operation", label: "操作", fixed: "right", width: 330 }
 ]);

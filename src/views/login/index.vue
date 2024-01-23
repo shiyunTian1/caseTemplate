@@ -9,14 +9,14 @@
 <template>
   <div class="login-container flx-center">
     <div class="login-box">
-      <SwitchDark class="dark" />
+      <!-- <SwitchDark class="dark" />
       <div class="login-left">
-        <!-- <img class="login-left-img" src="@/assets/images/login_left.png" alt="login" /> -->
-      </div>
+        <img class="login-left-img" src="@/assets/images/login_left.png" alt="login" />
+      </div> -->
       <div class="login-form">
         <div class="login-logo">
           <!-- <img class="login-icon" src="@/assets/images/logo.svg" alt="" /> -->
-          <h2 class="logo-text">前端建设平台</h2>
+          <h2 class="logo-text">工程成本估算与控制平台</h2>
         </div>
         <LoginForm />
       </div>

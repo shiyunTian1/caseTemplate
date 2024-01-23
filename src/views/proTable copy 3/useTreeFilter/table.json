@@ -1,0 +1,82 @@
+[
+  {
+    "name": "扳手",
+    "totalMaintained": 15,
+    "totalRepaired": 5,
+    "totalCompleted": 20,
+    "ongoing": 4,
+    "completed": 16
+  },
+  {
+    "name": "电钻",
+    "totalMaintained": 12,
+    "totalRepaired": 7,
+    "totalCompleted": 18,
+    "ongoing": 6,
+    "completed": 12
+  },
+  {
+    "name": "钳子",
+    "totalMaintained": 10,
+    "totalRepaired": 3,
+    "totalCompleted": 13,
+    "ongoing": 2,
+    "completed": 11
+  },
+  {
+    "name": "绝缘电工胶带",
+    "totalMaintained": 8,
+    "totalRepaired": 2,
+    "totalCompleted": 10,
+    "ongoing": 1,
+    "completed": 9
+  },
+  {
+    "name": "剥线钳",
+    "totalMaintained": 14,
+    "totalRepaired": 4,
+    "totalCompleted": 18,
+    "ongoing": 3,
+    "completed": 15
+  },
+  {
+    "name": "电压表",
+    "totalMaintained": 6,
+    "totalRepaired": 1,
+    "totalCompleted": 7,
+    "ongoing": 1,
+    "completed": 6
+  },
+  {
+    "name": "电动割线机",
+    "totalMaintained": 7,
+    "totalRepaired": 2,
+    "totalCompleted": 9,
+    "ongoing": 2,
+    "completed": 7
+  },
+  {
+    "name": "扎线机",
+    "totalMaintained": 9,
+    "totalRepaired": 3,
+    "totalCompleted": 12,
+    "ongoing": 1,
+    "completed": 11
+  },
+  {
+    "name": "接地线",
+    "totalMaintained": 11,
+    "totalRepaired": 2,
+    "totalCompleted": 13,
+    "ongoing": 2,
+    "completed": 11
+  },
+  {
+    "name": "台钳",
+    "totalMaintained": 13,
+    "totalRepaired": 4,
+    "totalCompleted": 17,
+    "ongoing": 3,
+    "completed": 14
+  }
+]

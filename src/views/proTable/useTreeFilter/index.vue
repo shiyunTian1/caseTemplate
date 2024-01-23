@@ -62,7 +62,7 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "../table.json";
+import tableData from "./table.json";
 
 const router = useRouter();
 
@@ -115,44 +115,30 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 
 // 表格配置项
 const columns = reactive<any>([
-  { prop: "name", label: "工具名称" },
-  { prop: "type", label: "工具类型" },
-  { prop: "quantity", label: "数量" },
   {
-    prop: "brand",
-    label: "品牌"
+    prop: "name",
+    label: "姓名"
   },
   {
-    prop: "purchaseDate",
-    label: "购买时间",
-    width: 180
+    prop: "age",
+    label: "年龄"
   },
-  { prop: "purchasePrice", label: "购买价格", search: { el: "input" } },
-  { prop: "remark", label: "备注" },
   {
-    prop: "status",
-    label: "状态",
-    enum: getUserStatus,
-    fieldNames: { label: "userLabel", value: "userStatus" },
-    render: scope => {
-      return (
-        <>
-          {BUTTONS.value.status ? (
-            <el-switch
-              model-value={scope.row.status == "可用" ? true : false}
-              active-text={scope.row.status ? "可用" : "禁用"}
-              active-value={1}
-              inactive-value={0}
-              onClick={() => changeStatus(scope.row)}
-            />
-          ) : (
-            <el-tag type={scope.row.status ? "success" : "danger"}>{scope.row.status ? "可用" : "禁用"}</el-tag>
-          )}
-        </>
-      );
-    }
+    prop: "gender",
+    label: "性别"
   },
-  { prop: "operation", label: "操作", fixed: "right", width: 330 }
+  {
+    prop: "phone",
+    label: "电话号码"
+  },
+  {
+    prop: "email",
+    label: "电子邮件"
+  },
+  {
+    prop: "position",
+    label: "职位"
+  }
 ]);
 
 // 表格拖拽排序

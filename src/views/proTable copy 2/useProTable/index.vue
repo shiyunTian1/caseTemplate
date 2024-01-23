@@ -127,42 +127,29 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 
 // 表格配置项
 const columns = reactive<any>([
-  { prop: "name", label: "工具名称" },
-  { prop: "type", label: "工具类型" },
-  { prop: "quantity", label: "数量" },
   {
-    prop: "brand",
-    label: "品牌"
+    prop: "name",
+    label: "工具名称"
   },
   {
-    prop: "purchaseDate",
-    label: "购买时间",
-    width: 180
+    prop: "quantity",
+    label: "领用数量"
   },
-  { prop: "purchasePrice", label: "购买价格", search: { el: "input" } },
-  { prop: "remark", label: "备注" },
+  {
+    prop: "borrower",
+    label: "借用人"
+  },
+  {
+    prop: "borrowDate",
+    label: "借用日期"
+  },
+  {
+    prop: "returnDate",
+    label: "归还日期"
+  },
   {
     prop: "status",
-    label: "状态",
-    enum: getUserStatus,
-    fieldNames: { label: "userLabel", value: "userStatus" },
-    render: scope => {
-      return (
-        <>
-          {BUTTONS.value.status ? (
-            <el-switch
-              model-value={scope.row.status == "可用" ? true : false}
-              active-text={scope.row.status ? "可用" : "禁用"}
-              active-value={1}
-              inactive-value={0}
-              onClick={() => changeStatus(scope.row)}
-            />
-          ) : (
-            <el-tag type={scope.row.status ? "success" : "danger"}>{scope.row.status ? "可用" : "禁用"}</el-tag>
-          )}
-        </>
-      );
-    }
+    label: "状态"
   },
   { prop: "operation", label: "操作", fixed: "right", width: 330 }
 ]);
