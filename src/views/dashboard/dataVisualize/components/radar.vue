@@ -16,228 +16,50 @@ const props = defineProps({
 let data = [582, 421.2, 622.1, 625.3, 265, 224];
 let indicator = [
   {
-    name: "套餐1",
-    max: 1000
+    name: "扳手",
+    max: 10
   },
   {
-    name: "套餐2",
-    max: 1000
+    name: "电钻",
+    max: 10
   },
   {
-    name: "套餐3",
-    max: 1000
+    name: "万能表",
+    max: 10
   },
   {
-    name: "套餐4",
-    max: 1000
-  },
-  {
-    name: "套餐5",
-    max: 1000
-  },
-  {
-    name: "套餐6",
-    max: 1000
+    name: "螺丝刀",
+    max: 10
   }
 ];
 const option = {
+  legend: {
+    show: false,
+    data: ["效果", "成本"]
+  },
   radar: {
-    center: ["50%", "50%"],
-    radius: "75%",
-    name: {
-      formatter: function (name, indicator) {
-        let arr;
-        //   if(name=='开卡绑定数'||name=='渠道批量办理业务'){
-        //         arr = [
-        //         '{a|'+name+'}{b|'+indicator.value+'万}'
-        //     ]
-        //   }else{
-        arr = ["{a|" + name + "}"];
-        //   }
-
-        return arr.join("\n");
-      },
-      textStyle: {
-        rich: {
-          //根据文字的组设置格式
-          a: {
-            color: "#999",
-            fontSize: 14,
-            fontWeight: 600,
-            fontFamily: "Source Han Sans CN"
-          }
-          // b:{
-          //     fontSize:14,
-          //     verticalAlign:'top',
-          //     width:57,
-          //     color:'#8E88FE',
-          //     fontWeight:600,
-          //     align:'center'
-          // },
-        }
-      }
-    },
-    nameGap: 0,
-    indicator: indicator,
-    splitLine: {
-      show: false
-    },
-    splitArea: {
-      show: false
-    },
-    axisLine: {
-      show: false
-    }
+    // shape: 'circle',
+    indicator: [
+      { name: "扳手", max: 6500 },
+      { name: "电钻", max: 16000 },
+      { name: "万能表", max: 30000 },
+      { name: "螺丝刀", max: 38000 }
+    ]
   },
   series: [
     {
-      // name: '家庭融合包',
+      name: "Budget vs spending",
       type: "radar",
-      data: [data],
-      // value:14,
-      label: {
-        show: true,
-        formatter: function (params) {
-          console.log(params);
-          return params.value + "万";
+      data: [
+        {
+          value: [4200, 3000, 20000, 35000, 50000, 18000],
+          name: "效果"
         },
-        color: "#666",
-        // position:[-20,-10,-10,-10],
-        align: "right",
-        distance: 10,
-        align: "right"
-      },
-      symbolSize: [6, 6],
-      lineStyle: {
-        //边缘颜色
-        width: 0
-      },
-      itemStyle: {
-        borderWidth: 1,
-        color: "#fff",
-        borderColor: "#F2F063"
-      },
-      areaStyle: {
-        color: "#7D77F1",
-        opacity: 0.6
-      }
-    },
-    {
-      type: "radar",
-      data: [[1000, 1000, 1000, 1000, 1000, 1000]],
-      symbol: "none",
-      lineStyle: {
-        width: 0
-      },
-      itemStyle: {
-        color: "#4175F5"
-      },
-
-      areaStyle: {
-        color: "#4175F5",
-        opacity: 0.06
-      }
-    },
-    {
-      type: "radar",
-      data: [[900, 900, 900, 900, 900, 900]],
-
-      symbol: "none",
-      lineStyle: {
-        width: 0
-      },
-      itemStyle: {
-        color: "#2C72C8"
-      },
-
-      areaStyle: {
-        color: "#2C72C8",
-        opacity: 0.12
-      }
-    },
-    {
-      type: "radar",
-      data: [[800, 800, 800, 800, 800, 800]],
-
-      symbol: "none",
-      lineStyle: {
-        width: 0
-      },
-      itemStyle: {
-        color: "#4175F5"
-      },
-
-      areaStyle: {
-        color: "#4175F5",
-        opacity: 0.18
-      }
-    },
-    {
-      type: "radar",
-      data: [[700, 700, 700, 700, 700, 700]],
-
-      symbol: "none",
-      lineStyle: {
-        width: 0
-      },
-      itemStyle: {
-        color: "#4175F5"
-      },
-
-      areaStyle: {
-        color: "#4175F5",
-        opacity: 0.19
-      }
-    },
-    {
-      type: "radar",
-      data: [[600, 600, 600, 600, 600, 600]],
-
-      symbol: "none",
-      lineStyle: {
-        width: 0
-      },
-      itemStyle: {
-        color: "#4175F5"
-      },
-
-      areaStyle: {
-        color: "#4175F5",
-        opacity: 0.17
-      }
-    },
-    {
-      type: "radar",
-      data: [[500, 500, 500, 500, 500, 500]],
-      symbol: "none",
-      lineStyle: {
-        width: 0
-      },
-      itemStyle: {
-        color: "#4175F5"
-      },
-
-      areaStyle: {
-        color: "#4175F5",
-        opacity: 0.16
-      }
-    },
-    {
-      type: "radar",
-      data: [[400, 400, 400, 400, 400, 400]],
-
-      symbol: "none",
-      lineStyle: {
-        width: 0
-      },
-      itemStyle: {
-        color: "#4175F5"
-      },
-
-      areaStyle: {
-        color: "#4175F5",
-        opacity: 0.13
-      }
+        {
+          value: [5000, 14000, 28000, 26000, 42000, 21000],
+          name: "成本"
+        }
+      ]
     }
   ]
 };

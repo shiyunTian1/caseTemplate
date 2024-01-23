@@ -24,45 +24,67 @@ const props = defineProps({
 });
 let bgColor = "#fff";
 let color = ["#0090FF", "#36CE9E", "#FFC005", "#FF515A", "#8B5CFF", "#00CA69"];
+// let echartData = [
+//   {
+//     name: "1",
+//     value1: 100,
+//     value2: 233
+//   },
+//   {
+//     name: "2",
+//     value1: 138,
+//     value2: 233
+//   },
+//   {
+//     name: "3",
+//     value1: 350,
+//     value2: 200
+//   },
+//   {
+//     name: "4",
+//     value1: 173,
+//     value2: 180
+//   },
+//   {
+//     name: "5",
+//     value1: 180,
+//     value2: 199
+//   },
+//   {
+//     name: "6",
+//     value1: 150,
+//     value2: 233
+//   },
+//   {
+//     name: "7",
+//     value1: 180,
+//     value2: 210
+//   },
+//   {
+//     name: "8",
+//     value1: 230,
+//     value2: 180
+//   }
+// ];
 let echartData = [
   {
-    name: "1",
+    name: "扳手",
     value1: 100,
     value2: 233
   },
   {
-    name: "2",
+    name: "电钻",
     value1: 138,
     value2: 233
   },
   {
-    name: "3",
+    name: "万用表",
     value1: 350,
     value2: 200
   },
   {
-    name: "4",
+    name: "螺丝刀",
     value1: 173,
-    value2: 180
-  },
-  {
-    name: "5",
-    value1: 180,
-    value2: 199
-  },
-  {
-    name: "6",
-    value1: 150,
-    value2: 233
-  },
-  {
-    name: "7",
-    value1: 180,
-    value2: 210
-  },
-  {
-    name: "8",
-    value1: 230,
     value2: 180
   }
 ];
@@ -170,7 +192,7 @@ const option = {
   ],
   series: [
     {
-      name: "2018",
+      name: "2022",
       type: "line",
       smooth: true,
       // showSymbol: false,/
@@ -210,7 +232,7 @@ const option = {
       data: yAxisData1
     },
     {
-      name: "2019",
+      name: "2023",
       type: "line",
       smooth: true,
       // showSymbol: false,

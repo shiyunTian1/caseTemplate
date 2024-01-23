@@ -15,15 +15,10 @@ var xData = (function () {
   return data;
 })();
 const curveData = [
-  { value: 30, spotName: "掘金" },
-  { value: 90, spotName: "CSDN" },
-  { value: 10, spotName: "Gitee" },
-  { value: 70, spotName: "GitHub" },
-  { value: 20, spotName: "知乎" },
-  { value: 60, spotName: "MyBlog" },
-  { value: 55, spotName: "简书" },
-  { value: 80, spotName: "StackOverFlow" },
-  { value: 50, spotName: "博客园" }
+  { value: 5000, spotName: "2022 Q1" },
+  { value: 5200, spotName: "2022 Q2" },
+  { value: 4800, spotName: "2022 Q3" },
+  { value: 5100, spotName: "2022 Q4" }
 ];
 
 const option: ECOption = {
@@ -76,12 +71,12 @@ const option: ECOption = {
   xAxis: [
     {
       type: "category",
-      data: xData,
-      // data: curveData.map((val: any) => {
-      //   return {
-      //     value: val.spotName
-      //   };
-      // }),
+      // data: xData,
+      data: curveData.map((val: any) => {
+        return {
+          value: val.spotName
+        };
+      }),
       axisTick: {
         show: false
       },

@@ -9,8 +9,10 @@ import { ECOption } from "@/components/ECharts/config";
 import ECharts from "@/components/ECharts/index.vue";
 
 const pieData = [
-  { value: 5000, name: "第一季度" },
-  { value: 5000, name: "第二季度" }
+  { value: 30, name: "人工费" },
+  { value: 40, name: "材料费" },
+  { value: 15, name: "维修费" },
+  { value: 15, name: "其他费用" }
 ];
 
 const option: ECOption = {
