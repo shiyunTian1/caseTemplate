@@ -16,7 +16,7 @@
       <div class="login-form">
         <div class="login-logo">
           <!-- <img class="login-icon" src="@/assets/images/logo.svg" alt="" /> -->
-          <h2 class="logo-text">工程成本估算与控制平台</h2>
+          <h2 class="logo-text">电工工具管理与统计平台</h2>
         </div>
         <LoginForm />
       </div>

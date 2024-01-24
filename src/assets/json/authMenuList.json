@@ -123,7 +123,7 @@
           "component": "/proTable copy 2/useProTable/index",
           "meta": {
             "icon": "Menu",
-            "title": "领用与归还表单登记",
+            "title": "领用与归还登记",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -137,7 +137,7 @@
           "component": "/proTable copy 2/useTreeFilter/index",
           "meta": {
             "icon": "Menu",
-            "title": "领用与归还表单统计",
+            "title": "领用与归还统计",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -167,7 +167,7 @@
           "component": "/proTable copy 3/useProTable/index",
           "meta": {
             "icon": "Menu",
-            "title": "维护与检修表单登记",
+            "title": "维护与检修登记",
             "isLink": "",
             "isHide": false,
             "isFull": false,
@@ -181,7 +181,7 @@
           "component": "/proTable copy 3/useTreeFilter/index",
           "meta": {
             "icon": "Menu",
-            "title": "维护与检修表单统计",
+            "title": "维护与检修统计",
             "isLink": "",
             "isHide": false,
             "isFull": false,

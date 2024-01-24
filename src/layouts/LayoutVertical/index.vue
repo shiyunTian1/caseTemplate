@@ -2,7 +2,7 @@
  * @Author: qingzi tsy15632385483@163.com
  * @Date: 2024-01-23 11:07:40
  * @LastEditors: qingzi tsy15632385483@163.com
- * @LastEditTime: 2024-01-23 11:33:44
+ * @LastEditTime: 2024-01-24 10:36:14
  * @FilePath: \yl_admin_base_project\src\layouts\LayoutVertical\index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -20,7 +20,7 @@
             :router="false"
             :default-active="activeMenu"
             :collapse="isCollapse"
-            :unique-opened="accordion"
+            :default-openeds="openeds"
             :collapse-transition="false"
           >
             <SubMenu :menu-list="menuList" />
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts" name="layoutVertical">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import { useAuthStore } from "@/stores/modules/auth";
 import { useGlobalStore } from "@/stores/modules/global";
@@ -50,10 +50,11 @@ import SubMenu from "@/layouts/components/Menu/SubMenu.vue";
 
 const title = import.meta.env.VITE_GLOB_APP_TITLE;
 
+const openeds = ref(["/proTable2", "/proTable1", "/proTable3", "/proTable"]);
 const route = useRoute();
 const authStore = useAuthStore();
 const globalStore = useGlobalStore();
-const accordion = computed(() => globalStore.accordion);
+// const accordion = computed(() => globalStore.accordion);
 const isCollapse = computed(() => globalStore.isCollapse);
 const menuList = computed(() => authStore.showMenuListGet);
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);

@@ -2,7 +2,7 @@
   {
     "name": "扳手",
     "quantity": 2,
-    "borrower": "张三",
+    "borrower": "张远",
     "borrowDate": "2024-01-05",
     "returnDate": "2024-01-10",
     "status": "已归还"
@@ -10,15 +10,15 @@
   {
     "name": "电钻",
     "quantity": 1,
-    "borrower": "李四",
+    "borrower": "李广",
     "borrowDate": "2024-01-07",
-    "returnDate": "",
-    "status": "未归还"
+    "returnDate": "2024",
+    "status": "未确定"
   },
   {
     "name": "钳子",
     "quantity": 3,
-    "borrower": "王五",
+    "borrower": "王学书",
     "borrowDate": "2024-01-08",
     "returnDate": "2024-01-15",
     "status": "已归还"
@@ -26,15 +26,15 @@
   {
     "name": "绝缘电工胶带",
     "quantity": 5,
-    "borrower": "赵六",
+    "borrower": "赵一梦",
     "borrowDate": "2024-01-12",
-    "returnDate": "",
+    "returnDate": "未确定",
     "status": "未归还"
   },
   {
     "name": "剥线钳",
     "quantity": 2,
-    "borrower": "小明",
+    "borrower": "赵海",
     "borrowDate": "2024-01-14",
     "returnDate": "2024-01-21",
     "status": "已归还"
@@ -42,15 +42,15 @@
   {
     "name": "电压表",
     "quantity": 1,
-    "borrower": "小红",
+    "borrower": "王超",
     "borrowDate": "2024-01-15",
-    "returnDate": "",
+    "returnDate": "未确定",
     "status": "未归还"
   },
   {
     "name": "电动割线机",
     "quantity": 1,
-    "borrower": "小李",
+    "borrower": "李富生",
     "borrowDate": "2024-01-17",
     "returnDate": "2024-01-20",
     "status": "已归还"
@@ -58,15 +58,15 @@
   {
     "name": "扎线机",
     "quantity": 2,
-    "borrower": "小芳",
+    "borrower": "何芳",
     "borrowDate": "2024-01-19",
-    "returnDate": "",
+    "returnDate": "未确定",
     "status": "未归还"
   },
   {
     "name": "接地线",
     "quantity": 10,
-    "borrower": "小刚",
+    "borrower": "王小刚",
     "borrowDate": "2024-01-21",
     "returnDate": "2024-01-28",
     "status": "已归还"
@@ -74,9 +74,9 @@
   {
     "name": "台钳",
     "quantity": 3,
-    "borrower": "小亮",
+    "borrower": "田亮",
     "borrowDate": "2024-01-22",
-    "returnDate": "",
+    "returnDate": "未确定",
     "status": "未归还"
   }
 ]

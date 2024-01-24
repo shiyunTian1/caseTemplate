@@ -1,10 +1,10 @@
 [
   {
-    "name": "张三",
+    "name": "张东",
     "age": 35,
     "gender": "男",
     "phone": "13812345678",
-    "email": "zhangsan@example.com",
+    "email": "zhangdong@example.com",
     "company": "ABC电气公司",
     "position": "电工",
     "qualification": [
@@ -13,11 +13,11 @@
     ]
   },
   {
-    "name": "李四",
+    "name": "李明",
     "age": 28,
     "gender": "男",
     "phone": "13987654321",
-    "email": "lisi@example.com",
+    "email": "liming@example.com",
     "company": "XYZ电气工程",
     "position": "电工助理",
     "qualification": [
@@ -25,11 +25,11 @@
     ]
   },
   {
-    "name": "王五",
+    "name": "王宁",
     "age": 40,
     "gender": "男",
     "phone": "13698765432",
-    "email": "wangwu@example.com",
+    "email": "wangning@example.com",
     "company": "电力局",
     "position": "主管",
     "qualification": [
@@ -37,11 +37,11 @@
     ]
   },
   {
-    "name": "赵六",
+    "name": "赵晓",
     "age": 32,
     "gender": "男",
     "phone": "13765432109",
-    "email": "zhaoliu@example.com",
+    "email": "zhaoxiao@example.com",
     "company": "电力公司",
     "position": "电工",
     "qualification": [
@@ -49,21 +49,24 @@
     ]
   },
   {
-    "name": "刘七",
+    "name": "刘红",
     "age": 25,
     "gender": "女",
     "phone": "13567890234",
-    "email": "liuqi@example.com",
+    "email": "liuhong@example.com",
     "company": "电气科技有限公司",
-    "position": "实习生",
-    "qualification": []
+    "position": "工程师",
+    "qualification": [
+      "电工一级",
+      "中级工程师"
+    ]
   },
   {
-    "name": "陈八",
+    "name": "陈阳",
     "age": 38,
     "gender": "男",
     "phone": "13456789012",
-    "email": "chenba@example.com",
+    "email": "chenyang@example.com",
     "company": "信电集团",
     "position": "工程师",
     "qualification": [
@@ -72,11 +75,11 @@
     ]
   },
   {
-    "name": "周九",
+    "name": "周雪",
     "age": 29,
     "gender": "女",
     "phone": "13098765432",
-    "email": "zhoujiu@example.com",
+    "email": "zhouxue@example.com",
     "company": "电力工程公司",
     "position": "电工助理",
     "qualification": [
@@ -84,11 +87,11 @@
     ]
   },
   {
-    "name": "刘十",
+    "name": "刘林",
     "age": 45,
     "gender": "男",
     "phone": "13901234567",
-    "email": "liushi@example.com",
+    "email": "liulin@example.com",
     "company": "华电集团",
     "position": "高级电工",
     "qualification": [
@@ -97,11 +100,11 @@
     ]
   },
   {
-    "name": "林十一",
+    "name": "林洁",
     "age": 31,
     "gender": "女",
     "phone": "13876543210",
-    "email": "linshiyi@example.com",
+    "email": "linjie@example.com",
     "company": "电气工程设计院",
     "position": "工程师",
     "qualification": [
@@ -110,11 +113,11 @@
     ]
   },
   {
-    "name": "张十二",
+    "name": "张斌",
     "age": 33,
     "gender": "男",
     "phone": "13789012345",
-    "email": "zhangshier@example.com",
+    "email": "zhangbin@example.com",
     "company": "国电公司",
     "position": "电工",
     "qualification": [

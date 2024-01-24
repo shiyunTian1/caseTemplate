@@ -2,7 +2,7 @@
  * @Author: qingzi tsy15632385483@163.com
  * @Date: 2024-01-23 11:07:40
  * @LastEditors: qingzi tsy15632385483@163.com
- * @LastEditTime: 2024-01-23 11:33:22
+ * @LastEditTime: 2024-01-24 10:29:57
  * @FilePath: \yl_admin_base_project\src\layouts\LayoutClassic\index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts" name="layoutClassic">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import { useAuthStore } from "@/stores/modules/auth";
 import { useGlobalStore } from "@/stores/modules/global";
@@ -50,6 +50,7 @@ import ToolBarRight from "@/layouts/components/Header/ToolBarRight.vue";
 
 const title = import.meta.env.VITE_GLOB_APP_TITLE;
 
+const arr = ref(["/proTable", "/proTable1", "proTable2"]);
 const route = useRoute();
 const authStore = useAuthStore();
 const globalStore = useGlobalStore();

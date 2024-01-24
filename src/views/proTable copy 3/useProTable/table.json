@@ -3,7 +3,7 @@
     "name": "扳手",
     "maintenanceDate": "2024-01-05",
     "maintenanceType": "日常保养",
-    "maintenancePerson": "张三",
+    "maintenancePerson": "张骐",
     "remarks": "更换磨损部件",
     "status": "已完成"
   },
@@ -11,7 +11,7 @@
     "name": "电钻",
     "maintenanceDate": "2024-01-07",
     "maintenanceType": "定期检修",
-    "maintenancePerson": "李四",
+    "maintenancePerson": "李贺",
     "remarks": "清洁润滑",
     "status": "已完成"
   },
@@ -19,7 +19,7 @@
     "name": "钳子",
     "maintenanceDate": "2024-01-08",
     "maintenanceType": "维修",
-    "maintenancePerson": "王五",
+    "maintenancePerson": "王立",
     "remarks": "更换损坏的刀口",
     "status": "进行中"
   },
@@ -27,7 +27,7 @@
     "name": "绝缘电工胶带",
     "maintenanceDate": "2024-01-12",
     "maintenanceType": "日常保养",
-    "maintenancePerson": "赵六",
+    "maintenancePerson": "赵一洁",
     "remarks": "检查绝缘性能",
     "status": "已完成"
   },
@@ -35,7 +35,7 @@
     "name": "剥线钳",
     "maintenanceDate": "2024-01-14",
     "maintenanceType": "定期检修",
-    "maintenancePerson": "小明",
+    "maintenancePerson": "李一明",
     "remarks": "调整剥线厚度",
     "status": "已完成"
   },
@@ -43,7 +43,7 @@
     "name": "电压表",
     "maintenanceDate": "2024-01-15",
     "maintenanceType": "日常保养",
-    "maintenancePerson": "小红",
+    "maintenancePerson": "刘红",
     "remarks": "校准测量精度",
     "status": "进行中"
   },
@@ -51,7 +51,7 @@
     "name": "电动割线机",
     "maintenanceDate": "2024-01-17",
     "maintenanceType": "维修",
-    "maintenancePerson": "小李",
+    "maintenancePerson": "李慧",
     "remarks": "更换磨损的刀片",
     "status": "已完成"
   },
@@ -59,7 +59,7 @@
     "name": "扎线机",
     "maintenanceDate": "2024-01-19",
     "maintenanceType": "定期检修",
-    "maintenancePerson": "小芳",
+    "maintenancePerson": "何芳",
     "remarks": "清洁机器内部",
     "status": "已完成"
   },
@@ -67,7 +67,7 @@
     "name": "接地线",
     "maintenanceDate": "2024-01-21",
     "maintenanceType": "日常保养",
-    "maintenancePerson": "小刚",
+    "maintenancePerson": "王刚",
     "remarks": "检查接地线连接",
     "status": "进行中"
   },
@@ -75,7 +75,7 @@
     "name": "台钳",
     "maintenanceDate": "2024-01-22",
     "maintenanceType": "维修",
-    "maintenancePerson": "小亮",
+    "maintenancePerson": "赵小亮",
     "remarks": "调整夹持力度",
     "status": "已完成"
   }
