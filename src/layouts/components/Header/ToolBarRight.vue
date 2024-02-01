@@ -14,6 +14,7 @@
 </template>
 
 <script setup lang="ts">
+import Avatar from "./components/Avatar.vue";
 import { computed } from "vue";
 import { useUserStore } from "@/stores/modules/user";
 
