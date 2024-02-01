@@ -12,6 +12,7 @@ dist
 dist-ssr
 stats.html
 *.local
+源码.zip
 
 # Editor directories and files
 .vscode/*
