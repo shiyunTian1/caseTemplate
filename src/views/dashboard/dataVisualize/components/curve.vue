@@ -15,10 +15,18 @@ var xData = (function () {
   return data;
 })();
 const curveData = [
-  { value: 5000, spotName: "2022 Q1" },
-  { value: 5200, spotName: "2022 Q2" },
-  { value: 4800, spotName: "2022 Q3" },
-  { value: 5100, spotName: "2022 Q4" }
+  { month: "2022-01", value: 160 },
+  { month: "2022-02", value: 165 },
+  { month: "2022-03", value: 170 },
+  { month: "2022-04", value: 155 },
+  { month: "2022-05", value: 168 },
+  { month: "2022-06", value: 175 },
+  { month: "2022-07", value: 180 },
+  { month: "2022-08", value: 178 },
+  { month: "2022-09", value: 169 },
+  { month: "2022-10", value: 163 },
+  { month: "2022-11", value: 165 },
+  { month: "2022-12", value: 170 }
 ];
 
 const option: ECOption = {
@@ -32,7 +40,7 @@ const option: ECOption = {
     formatter: (p: any) => {
       let dom = `<div style="width:100%; height: 70px !important; display:flex;flex-direction: column;justify-content: space-between;padding:10px;box-sizing: border-box;
       color:#fff; background: #6B9DFE;border-radius: 4px;font-size:14px; ">
-        <div style="display: flex; align-items: center;"> <div style="width:5px;height:5px;background:#ffffff;border-radius: 50%;margin-right:5px"></div>平台 :  ${p[0].name}</div>
+        <div style="display: flex; align-items: center;"> <div style="width:5px;height:5px;background:#ffffff;border-radius: 50%;margin-right:5px"></div>  ${p[0].name}</div>
         <div style="display: flex;align-items: center;"><div style="width:5px;height:5px;background:#ffffff;border-radius: 50%;margin-right:5px"></div>数据量 :  ${p[0].value}</div>
       </div>`;
       return dom;
@@ -74,7 +82,7 @@ const option: ECOption = {
       // data: xData,
       data: curveData.map((val: any) => {
         return {
-          value: val.spotName
+          value: val.month
         };
       }),
       axisTick: {
@@ -138,7 +146,7 @@ const option: ECOption = {
       }),
       barWidth: "45px",
       itemStyle: {
-        color: "#C5D8FF",
+        color: "#e7e6fa",
         borderRadius: [12, 12, 0, 0]
       },
       emphasis: {

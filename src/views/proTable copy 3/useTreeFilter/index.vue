@@ -1,6 +1,7 @@
 <template>
   <div class="table-box">
     <ProTable
+      v-if="columns"
       ref="proTable"
       :toolButton="false"
       :columns="columns"
@@ -39,11 +40,13 @@
 
 <script setup lang="tsx" name="useProTable">
 import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { User } from "@/api/interface";
 import { useHandleData } from "@/hooks/useHandleData";
 import { useDownload } from "@/hooks/useDownload";
 import { useAuthButtons } from "@/hooks/useAuthButtons";
+import { useCasetable } from "@/hooks/usecasetable";
+
 import { ElMessage, ElMessageBox } from "element-plus";
 import ProTable from "@/components/ProTable/index.vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
@@ -62,11 +65,14 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
+// import tableData from "./table.json";
 
 const router = useRouter();
 
 // const tableData = ref(tableData);
+
+const route = useRoute();
+const { columns, tableData } = useCasetable(route.name.toString());
 
 // 跳转详情页
 const toDetail = () => {
@@ -114,32 +120,32 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 };
 
 // 表格配置项
-const columns = reactive<any>([
-  {
-    prop: "name",
-    label: "工具名称"
-  },
-  {
-    prop: "totalMaintained",
-    label: "总维护次数"
-  },
-  {
-    prop: "totalRepaired",
-    label: "总维修次数"
-  },
-  {
-    prop: "totalCompleted",
-    label: "总完成次数"
-  },
-  {
-    prop: "ongoing",
-    label: "进行中数量"
-  },
-  {
-    prop: "completed",
-    label: "已完成数量"
-  }
-]);
+// const columns = reactive<any>([
+//   {
+//     prop: "name",
+//     label: "工具名称"
+//   },
+//   {
+//     prop: "totalMaintained",
+//     label: "总维护次数"
+//   },
+//   {
+//     prop: "totalRepaired",
+//     label: "总维修次数"
+//   },
+//   {
+//     prop: "totalCompleted",
+//     label: "总完成次数"
+//   },
+//   {
+//     prop: "ongoing",
+//     label: "进行中数量"
+//   },
+//   {
+//     prop: "completed",
+//     label: "已完成数量"
+//   }
+// ]);
 
 // 表格拖拽排序
 const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: number }) => {

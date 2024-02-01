@@ -1,0 +1,158 @@
+{
+  "tableColumns": [
+    {
+      "prop": "Name",
+      "label": "姓名"
+    },
+    {
+      "prop": "IDCard",
+      "label": "IDCard"
+    },
+    {
+      "prop": "DateOfBirth",
+      "label": "出生日期"
+    },
+    {
+      "prop": "ContactNumber",
+      "label": "电话"
+    },
+    {
+      "prop": "Email",
+      "label": "邮箱"
+    },
+    {
+      "prop": "Position",
+      "label": "职位"
+    },
+    {
+      "prop": "Title",
+      "label": "头衔"
+    },
+    {
+      "prop": "CertificateNumber",
+      "label": "证书编号"
+    }
+  ],
+  "tableData": [
+    {
+      "Name": "张洁",
+      "IDCard": "310112199001010001",
+      "Gender": "Male",
+      "DateOfBirth": "1990-01-01",
+      "ContactNumber": "13812345678",
+      "Email": "zhangsan@example.com",
+      "Department": "生产部",
+      "Position": "工人",
+      "Title": "高级技工",
+      "CertificateNumber": "CERT001"
+    },
+    {
+      "Name": "李思宇",
+      "IDCard": "310112198505100002",
+      "Gender": "Male",
+      "DateOfBirth": "1985-05-10",
+      "ContactNumber": "13987654321",
+      "Email": "lisi@example.com",
+      "Department": "生产部",
+      "Position": "工人",
+      "Title": "中级技工",
+      "CertificateNumber": "CERT002"
+    },
+    {
+      "Name": "王桌",
+      "IDCard": "310112198710201003",
+      "Gender": "Male",
+      "DateOfBirth": "1987-10-20",
+      "ContactNumber": "13655557777",
+      "Email": "wangwu@example.com",
+      "Department": "技术部",
+      "Position": "工程师",
+      "Title": "高级工程师",
+      "CertificateNumber": "CERT003"
+    },
+    {
+      "Name": "赵骐",
+      "IDCard": "310112199305150004",
+      "Gender": "Male",
+      "DateOfBirth": "1993-05-15",
+      "ContactNumber": "13733334444",
+      "Email": "zhaoliu@example.com",
+      "Department": "技术部",
+      "Position": "工程师",
+      "Title": "中级工程师",
+      "CertificateNumber": "CERT004"
+    },
+    {
+      "Name": "孙雨",
+      "IDCard": "310112198912250005",
+      "Gender": "Male",
+      "DateOfBirth": "1989-12-25",
+      "ContactNumber": "13522229999",
+      "Email": "liuqi@example.com",
+      "Department": "市场部",
+      "Position": "销售主管",
+      "Title": "高级销售",
+      "CertificateNumber": "CERT005"
+    },
+    {
+      "Name": "周林",
+      "IDCard": "310112199108080006",
+      "Gender": "Female",
+      "DateOfBirth": "1991-08-08",
+      "ContactNumber": "13777776666",
+      "Email": "chenba@example.com",
+      "Department": "市场部",
+      "Position": "销售主管",
+      "Title": "中级销售",
+      "CertificateNumber": "CERT006"
+    },
+    {
+      "Name": "周周",
+      "IDCard": "310112198302030007",
+      "Gender": "Male",
+      "DateOfBirth": "1983-02-03",
+      "ContactNumber": "13847474747",
+      "Email": "zhoujiu@example.com",
+      "Department": "人力资源部",
+      "Position": "人力资源经理",
+      "Title": "高级人力资源",
+      "CertificateNumber": "CERT007"
+    },
+    {
+      "Name": "吴江",
+      "IDCard": "310112198606060008",
+      "Gender": "Female",
+      "DateOfBirth": "1986-06-06",
+      "ContactNumber": "13989898989",
+      "Email": "wushi@example.com",
+      "Department": "人力资源部",
+      "Position": "人力资源经理",
+      "Title": "中级人力资源",
+      "CertificateNumber": "CERT008"
+    },
+    {
+      "Name": "王忆",
+      "IDCard": "310112199210020009",
+      "Gender": "Male",
+      "DateOfBirth": "1992-10-02",
+      "ContactNumber": "13686868686",
+      "Email": "qianshiyi@example.com",
+      "Department": "财务部",
+      "Position": "财务主管",
+      "Title": "高级财务",
+      "CertificateNumber": "CERT009"
+    },
+    {
+      "Name": "孙书宁",
+      "IDCard": "310112198704040010",
+      "Gender": "Female",
+      "DateOfBirth": "1987-04-04",
+      "ContactNumber": "13790909090",
+      "Email": "sunshier@example.com",
+      "Department": "财务部",
+      "Position": "财务主管",
+      "Title": "中级财务",
+      "CertificateNumber": "CERT010"
+    }
+  ]
+}

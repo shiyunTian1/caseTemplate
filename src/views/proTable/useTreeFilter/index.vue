@@ -2,6 +2,7 @@
   <div class="table-box">
     <ProTable
       ref="proTable"
+      v-if="columns"
       :toolButton="false"
       :columns="columns"
       :data="tableData"
@@ -39,11 +40,13 @@
 
 <script setup lang="tsx" name="useProTable">
 import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { User } from "@/api/interface";
 import { useHandleData } from "@/hooks/useHandleData";
 import { useDownload } from "@/hooks/useDownload";
 import { useAuthButtons } from "@/hooks/useAuthButtons";
+import { useCasetable } from "@/hooks/usecasetable";
+
 import { ElMessage, ElMessageBox } from "element-plus";
 import ProTable from "@/components/ProTable/index.vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
@@ -62,7 +65,7 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
+// import tableData from "./table.json";
 
 const router = useRouter();
 
@@ -73,6 +76,8 @@ const toDetail = () => {
   router.push(`/proTable/useProTable/detail/${Math.random().toFixed(3)}?params=detail-page`);
 };
 
+const route = useRoute();
+const { columns, tableData } = useCasetable(route.name.toString());
 // ProTable 实例
 const proTable = ref<ProTableInstance>();
 
@@ -114,32 +119,32 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 };
 
 // 表格配置项
-const columns = reactive<any>([
-  {
-    prop: "name",
-    label: "姓名"
-  },
-  {
-    prop: "age",
-    label: "年龄"
-  },
-  {
-    prop: "gender",
-    label: "性别"
-  },
-  {
-    prop: "phone",
-    label: "电话号码"
-  },
-  {
-    prop: "email",
-    label: "电子邮件"
-  },
-  {
-    prop: "position",
-    label: "职位"
-  }
-]);
+// const columns = reactive<any>([
+//   {
+//     prop: "name",
+//     label: "姓名"
+//   },
+//   {
+//     prop: "age",
+//     label: "年龄"
+//   },
+//   {
+//     prop: "gender",
+//     label: "性别"
+//   },
+//   {
+//     prop: "phone",
+//     label: "电话号码"
+//   },
+//   {
+//     prop: "email",
+//     label: "电子邮件"
+//   },
+//   {
+//     prop: "position",
+//     label: "职位"
+//   }
+// ]);
 
 // 表格拖拽排序
 const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: number }) => {

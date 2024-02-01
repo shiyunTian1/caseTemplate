@@ -1,0 +1,84 @@
+{
+  "tableColumns": [
+    {
+      "prop": "name",
+      "label": "姓名"
+    },
+    {
+      "prop": "company",
+      "label": "公司名称"
+    },
+    {
+      "prop": "position",
+      "label": "职位"
+    },
+    {
+      "prop": "hireDate",
+      "label": "培训入职日期"
+    },
+    {
+      "prop": "resignationDate",
+      "label": "培训离职日期"
+    },
+    {
+      "prop": "duration",
+      "label": "培训时长（月）"
+    },
+    {
+      "prop": "description",
+      "label": "工作描述"
+    }
+  ],
+  "tableData": [
+    {
+      "name": "张骐",
+      "company": "河北优诺公司",
+      "position": "项目经理",
+      "hireDate": "2019-01-01",
+      "resignationDate": "2022-05-31",
+      "duration": 40,
+      "description": "负责项目管理和团队协调",
+      "witness": "李四"
+    },
+    {
+      "name": "李思",
+      "company": "中科企业",
+      "position": "销售代表",
+      "hireDate": "2018-06-01",
+      "resignationDate": "2020-12-31",
+      "duration": 30,
+      "description": "负责销售和客户关系管理",
+      "witness": "王五"
+    },
+    {
+      "name": "王梦洁",
+      "company": "明亮科技",
+      "position": "软件工程师",
+      "hireDate": "2020-02-01",
+      "resignationDate": "2023-03-31",
+      "duration": 38,
+      "description": "参与软件开发和系统维护工作",
+      "witness": "赵六"
+    },
+    {
+      "name": "赵晓亮",
+      "company": "电力集团",
+      "position": "工程师助理",
+      "hireDate": "2017-09-01",
+      "resignationDate": "2019-12-31",
+      "duration": 27,
+      "description": "协助工程师进行实地勘测和项目报告编写",
+      "witness": "孙七"
+    },
+    {
+      "name": "孙二佳",
+      "company": "市政建设公司",
+      "position": "施工员",
+      "hireDate": "2019-03-01",
+      "resignationDate": "2021-08-31",
+      "duration": 29,
+      "description": "负责施工进度跟踪和质量监督",
+      "witness": "周八"
+    }
+  ]
+}

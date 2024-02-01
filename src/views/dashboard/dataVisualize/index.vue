@@ -1,14 +1,22 @@
+<!--
+ * @Author: qingzi tsy15632385483@163.com
+ * @Date: 2024-01-25 18:00:00
+ * @LastEditors: qingzi tsy15632385483@163.com
+ * @LastEditTime: 2024-02-01 14:41:39
+ * @FilePath: \yl_admin_base_project\src\views\dashboard\dataVisualize\index.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div class="dataVisualize-box">
     <div class="card bottom-box">
-      <div class="bottom-title">工具利用率折线图</div>
+      <div class="bottom-title">人员工作时长柱状图</div>
       <!-- <div class="bottom-tabs">
         <el-tabs v-model="tabActive" class="demo-tabs">
           <el-tab-pane v-for="item in tab" :key="item.name" :label="item.label" :name="item.name"></el-tab-pane>
         </el-tabs>
       </div> -->
       <div class="curve-echarts">
-        <Line ref="curveRef" />
+        <Curve ref="curveRef" />
       </div>
     </div>
     <div class="card top-box">
@@ -16,7 +24,7 @@
         <el-row :gutter="24">
           <el-col class="mb40" :xs="8" :sm="8" :md="8" :lg="8" :xl="8">
             <div class="item-right">
-              <div class="echarts-title">成本效益雷达图</div>
+              <div class="echarts-title">人员年龄雷达图</div>
               <div class="book-echarts">
                 <Radar ref="pieRef" />
               </div>
@@ -24,7 +32,7 @@
           </el-col>
           <el-col class="mb40" :xs="8" :sm="8" :md="8" :lg="8" :xl="8">
             <div class="item-right">
-              <div class="echarts-title">成本构成饼状图</div>
+              <div class="echarts-title">人员职位图表饼状图</div>
               <div class="book-echarts">
                 <Pie ref="pieRef" />
               </div>
@@ -32,9 +40,9 @@
           </el-col>
           <el-col class="mb40" :xs="8" :sm="8" :md="8" :lg="8" :xl="8">
             <div class="item-right">
-              <div class="echarts-title">成本趋势柱状图</div>
+              <div class="echarts-title">人员培训情况折线图</div>
               <div class="book-echarts">
-                <Curve ref="curveRef" />
+                <Line ref="curveRef" />
               </div>
             </div>
           </el-col>

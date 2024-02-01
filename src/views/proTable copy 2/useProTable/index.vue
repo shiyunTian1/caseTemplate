@@ -2,6 +2,7 @@
   <div class="table-box">
     <ProTable
       ref="proTable"
+      v-if="columns"
       :columns="columns"
       :data="tableData"
       :init-param="initParam"
@@ -11,7 +12,7 @@
     >
       <!-- 表格 header 按钮 -->
       <template #tableHeader="scope">
-        <el-button type="primary" :icon="Search" @click="search"> 搜索 </el-button>
+        <el-button type="primary" :icon="Search" @click="handleSearch()"> 搜索 </el-button>
         <el-button v-auth="'add'" type="primary" :icon="CirclePlus" @click="openDrawer('新增')">新增用户</el-button>
         <el-button v-auth="'export'" type="primary" :icon="Download" @click="downloadFile">导出用户数据</el-button>
         <!-- <el-button type="primary" plain @click="toDetail">To 子集详情页面</el-button>
@@ -51,11 +52,13 @@
 
 <script setup lang="tsx" name="useProTable">
 import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { User } from "@/api/interface";
 import { useHandleData } from "@/hooks/useHandleData";
 import { useDownload } from "@/hooks/useDownload";
 import { useAuthButtons } from "@/hooks/useAuthButtons";
+import { useCasetable } from "@/hooks/usecasetable";
+
 import { ElMessage, ElMessageBox } from "element-plus";
 import ProTable from "@/components/ProTable/index.vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
@@ -74,10 +77,12 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
+// import tableData from "./table.json";
 
 const router = useRouter();
 
+const route = useRoute();
+const { columns, tableData } = useCasetable(route.name.toString());
 // const tableData = ref(tableData);
 
 // 跳转详情页
@@ -125,34 +130,35 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
   );
 };
 
+const handleSearch = () => {};
 // 表格配置项
-const columns = reactive<any>([
-  {
-    prop: "name",
-    label: "工具名称"
-  },
-  {
-    prop: "quantity",
-    label: "领用数量"
-  },
-  {
-    prop: "borrower",
-    label: "借用人"
-  },
-  {
-    prop: "borrowDate",
-    label: "借用日期"
-  },
-  {
-    prop: "returnDate",
-    label: "归还日期"
-  },
-  {
-    prop: "status",
-    label: "状态"
-  },
-  { prop: "operation", label: "操作", fixed: "right", width: 330 }
-]);
+// const columns = reactive<any>([
+//   {
+//     prop: "name",
+//     label: "工具名称"
+//   },
+//   {
+//     prop: "quantity",
+//     label: "领用数量"
+//   },
+//   {
+//     prop: "borrower",
+//     label: "借用人"
+//   },
+//   {
+//     prop: "borrowDate",
+//     label: "借用日期"
+//   },
+//   {
+//     prop: "returnDate",
+//     label: "归还日期"
+//   },
+//   {
+//     prop: "status",
+//     label: "状态"
+//   },
+//   { prop: "operation", label: "操作", fixed: "right", width: 330 }
+// ]);
 
 // 表格拖拽排序
 const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: number }) => {

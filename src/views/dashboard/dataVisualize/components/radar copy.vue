@@ -13,23 +13,23 @@ const props = defineProps({
     default: "雷达图"
   }
 });
-let data = [582, 421.2, 622.1, 625.3, 265, 224];
+let data = [40, 30, 20, 10];
 let indicator = [
   {
-    name: "扳手",
-    max: 10
+    name: "20-30",
+    max: 40
   },
   {
-    name: "电钻",
-    max: 10
+    name: "30-40",
+    max: 50
   },
   {
-    name: "万能表",
-    max: 10
+    name: "40-50",
+    max: 50
   },
   {
-    name: "螺丝刀",
-    max: 10
+    name: "50-60",
+    max: 50
   }
 ];
 const option = {

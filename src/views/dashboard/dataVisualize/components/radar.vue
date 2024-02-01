@@ -1,3 +1,11 @@
+<!--
+ * @Author: qingzi tsy15632385483@163.com
+ * @Date: 2024-01-25 18:00:00
+ * @LastEditors: qingzi tsy15632385483@163.com
+ * @LastEditTime: 2024-02-01 14:40:43
+ * @FilePath: \yl_admin_base_project\src\views\dashboard\dataVisualize\components\radar.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div class="echarts">
     <ECharts :option="option" />
@@ -13,23 +21,23 @@ const props = defineProps({
     default: "雷达图"
   }
 });
-let data = [582, 421.2, 622.1, 625.3, 265, 224];
+let data = [40, 30, 20, 10];
 let indicator = [
   {
-    name: "扳手",
-    max: 10
+    name: "20-30",
+    max: 40
   },
   {
-    name: "电钻",
-    max: 10
+    name: "30-40",
+    max: 50
   },
   {
-    name: "万能表",
-    max: 10
+    name: "40-50",
+    max: 50
   },
   {
-    name: "螺丝刀",
-    max: 10
+    name: "50-60",
+    max: 50
   }
 ];
 const option = {
@@ -40,10 +48,22 @@ const option = {
   radar: {
     // shape: 'circle',
     indicator: [
-      { name: "扳手", max: 6500 },
-      { name: "电钻", max: 16000 },
-      { name: "万能表", max: 30000 },
-      { name: "螺丝刀", max: 38000 }
+      {
+        name: "20-30",
+        max: 40
+      },
+      {
+        name: "30-40",
+        max: 50
+      },
+      {
+        name: "40-50",
+        max: 50
+      },
+      {
+        name: "50-60",
+        max: 50
+      }
     ]
   },
   series: [
@@ -52,12 +72,12 @@ const option = {
       type: "radar",
       data: [
         {
-          value: [4200, 3000, 20000, 35000, 50000, 18000],
-          name: "效果"
+          value: [10, 20, 30, 40],
+          name: "20-30"
         },
         {
-          value: [5000, 14000, 28000, 26000, 42000, 21000],
-          name: "成本"
+          value: [20, 10, 40, 40],
+          name: "30-40"
         }
       ]
     }

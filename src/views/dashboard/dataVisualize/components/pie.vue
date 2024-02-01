@@ -9,10 +9,10 @@ import { ECOption } from "@/components/ECharts/config";
 import ECharts from "@/components/ECharts/index.vue";
 
 const pieData = [
-  { value: 30, name: "人工费" },
-  { value: 40, name: "材料费" },
-  { value: 15, name: "维修费" },
-  { value: 15, name: "其他费用" }
+  { value: 30, name: "技术支持" },
+  { value: 25, name: "销售" },
+  { value: 10, name: "人力资源" },
+  { value: 15, name: "市场营销" }
 ];
 
 const option: ECOption = {
@@ -85,40 +85,44 @@ const option: ECOption = {
         color: "#a1a1a1"
       },
       color: [
-        {
-          type: "linear",
-          x: 0,
-          y: 0,
-          x2: 0.5,
-          y2: 1,
-          colorStops: [
-            {
-              offset: 0,
-              color: "#feb791" // 0% 处的颜色
-            },
-            {
-              offset: 1,
-              color: "#fe8b4c" // 100% 处的颜色
-            }
-          ]
-        },
-        {
-          type: "linear",
-          x: 0,
-          y: 0,
-          x2: 1,
-          y2: 0.5,
-          colorStops: [
-            {
-              offset: 0,
-              color: "#b898fd" // 0% 处的颜色
-            },
-            {
-              offset: 1,
-              color: "#8347fd" // 100% 处的颜色
-            }
-          ]
-        }
+        "#ffcd56",
+        "#ff6384",
+        "#36a2eb",
+        "#4bc0c0"
+        // {
+        //   type: "linear",
+        //   x: 0,
+        //   y: 0,
+        //   x2: 0.5,
+        //   y2: 1,
+        //   colorStops: [
+        //     {
+        //       offset: 0,
+        //       color: "#feb791" // 0% 处的颜色
+        //     },
+        //     {
+        //       offset: 1,
+        //       color: "#fe8b4c" // 100% 处的颜色
+        //     }
+        //   ]
+        // },
+        // {
+        //   type: "linear",
+        //   x: 0,
+        //   y: 0,
+        //   x2: 1,
+        //   y2: 0.5,
+        //   colorStops: [
+        //     {
+        //       offset: 0,
+        //       color: "#b898fd" // 0% 处的颜色
+        //     },
+        //     {
+        //       offset: 1,
+        //       color: "#8347fd" // 100% 处的颜色
+        //     }
+        //   ]
+        // }
       ]
     }
   ]

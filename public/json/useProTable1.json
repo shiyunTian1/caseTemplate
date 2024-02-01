@@ -1,0 +1,138 @@
+{
+  "tableColumns": [
+    {
+      "prop": "name",
+      "label": "姓名"
+    },
+    {
+      "prop": "age",
+      "label": "年龄"
+    },
+    {
+      "prop": "gender",
+      "label": "性别"
+    },
+    {
+      "prop": "department",
+      "label": "所属部门"
+    },
+    {
+      "prop": "position",
+      "label": "职位"
+    },
+    {
+      "prop": "salary",
+      "label": "薪水"
+    },
+    {
+      "prop": "education",
+      "label": "教育程度"
+    },
+    {
+      "prop": "experience",
+      "label": "工作经验"
+    }
+  ],
+  "tableData": [
+    {
+      "name": "王宇",
+      "age": 28,
+      "gender": "男",
+      "department": "销售部",
+      "position": "销售经理",
+      "salary": 10000,
+      "education": "本科",
+      "experience": "5年"
+    },
+    {
+      "name": "李思佳",
+      "age": 35,
+      "gender": "女",
+      "department": "研发部",
+      "position": "软件工程师",
+      "salary": 8000,
+      "education": "研究生",
+      "experience": "8年"
+    },
+    {
+      "name": "张阳",
+      "age": 30,
+      "gender": "男",
+      "department": "人力资源部",
+      "position": "人力资源经理",
+      "salary": 12000,
+      "education": "本科",
+      "experience": "7年"
+    },
+    {
+      "name": "刘倩",
+      "age": 32,
+      "gender": "女",
+      "department": "市场部",
+      "position": "市场专员",
+      "salary": 5000,
+      "education": "本科",
+      "experience": "3年"
+    },
+    {
+      "name": "陈涛",
+      "age": 29,
+      "gender": "男",
+      "department": "财务部",
+      "position": "财务主管",
+      "salary": 9000,
+      "education": "本科",
+      "experience": "6年"
+    },
+    {
+      "name": "赵敏",
+      "age": 31,
+      "gender": "女",
+      "department": "生产部",
+      "position": "生产经理",
+      "salary": 11000,
+      "education": "本科",
+      "experience": "9年"
+    },
+    {
+      "name": "王晓燕",
+      "age": 27,
+      "gender": "女",
+      "department": "市场部",
+      "position": "市场经理",
+      "salary": 10000,
+      "education": "本科",
+      "experience": "4年"
+    },
+    {
+      "name": "李杰",
+      "age": 33,
+      "gender": "男",
+      "department": "销售部",
+      "position": "销售员",
+      "salary": 4000,
+      "education": "大专",
+      "experience": "2年"
+    },
+    {
+      "name": "孙鑫",
+      "age": 26,
+      "gender": "男",
+      "department": "研发部",
+      "position": "软件工程师",
+      "salary": 9000,
+      "education": "本科",
+      "experience": "3年"
+    },
+    {
+      "name": "刘海洋",
+      "age": 34,
+      "gender": "男",
+      "department": "财务部",
+      "position": "财务专员",
+      "salary": 5000,
+      "education": "大专",
+      "experience": "5年"
+    }
+  ]
+}

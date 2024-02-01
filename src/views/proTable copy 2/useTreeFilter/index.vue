@@ -2,10 +2,10 @@
   <div class="table-box">
     <ProTable
       ref="proTable"
+      v-if="columns"
       :toolButton="false"
       :columns="columns"
       :data="tableData"
-      :init-param="initParam"
       :data-callback="dataCallback"
     >
       <!-- Expand -->
@@ -39,11 +39,13 @@
 
 <script setup lang="tsx" name="useProTable">
 import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { User } from "@/api/interface";
 import { useHandleData } from "@/hooks/useHandleData";
 import { useDownload } from "@/hooks/useDownload";
 import { useAuthButtons } from "@/hooks/useAuthButtons";
+import { useCasetable } from "@/hooks/usecasetable";
+
 import { ElMessage, ElMessageBox } from "element-plus";
 import ProTable from "@/components/ProTable/index.vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
@@ -62,10 +64,12 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
+// import tableData from "./table.json";
 
 const router = useRouter();
 
+const route = useRoute();
+const { columns, tableData } = useCasetable(route.name.toString());
 // const tableData = ref(tableData);
 
 // 跳转详情页
@@ -114,32 +118,32 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 };
 
 // 表格配置项
-const columns = reactive<any>([
-  {
-    prop: "name",
-    label: "工具名称"
-  },
-  {
-    prop: "totalBorrowed",
-    label: "总借用次数"
-  },
-  {
-    prop: "totalReturned",
-    label: "总归还次数"
-  },
-  {
-    prop: "currentBorrowed",
-    label: "当前借用数量"
-  },
-  {
-    prop: "available",
-    label: "可用数量"
-  },
-  {
-    prop: "unavailable",
-    label: "不可用数量"
-  }
-]);
+// const columns = reactive<any>([
+//   {
+//     prop: "name",
+//     label: "工具名称"
+//   },
+//   {
+//     prop: "totalBorrowed",
+//     label: "总借用次数"
+//   },
+//   {
+//     prop: "totalReturned",
+//     label: "总归还次数"
+//   },
+//   {
+//     prop: "currentBorrowed",
+//     label: "当前借用数量"
+//   },
+//   {
+//     prop: "available",
+//     label: "可用数量"
+//   },
+//   {
+//     prop: "unavailable",
+//     label: "不可用数量"
+//   }
+// ]);
 
 // 表格拖拽排序
 const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: number }) => {

@@ -1,0 +1,118 @@
+{
+  "tableColumns": [
+    {
+      "prop": "name",
+      "label": "姓名"
+    },
+    {
+      "prop": "gender",
+      "label": "性别"
+    },
+    {
+      "prop": "age",
+      "label": "年龄"
+    },
+    {
+      "prop": "position",
+      "label": "职位"
+    },
+    {
+      "prop": "start_date",
+      "label": "入职日期"
+    },
+    {
+      "prop": "end_date",
+      "label": "离职日期"
+    },
+    {
+      "prop": "company_name",
+      "label": "公司名称"
+    },
+    {
+      "prop": "salary",
+      "label": "薪资"
+    },
+    {
+      "prop": "location",
+      "label": "工作地点"
+    },
+    {
+      "prop": "resign_reason",
+      "label": "离职原因"
+    }
+  ],
+  "tableData": [
+    {
+      "name": "张宇",
+      "gender": "男",
+      "age": 28,
+      "position": "高级工程师",
+      "start_date": "2018-05-15",
+      "end_date": "2021-03-31",
+      "company_name": "ABC建筑公司",
+      "salary": "25000元/月",
+      "location": "北京",
+      "resign_reason": "个人发展需求"
+    },
+    {
+      "name": "李思",
+      "gender": "女",
+      "age": 32,
+      "position": "项目经理",
+      "start_date": "2017-09-01",
+      "end_date": "2022-08-31",
+      "company_name": "XYZ装饰设计公司",
+      "salary": "28000元/月",
+      "location": "上海",
+      "resign_reason": "与公司理念不符"
+    },
+    {
+      "name": "王阳明",
+      "gender": "男",
+      "age": 30,
+      "position": "施工队长",
+      "start_date": "2019-02-10",
+      "end_date": "2023-01-31",
+      "company_name": "EFG建筑工程公司",
+      "salary": "22000元/月",
+      "location": "广州",
+      "resign_reason": "个人原因"
+    },
+    {
+      "name": "陈思梦",
+      "gender": "女",
+      "age": 29,
+      "position": "工程师",
+      "start_date": "2020-07-02",
+      "end_date": "2024-06-30",
+      "company_name": "HIJ建材有限公司",
+      "salary": "20000元/月",
+      "location": "深圳",
+      "resign_reason": "公司裁员"
+    },
+    {
+      "name": "刘傅",
+      "gender": "男",
+      "age": 27,
+      "position": "技术支持",
+      "start_date": "2019-11-18",
+      "end_date": "2023-12-31",
+      "company_name": "MNO技术服务有限公司",
+      "salary": "18000元/月",
+      "location": "成都",
+      "resign_reason": "合同到期"
+    },
+    {
+      "name": "赵传一",
+      "gender": "女",
+      "age": 31,
+      "position": "建筑师",
+      "start_date": "2020-03-15",
+      "end_date": "2023-09-30",
+      "company_name": "PPP建筑设计院",
+      "salary": "21000元/月",
+      "location": "西安",
+      "resign_reason": "个人发展需求"
+    }
+  ]
+}

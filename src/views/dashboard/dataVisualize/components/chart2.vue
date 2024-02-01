@@ -23,7 +23,7 @@ const props = defineProps({
   }
 });
 let bgColor = "#fff";
-let color = ["#0090FF", "#36CE9E", "#FFC005", "#FF515A", "#8B5CFF", "#00CA69"];
+let color = ["#FFC005", "#FF515A", "#8B5CFF", "#00CA69"];
 // let echartData = [
 //   {
 //     name: "1",
@@ -67,31 +67,21 @@ let color = ["#0090FF", "#36CE9E", "#FFC005", "#FF515A", "#8B5CFF", "#00CA69"];
 //   }
 // ];
 let echartData = [
-  {
-    name: "扳手",
-    value1: 100,
-    value2: 233
-  },
-  {
-    name: "电钻",
-    value1: 138,
-    value2: 233
-  },
-  {
-    name: "万用表",
-    value1: 350,
-    value2: 200
-  },
-  {
-    name: "螺丝刀",
-    value1: 173,
-    value2: 180
-  }
+  { name: " ", coursesCompleted: 5, trainingScore: 90 },
+  { name: " B", coursesCompleted: 7, trainingScore: 88 },
+  { name: " C", coursesCompleted: 4, trainingScore: 92 },
+  { name: " D", coursesCompleted: 6, trainingScore: 85 },
+  { name: " E", coursesCompleted: 6, trainingScore: 92 },
+  { name: " F", coursesCompleted: 3, trainingScore: 85 },
+  { name: " G", coursesCompleted: 5, trainingScore: 90 },
+  { name: " H", coursesCompleted: 4, trainingScore: 87 },
+  { name: " I", coursesCompleted: 6, trainingScore: 92 },
+  { name: " J", coursesCompleted: 5, trainingScore: 89 }
 ];
 
 let xAxisData = echartData.map(v => v.name);
-let yAxisData1 = echartData.map(v => v.value1);
-let yAxisData2 = echartData.map(v => v.value2);
+let yAxisData1 = echartData.map(v => v.coursesCompleted);
+let yAxisData2 = echartData.map(v => v.trainingScore);
 const hexToRgba = (hex, opacity) => {
   let rgbaColor = "";
   let reg = /^#[\da-f]{6}$/i;
@@ -112,21 +102,20 @@ const option = {
   },
   tooltip: {
     trigger: "axis",
-    formatter: function (params) {
-      let html = "";
-      params.forEach(v => {
-        console.log(v);
-        html += `<div style="color: #666;font-size: 14px;line-height: 24px">
-                <span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:${
-                  color[v.componentIndex]
-                };"></span>
-                ${v.seriesName}.${v.name}
-                <span style="color:${color[v.componentIndex]};font-weight:700;font-size: 18px">${v.value}</span>
-                万元`;
-      });
-
-      return html;
-    },
+    // formatter: function (params) {
+    //   let html = "";
+    //   params.forEach(v => {
+    //     console.log(v);
+    //     html += `<div style="color: #666;font-size: 14px;line-height: 24px">
+    //             <span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:${
+    //               color[v.componentIndex]
+    //             };"></span>
+    //             ${v.seriesName}.${v.name}
+    //             <span style="color:${color[v.componentIndex]};font-weight:700;font-size: 18px">${v.value}</span>
+    //             万元`;
+    //   });
+    //   return params;
+    // },
     extraCssText: "background: #fff; border-radius: 0;box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);color: #333;",
     axisPointer: {
       type: "shadow",
@@ -149,7 +138,7 @@ const option = {
       type: "category",
       boundaryGap: false,
       axisLabel: {
-        formatter: "{value}月",
+        formatter: "{value}",
         textStyle: {
           color: "#333"
         }
@@ -192,7 +181,7 @@ const option = {
   ],
   series: [
     {
-      name: "2022",
+      name: "培训课程",
       type: "line",
       smooth: true,
       // showSymbol: false,/
@@ -232,7 +221,7 @@ const option = {
       data: yAxisData1
     },
     {
-      name: "2023",
+      name: "培训分数",
       type: "line",
       smooth: true,
       // showSymbol: false,

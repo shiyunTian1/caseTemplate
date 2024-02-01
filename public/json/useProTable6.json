@@ -1,0 +1,134 @@
+{
+  "tableColumns": [
+    {
+      "prop": "name",
+      "label": "姓名"
+    },
+    {
+      "prop": "id",
+      "label": "证书id"
+    },
+    {
+      "prop": "department",
+      "label": "部门"
+    },
+    {
+      "prop": "issueDate",
+      "label": "入职日期"
+    },
+    {
+      "prop": "expiryDate",
+      "label": "离职日期"
+    },
+    {
+      "prop": "certificateNo",
+      "label": "证书编号"
+    },
+    {
+      "prop": "certificateName",
+      "label": "证书名称"
+    }
+  ],
+  "tableData": [
+    {
+      "name": "张洁",
+      "id": "210101198001010001",
+      "department": "技术部",
+      "position": "工程师",
+      "certificateName": "职业资格证书",
+      "certificateNo": "20220001",
+      "issueDate": "2023-04-10",
+      "expiryDate": "2028-04-10"
+    },
+    {
+      "name": "李思宇",
+      "id": "210201198002020002",
+      "department": "运营部",
+      "position": "项目经理",
+      "certificateName": "PMP项目管理证书",
+      "certificateNo": "20220002",
+      "issueDate": "2022-06-15",
+      "expiryDate": "2027-06-15"
+    },
+    {
+      "name": "王桌",
+      "id": "210301198003030003",
+      "department": "客户服务部",
+      "position": "客户经理",
+      "certificateName": "国际销售证书",
+      "certificateNo": "20220003",
+      "issueDate": "2023-02-28",
+      "expiryDate": "2028-02-28"
+    },
+    {
+      "name": "赵骐",
+      "id": "210401198004040004",
+      "department": "财务部",
+      "position": "财务经理",
+      "certificateName": "高级注册会计师证书",
+      "certificateNo": "20220004",
+      "issueDate": "2021-12-20",
+      "expiryDate": "2026-12-20"
+    },
+    {
+      "name": "孙雨",
+      "id": "210501198005050005",
+      "department": "人力资源部",
+      "position": "人力资源专员",
+      "certificateName": "人力资源管理师证书",
+      "certificateNo": "20220005",
+      "issueDate": "2022-09-05",
+      "expiryDate": "2027-09-05"
+    },
+    {
+      "name": "周林",
+      "id": "210601198006060006",
+      "department": "市场部",
+      "position": "市场营销经理",
+      "certificateName": "市场营销策划师证书",
+      "certificateNo": "20220006",
+      "issueDate": "2023-01-12",
+      "expiryDate": "2028-01-12"
+    },
+    {
+      "name": "吴江",
+      "id": "210701198007070007",
+      "department": "生产部",
+      "position": "生产主管",
+      "certificateName": "ISO9001质量管理体系证书",
+      "certificateNo": "20220007",
+      "issueDate": "2022-11-30",
+      "expiryDate": "2027-11-30"
+    },
+    {
+      "name": "郑军",
+      "id": "210801198008080008",
+      "department": "品质部",
+      "position": "品质检验员",
+      "certificateName": "品质管理岗位技能证书",
+      "certificateNo": "20220008",
+      "issueDate": "2023-08-05",
+      "expiryDate": "2028-08-05"
+    },
+    {
+      "name": "钱学思",
+      "id": "210901198009090009",
+      "department": "技术部",
+      "position": "实施工程师",
+      "certificateName": "CCNA网络工程师证书",
+      "certificateNo": "20220009",
+      "issueDate": "2022-03-25",
+      "expiryDate": "2027-03-25"
+    },
+    {
+      "name": "孙彤彤",
+      "id": "211001198010100010",
+      "department": "客户服务部",
+      "position": "客户经理",
+      "certificateName": "金融理财规划师证书",
+      "certificateNo": "20220010",
+      "issueDate": "2023-07-20",
+      "expiryDate": "2028-07-20"
+    }
+  ]
+}

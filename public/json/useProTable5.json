@@ -1,0 +1,138 @@
+{
+  "tableColumns": [
+    {
+      "prop": "name",
+      "label": "姓名"
+    },
+    {
+      "prop": "gender",
+      "label": "性别"
+    },
+    {
+      "prop": "age",
+      "label": "年龄"
+    },
+    {
+      "prop": "phone",
+      "label": "电话"
+    },
+    {
+      "prop": "email",
+      "label": "邮箱"
+    },
+    {
+      "prop": "position",
+      "label": "职位"
+    },
+    {
+      "prop": "trainingCourse",
+      "label": "培训课程"
+    },
+    {
+      "prop": "trainingScore",
+      "label": "培训分数"
+    }
+  ],
+  "tableData": [
+    {
+      "name": "张阳",
+      "gender": "男",
+      "age": 28,
+      "phone": "13812345678",
+      "email": "zhangsan@example.com",
+      "position": "技术支持",
+      "trainingCourse": "产品知识培训",
+      "trainingScore": 90
+    },
+    {
+      "name": "李思佳",
+      "gender": "男",
+      "age": 32,
+      "phone": "13998765432",
+      "email": "lisi@example.com",
+      "position": "销售",
+      "trainingCourse": "销售技巧培训",
+      "trainingScore": 88
+    },
+    {
+      "name": "刘倩",
+      "gender": "女",
+      "age": 26,
+      "phone": "13611112222",
+      "email": "wangwu@example.com",
+      "position": "人力资源",
+      "trainingCourse": "员工管理培训",
+      "trainingScore": 92
+    },
+    {
+      "name": "陈涛",
+      "gender": "男",
+      "age": 29,
+      "phone": "13755556666",
+      "email": "zhaoliu@example.com",
+      "position": "财务",
+      "trainingCourse": "财务知识培训",
+      "trainingScore": 85
+    },
+    {
+      "name": "赵敏",
+      "gender": "女",
+      "age": 30,
+      "phone": "13899998888",
+      "email": "chenqi@example.com",
+      "position": "市场营销",
+      "trainingCourse": "市场推广培训",
+      "trainingScore": 92
+    },
+    {
+      "name": "王晓燕",
+      "gender": "男",
+      "age": 35,
+      "phone": "13966667777",
+      "email": "liuba@example.com",
+      "position": "研发",
+      "trainingCourse": "创新技术培训",
+      "trainingScore": 85
+    },
+    {
+      "name": "李杰",
+      "gender": "女",
+      "age": 27,
+      "phone": "13900001111",
+      "email": "huangjiu@example.com",
+      "position": "销售",
+      "trainingCourse": "销售技巧培训",
+      "trainingScore": 90
+    },
+    {
+      "name": "王雨河",
+      "gender": "男",
+      "age": 31,
+      "phone": "13888888888",
+      "email": "wangshi@example.com",
+      "position": "人力资源",
+      "trainingCourse": "员工管理培训",
+      "trainingScore": 87
+    },
+    {
+      "name": "张宇",
+      "gender": "女",
+      "age": 26,
+      "phone": "13811112222",
+      "email": "zhangshiyi@example.com",
+      "position": "市场营销",
+      "trainingCourse": "市场推广培训",
+      "trainingScore": 92
+    },
+    {
+      "name": "李友友",
+      "gender": "男",
+      "age": 28,
+      "phone": "13922223333",
+      "email": "lishier@example.com",
+      "position": "技术支持",
+      "trainingCourse": "产品知识培训",
+      "trainingScore": 89
+    }
+  ]
+}

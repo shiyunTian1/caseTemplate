@@ -1,6 +1,15 @@
+<!--
+ * @Author: qingzi tsy15632385483@163.com
+ * @Date: 2024-01-25 10:05:28
+ * @LastEditors: qingzi tsy15632385483@163.com
+ * @LastEditTime: 2024-02-01 15:02:05
+ * @FilePath: \casetemplage\src\views\proTable\useProTable\index.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div class="table-box">
     <ProTable
+      v-if="columns"
       ref="proTable"
       :columns="columns"
       :data="tableData"
@@ -51,11 +60,12 @@
 
 <script setup lang="tsx" name="useProTable">
 import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { User } from "@/api/interface";
 import { useHandleData } from "@/hooks/useHandleData";
 import { useDownload } from "@/hooks/useDownload";
 import { useAuthButtons } from "@/hooks/useAuthButtons";
+
 import { ElMessage, ElMessageBox } from "element-plus";
 import ProTable from "@/components/ProTable/index.vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
@@ -74,11 +84,38 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
+import { useCasetable } from "@/hooks/usecasetable";
+
+// import tableData from "./table.json";
 
 const router = useRouter();
-
 // const tableData = ref(tableData);
+
+// const columns = ref();
+// const tableData = ref();
+
+// const handleRouteDataJson = () => {
+//   // fetch(`/json/table.json`)
+//   fetch(`/json/${route.name.toString()}.json`)
+//     .then(response => response.json())
+//     .then(jsonData => {
+//       console.log(jsonData);
+//       columns.value = jsonData.tableColumns;
+//       tableData.value = jsonData.tableData;
+
+//       console.log(columns.value);
+//       console.log(tableData.value);
+//     })
+//     .catch(error => {
+//       console.error(error);
+//     });
+// };
+// handleRouteDataJson();
+const route = useRoute();
+
+const { columns, tableData } = useCasetable(route.name.toString());
+
+console.log(`当前页面`, columns);
 
 // 跳转详情页
 const toDetail = () => {
@@ -166,41 +203,41 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 //   },
 //   { prop: "operation", label: "操作", fixed: "right", width: 330 }
 // ]);
-const columns = reactive<any>([
-  {
-    prop: "name",
-    label: "姓名"
-  },
-  {
-    prop: "age",
-    label: "年龄"
-  },
-  {
-    prop: "gender",
-    label: "性别"
-  },
-  {
-    prop: "phone",
-    label: "电话号码"
-  },
-  {
-    prop: "email",
-    label: "电子邮件"
-  },
-  {
-    prop: "company",
-    label: "所属公司"
-  },
-  {
-    prop: "position",
-    label: "职位"
-  },
-  {
-    prop: "qualification",
-    label: "资质证书"
-  },
-  { prop: "operation", label: "操作", fixed: "right", width: 330 }
-]);
+// const columns = ref<any>([
+//   {
+//     prop: "name",
+//     label: "姓名"
+//   },
+//   {
+//     prop: "age",
+//     label: "年龄"
+//   },
+//   {
+//     prop: "gender",
+//     label: "性别"
+//   },
+//   {
+//     prop: "phone",
+//     label: "电话号码"
+//   },
+//   {
+//     prop: "email",
+//     label: "电子邮件"
+//   },
+//   {
+//     prop: "company",
+//     label: "所属公司"
+//   },
+//   {
+//     prop: "position",
+//     label: "职位"
+//   },
+//   {
+//     prop: "qualification",
+//     label: "资质证书"
+//   },
+//   { prop: "operation", label: "操作", fixed: "right", width: 330 }
+// ]);
 
 // 表格拖拽排序
 const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: number }) => {
@@ -208,7 +245,7 @@ const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: numbe
   console.log(proTable.value?.tableData);
   ElMessage.success("修改列表排序成功");
 };
-
+const search = () => {};
 // 删除用户信息
 const deleteAccount = async (params: User.ResUserList) => {
   await useHandleData(deleteUser, { id: [params.id] }, `删除`);

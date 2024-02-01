@@ -2,6 +2,7 @@
   <div class="table-box">
     <ProTable
       ref="proTable"
+      v-if="columns"
       :toolButton="false"
       :columns="columns"
       :data="tableData"
@@ -39,11 +40,13 @@
 
 <script setup lang="tsx" name="useProTable">
 import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { User } from "@/api/interface";
 import { useHandleData } from "@/hooks/useHandleData";
 import { useDownload } from "@/hooks/useDownload";
 import { useAuthButtons } from "@/hooks/useAuthButtons";
+import { useCasetable } from "@/hooks/usecasetable";
+
 import { ElMessage, ElMessageBox } from "element-plus";
 import ProTable from "@/components/ProTable/index.vue";
 import ImportExcel from "@/components/ImportExcel/index.vue";
@@ -62,12 +65,14 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
+// import tableData from "./table.json";
 
 const router = useRouter();
 
 // const tableData = ref(tableData);
 
+const route = useRoute();
+const { columns, tableData } = useCasetable(route.name.toString());
 // 跳转详情页
 const toDetail = () => {
   router.push(`/proTable/useProTable/detail/${Math.random().toFixed(3)}?params=detail-page`);
@@ -114,32 +119,32 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 };
 
 // 表格配置项
-const columns = reactive<any>([
-  {
-    prop: "name",
-    label: "工具名称"
-  },
-  {
-    prop: "type",
-    label: "工具类型"
-  },
-  {
-    prop: "quantity",
-    label: "数量"
-  },
-  {
-    prop: "status",
-    label: "状态"
-  },
-  {
-    prop: "lastMaintenance",
-    label: "上次维护时间"
-  },
-  {
-    prop: "location",
-    label: "存放位置"
-  }
-]);
+// const columns = reactive<any>([
+//   {
+//     prop: "name",
+//     label: "工具名称"
+//   },
+//   {
+//     prop: "type",
+//     label: "工具类型"
+//   },
+//   {
+//     prop: "quantity",
+//     label: "数量"
+//   },
+//   {
+//     prop: "status",
+//     label: "状态"
+//   },
+//   {
+//     prop: "lastMaintenance",
+//     label: "上次维护时间"
+//   },
+//   {
+//     prop: "location",
+//     label: "存放位置"
+//   }
+// ]);
 
 // 表格拖拽排序
 const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: number }) => {

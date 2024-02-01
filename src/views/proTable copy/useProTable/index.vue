@@ -2,6 +2,7 @@
   <div class="table-box">
     <ProTable
       ref="proTable"
+      v-if="columns"
       :columns="columns"
       :data="tableData"
       :init-param="initParam"
@@ -51,10 +52,12 @@
 
 <script setup lang="tsx" name="useProTable">
 import { ref, reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { User } from "@/api/interface";
 import { useHandleData } from "@/hooks/useHandleData";
 import { useDownload } from "@/hooks/useDownload";
+import { useCasetable } from "@/hooks/usecasetable";
+
 import { useAuthButtons } from "@/hooks/useAuthButtons";
 import { ElMessage, ElMessageBox } from "element-plus";
 import ProTable from "@/components/ProTable/index.vue";
@@ -74,10 +77,12 @@ import {
   getUserStatus,
   getUserGender
 } from "@/api/modules/user";
-import tableData from "./table.json";
+// import tableData from "./table.json";
 
 const router = useRouter();
 
+const route = useRoute();
+const { columns, tableData } = useCasetable(route.name.toString());
 // const tableData = ref(tableData);
 
 // 跳转详情页
@@ -126,43 +131,43 @@ const headerRender = (scope: HeaderRenderScope<User.ResUserList>) => {
 };
 
 // 表格配置项
-const columns = reactive<any>([
-  { prop: "name", label: "工具名称" },
-  { prop: "type", label: "工具类型" },
-  { prop: "quantity", label: "数量" },
-  { prop: "brand", label: "品牌" },
-  {
-    prop: "purchaseDate",
-    label: "购买时间",
-    width: 180
-  },
-  { prop: "purchasePrice", label: "购买价格", search: { el: "input" } },
-  { prop: "remark", label: "备注" },
-  {
-    prop: "status",
-    label: "状态",
-    enum: getUserStatus,
-    fieldNames: { label: "userLabel", value: "userStatus" },
-    render: scope => {
-      return (
-        <>
-          {BUTTONS.value.status ? (
-            <el-switch
-              model-value={scope.row.status == "可用" ? true : false}
-              active-text={scope.row.status ? "可用" : "禁用"}
-              active-value={1}
-              inactive-value={0}
-              onClick={() => changeStatus(scope.row)}
-            />
-          ) : (
-            <el-tag type={scope.row.status ? "success" : "danger"}>{scope.row.status ? "可用" : "禁用"}</el-tag>
-          )}
-        </>
-      );
-    }
-  },
-  { prop: "operation", label: "操作", fixed: "right", width: 330 }
-]);
+// const columns = reactive<any>([
+//   { prop: "name", label: "工具名称" },
+//   { prop: "type", label: "工具类型" },
+//   { prop: "quantity", label: "数量" },
+//   { prop: "brand", label: "品牌" },
+//   {
+//     prop: "purchaseDate",
+//     label: "购买时间",
+//     width: 180
+//   },
+//   { prop: "purchasePrice", label: "购买价格", search: { el: "input" } },
+//   { prop: "remark", label: "备注" },
+//   {
+//     prop: "status",
+//     label: "状态",
+//     enum: getUserStatus,
+//     fieldNames: { label: "userLabel", value: "userStatus" },
+//     render: scope => {
+//       return (
+//         <>
+//           {BUTTONS.value.status ? (
+//             <el-switch
+//               model-value={scope.row.status == "可用" ? true : false}
+//               active-text={scope.row.status ? "可用" : "禁用"}
+//               active-value={1}
+//               inactive-value={0}
+//               onClick={() => changeStatus(scope.row)}
+//             />
+//           ) : (
+//             <el-tag type={scope.row.status ? "success" : "danger"}>{scope.row.status ? "可用" : "禁用"}</el-tag>
+//           )}
+//         </>
+//       );
+//     }
+//   },
+//   { prop: "operation", label: "操作", fixed: "right", width: 330 }
+// ]);
 
 // 表格拖拽排序
 const sortTable = ({ newIndex, oldIndex }: { newIndex?: number; oldIndex?: number }) => {
